@@ -1,0 +1,17 @@
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{\numberline {1}Authentication techiniques protocols, and architecures}{3}{chapter.1}%
+\contentsline {subsubsection}{Authentication vs Authorization}{3}{section*.2}%
+\contentsline {section}{\numberline {1.1}Authentication factors}{3}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Risks}{3}{subsection.1.1.1}%
+\contentsline {section}{\numberline {1.2}Digital Authentication model (NIST SP800.63B)}{4}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Generic authentication protocol}{4}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Password base authentication}{4}{section.1.4}%
+\contentsline {section}{\numberline {1.5}The "dictionary" attack}{5}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Rainbow Table attack}{5}{section.1.6}%
+\contentsline {section}{\numberline {1.7}Salting Passwords: A Defense Against Dictionary and Rainbow Table Attacks}{6}{section.1.7}%
+\contentsline {subsubsection}{Steps for each user (UID):}{6}{section*.3}%
+\contentsline {subsubsection}{Password Verification with Salt}{6}{section*.4}%
+\contentsline {section}{\numberline {1.8}Strong authentication definitions}{6}{section.1.8}%
+\contentsline {section}{\numberline {1.9}Challenge-Response Authentication (CRA)}{6}{section.1.9}%
+\contentsline {subsection}{\numberline {1.9.1}Symmetric CRA}{7}{subsection.1.9.1}%
+\contentsline {subsection}{\numberline {1.9.2}Mutual symmetric CRA}{7}{subsection.1.9.2}%
