@@ -15,3 +15,10 @@
 \contentsline {section}{\numberline {1.9}Challenge-Response Authentication (CRA)}{6}{section.1.9}%
 \contentsline {subsection}{\numberline {1.9.1}Symmetric CRA}{7}{subsection.1.9.1}%
 \contentsline {subsection}{\numberline {1.9.2}Mutual symmetric CRA}{7}{subsection.1.9.2}%
+\contentsline {subsubsection}{Version 1: Basic Exchange}{7}{section*.5}%
+\contentsline {subsubsection}{Version 2: Improved Performance}{7}{section*.6}%
+\contentsline {subsection}{\numberline {1.9.3}Asymmetric CRA}{7}{subsection.1.9.3}%
+\contentsline {subsubsection}{Applications}{7}{section*.7}%
+\contentsline {subsubsection}{Security:}{8}{section*.8}%
+\contentsline {subsubsection}{Problems:}{8}{section*.9}%
+\contentsline {section}{\numberline {1.10}One-Time Password(OTP)}{8}{section.1.10}%
