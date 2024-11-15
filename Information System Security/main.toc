@@ -22,3 +22,5 @@
 \contentsline {subsubsection}{Security:}{8}{section*.8}%
 \contentsline {subsubsection}{Problems:}{8}{section*.9}%
 \contentsline {section}{\numberline {1.10}One-Time Password(OTP)}{8}{section.1.10}%
+\contentsline {subsection}{\numberline {1.10.1}S/KEY System}{8}{subsection.1.10.1}%
+\contentsline {subsubsection}{One-time generation with S/KEY}{8}{section*.10}%

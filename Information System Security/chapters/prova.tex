@@ -346,12 +346,37 @@ In this case, the initiator explicitly provides its claimed identity (This versi
 \end{quotebox}
 
 \section{One-Time Password(OTP)}
-\begin{minipage}{0.5\textwidth}
-%	\vspace{-0.5cm}
+\begin{minipage}{0.6\textwidth}
+\vspace{-1.0cm}
 One-Time Passwords are temporary and valid for a single use in an authentication session. They mitigate risks like password reuse and passive sniffing but can still be vulnerable to man-in-the-middle (MITM) attacks. 
+These passwords are often designed 
+with random characters to prevent 
+guessing, but this can make password instertion difficult for users. 
+input.
 \end{minipage} 
-\hspace{1cm}
-\begin{minipage}{0.5\textwidth}
-    \centering
-    \includegraphics[width=0.7\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-15 13-11-17.png}
+\hspace{0.5cm}
+\begin{minipage}{0.4\textwidth}
+    
+    \includegraphics[width=0.8\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-15 13-11-17.png}
 \end{minipage}
+
+\subsection{S/KEY System}
+S/KEY System was the first OTP implementation by Bell Labs (1981).
+It pre-computes a sequence of passwords derived from a user’s secret. 
+Each password is validated and replaced with its predecessor, ensuring security 
+without storing the secret:
+\[Secret = S_{ID}\]
+\[P_1=h(S_{ID}),P_2=h(P_1),...,P_N=h(P_{N-1})\]
+\noindent
+This approach 
+minimizes verifier storage needs and offers robust protection, with users solely 
+responsible for password retention.
+\subsubsection{One-time generation with S/KEY}
+
+In the S/KEY system, the user creates 
+a secret passphrase (PP), which is combined 
+with a server-provided seed to generate a 64-bit 
+password. The passphrase is concatenated with the seed, 
+and an MD4 hash is used to produce the password. 
+The result is presented as six short words from a shared 
+dictionary, making it easy to remember. This method allows secure password generation while using the same passphrase across multiple servers with different seeds. If the passphrase is compromised, security is at risk.
