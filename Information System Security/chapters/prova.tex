@@ -371,12 +371,113 @@ without storing the secret:
 This approach 
 minimizes verifier storage needs and offers robust protection, with users solely 
 responsible for password retention.
-\subsubsection{One-time generation with S/KEY}
 
-In the S/KEY system, the user creates 
+\begin{customquote}
+\textbf{One-time generation with S/KEY}
+\\In the S/KEY system, the user creates 
 a secret passphrase (PP), which is combined 
 with a server-provided seed to generate a 64-bit 
 password. The passphrase is concatenated with the seed, 
 and an MD4 hash is used to produce the password. 
 The result is presented as six short words from a shared 
 dictionary, making it easy to remember. This method allows secure password generation while using the same passphrase across multiple servers with different seeds. If the passphrase is compromised, security is at risk.
+\end{customquote}
+
+\subsection{Time-based OTP (TOPT)}
+\begin{minipage}{0.5\textwidth}
+    TOTP systems generate passwords based on the user's secret and the current time, requiring synchronization between the user and the verifier:
+    \[p(ID,t)\ =\ h(t,S_{ID})\]
+    \begin{customquote}
+        \textbf{Authentication Process:}
+        \begin{itemize}
+            \item The claimant sends an authentication request with \(ID\) and the generated OTP \(x\).
+            \item The verifier cecks if \(X\) matches the computed OTP for the corresponding \(ID\) and \(t\).
+        \end{itemize}
+    \end{customquote}
+    
+
+\end{minipage} 
+\hspace{0.3cm}
+\begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=0.9\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 10-54-11.png}
+\end{minipage}
+
+\vspace{0.5cm}
+\begin{customquote}
+    \textbf{Requirements:}
+    \begin{itemize}
+        \item Local computation of OTPby the subscriber.
+        \item Clock synchronization  (or keeping track of time-shift for each subscribers).
+    \end{itemize}
+\end{customquote}
+
+\begin{customquote}
+    \textbf{Limitations:}
+    \begin{itemize}
+        \item Only one authentication is allowed per time-slot, typically 30s or 60s.
+        \item This time limit may not suit all services.
+    \end{itemize}
+\end{customquote}
+
+\begin{customquote}
+    \textbf{Vulnerabilities:}
+    \begin{itemize}
+        \item Potential attacks on the subscriber and verifier:
+        \begin{itemize}
+            \item Fake NTP servers or compromised mobile network femtocells.
+            \item Sensitive database storage at the verifier (e.g., the RSA SecurID attack).
+        \end{itemize}
+    \end{itemize}
+\end{customquote}
+
+\begin{quotebox}[colframe=blue!10!white, colback=blue!5!white]{Example:RSA SecurID}
+    \begin{minipage}{0.6\textwidth}
+    %	\vspace{-0.5cm}
+        Authentication process:
+        \begin{itemize}
+            \item \textbf{The claimant sends to the verifier:}
+            \begin{itemize}
+                \item \underline{Without PIN Pad:} User ID, PIN, and Token Code (computed using seed and time).
+                \item \underline{With PIN Pad:} User ID and a combined Token Code* (includes seed, time, and PIN).
+            \end{itemize}
+        \end{itemize}
+    \end{minipage} 
+    \hspace{1cm}
+    \begin{minipage}{0.3\textwidth}
+        \centering
+        \includegraphics[width=1.1\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 12-00-37.png}
+    \end{minipage}
+\end{quotebox}
+
+\subsection{Out-of-Band (OOB) OTP Summary}
+Out-of-Band OTP requires a \textbf{secure channel} with server authentication 
+to prevent MITM (Man-In-The-Middle) attacks. Traditionally, it uses text or 
+SMS as the communication channel, but this method is increasingly vulnerable 
+due to weaknesses in VoIP, mobile user identification, and the SS7 protocol. 
+Nowadays, a push mechanism over a \textbf{TLS-secured channel} to a registered device is recommended for enhanced security.
+
+
+\subsection{Two-/Multi-Factor Authentication (2FA/MFA)}
+MFA enhances authentication (authN) by requiring multiple factors, 
+such as a PIN, OTP, or biometrics, to verify identity. These factors can include something you know (like a PIN or password), something you have (like a token or phone), and something you are (like biometric data). MFA also protects the authenticator, for example, by using a PIN to safeguard it, but risks arise if the lock mechanism is weak or if there’s no protection against multiple unlock attempts.
+
+\begin{quotebox}[colframe=blue!10!white, colback=blue!5!white]{Importance of MFA: The iPhone Ransomware (2014)}
+    In 2014, iCloud accounts with 1FA were hacked, allowing attackers to lock devices remotely. Victims were extorted for \$100, but paying didn’t help as the PayPal account was fake. This incident underscores the need for MFA to secure devices and prevent such attacks.
+\end{quotebox}
+
+\section{Authentication of human beings}
+To verify whether we're interacting with a human rather than a machine, there are two common approaches:
+\begin{itemize}
+    \item \textbf{CAPTCHA (Completely Automated Public Turing Test to Tell Computers and Humans Apart):} A method where users must solve challenges like distorted characters in images to prove they are human.
+    \item \textbf{Biometric Techniques:} These involve verifying human characteristics such as fingerprints, voice, retinal scans, iris scans, blood vein patterns in hands, heart rate, and hand geometry.
+
+\end{itemize}
+
+
+ 
+
+
+
+
+

@@ -11,6 +11,22 @@ before=\vskip\baselineskip,
 left=2pt, % This adds the vertical line
 title={#2},#1}
 
+%prova
+\usepackage[utf8]{inputenc} % For UTF-8 support
+\usepackage{mdframed} % For the vertical line on the left
+% Define a custom style for the vertical line
+\newmdenv[
+    topline=false, % No top border
+    bottomline=false, % No bottom border
+    rightline=false, % No right border
+    leftline=true, % Only left border
+    linecolor=black, % Black line color
+    linewidth=1pt, % Thickness of the left line
+    innerleftmargin=5pt, % Space between the line and the text
+    innerrightmargin=0pt, % No right margin
+    innertopmargin=0pt, % No top margin
+    innerbottommargin=0pt % No bottom margin
+]{customquote}
 %--------------------
 % Dimensione dei margini
 \usepackage[a4paper,top=2cm,bottom=1.5cm,left=1.5cm,right=1.5cm]{geometry} 
