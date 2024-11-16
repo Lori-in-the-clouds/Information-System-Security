@@ -46,7 +46,7 @@ Authentication can be based on 3 primary factors:
 \end{itemize}
 
 \section{Digital Authentication model (NIST SP800.63B)}
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-13 20-29-06.png}
 \end{figure}
@@ -470,12 +470,129 @@ such as a PIN, OTP, or biometrics, to verify identity. These factors can include
 To verify whether we're interacting with a human rather than a machine, there are two common approaches:
 \begin{itemize}
     \item \textbf{CAPTCHA (Completely Automated Public Turing Test to Tell Computers and Humans Apart):} A method where users must solve challenges like distorted characters in images to prove they are human.
-    \item \textbf{Biometric Techniques:} These involve verifying human characteristics such as fingerprints, voice, retinal scans, iris scans, blood vein patterns in hands, heart rate, and hand geometry.
-
+    \item \textbf{Biometric Techniques:} 
+    These involve verifying human characteristics such as fingerprints, voice, retinal scans, iris scans, blood vein patterns in hands, heart rate, and hand geometry.
 \end{itemize}
 
 
- 
+\begin{quotebox}[colframe=blue!10!white, colback=blue!5!white]{Problems of biometric systems}{
+    There are several issues with biometric systems:
+    \begin{itemize}
+        \begin{minipage}{0.7\textwidth}
+        \item \textbf{FAR (False Acceptance Rate)} and \textbf{FRR (False Rejection Rate)}: These rates depend on the system's cost and can be adjusted, but biological factors like injuries or emotional changes can affect accuracy.
+        \end{minipage} 
+        \hspace{-1.2cm}
+        \begin{minipage}{0.4\textwidth}
+            \centering
+            \includegraphics[width=0.5\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 15-05-31.png}
+        \end{minipage}
+        
+        \item \textbf{Psychological Acceptance:} Many people fear the "Big Brother" scenario—personal data collection and potential privacy invasions.
+        \item \textbf{Irreplaceability:} Once compromised, biometric data cannot be changed, unlike a password or PIN. Thus, biometrics are primarily useful for local authentication but unsuitable for global identity systems.
+        \item \textbf{Lack of Standardization:} High development costs and dependency on specific vendors are significant drawbacks in current biometric systems.
+    \end{itemize}}
+\end{quotebox}
+\newpage
+\section{Kerberos Authentication System}
+\begin{minipage}{0.8\textwidth}
+\vspace{-0.5cm}
+Kerberos is a widely-used \underline{authentication protocol} based on a Trusted Third Party (TTP) model. It's designed to ensure that user passwords are never transmitted over the network. Instead, the password is used locally for encryption.
+\begin{itemize}
+    \item \textbf{Realm:} Refers to a Kerberos domain, grouping together all systems that use Kerberos for authentication.
+    \item \textbf{Credential:} A unique identifier for a user, typically in the format \textbf{user.instance@realm}.
+    \end{itemize}
+\end{minipage} 
+\hspace{-1.2cm}
+\begin{minipage}{0.3\textwidth}
+    \centering
+    \includegraphics[width=0.23\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 15-19-27.png}
+\end{minipage}
+
+\subsection{Players}
+There are 4 key players:
+\begin{itemize}
+    \item \textbf{Client (User/Application:)} he person or application trying to access a resource.
+    \item \textbf{Authentication Server (AS):} Confirms who you are and issues a Ticket Granting Ticket (TGT).
+    \item \textbf{Ticket Granting Server (TGS):} Issues tickets for specific services after seeing the TGT.
+    \item \textbf{Service (Server):} The resource you want to access. 
+\end{itemize}
+
+\subsection{How it Works?}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 16-35-14.png}
+\end{figure}
+\begin{enumerate}
+    \item \textbf{TGT Request}: Client authenticates with the Authentication Server (AS) to obtain a Ticket Granting Ticket (TGT).\vspace{0.5cm}
+    \begin{minipage}{0.5\textwidth}
+    %	\vspace{-0.5cm}
+        \begin{customquote}
+        The expression \({KC,TGS,{TC,TGS}\ KTGS}KC\) represents a \textbf{TGT}:
+        \begin{itemize}
+            \item The enitre structure is encrypted using the client's secret key (\(KC\)) (This ensure that only the intended client can decrupt and use the TGT).
+            \item \({TC,TGS}\ KTGS\) is the \textbf{TGS} that contains the client’s identity and other information. It's encrypted using the TGS's secret key (\(KTGS\)), ensuring only TGS can read and verify the ticket. 
+
+        \end{itemize}
+        \end{customquote}
+    \end{minipage} 
+    \hspace{1cm}
+    \begin{minipage}{0.3\textwidth}
+        \centering
+        \includegraphics[width=1.3\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 17-02-07.png}
+    \end{minipage}
+
+    \item \textbf{Service Ticket Request}: TGT is sent to the Ticket Granting Server (TGS) to request a service-specific ticket. \\
+    \\
+    \begin{minipage}{0.5\textwidth}
+    %	\vspace{-0.5cm}
+        \begin{customquote}
+        \begin{itemize}
+            \item The client sends: (S) \(\rightarrow\) the indetifier of the target device, \({TG,TGS}\ KTGS\) \(\rightarrow\) TGS ticket and \(({AC}\ KC,TGS)\) \(\rightarrow\) the authenticator.
+            \item TGS Verifies and Responds: 
+            \begin{itemize}
+                \item The TGS decrypts the TGS ticket using its secret key (KTGS).
+                \item It verifies the client's identity using the authenticator.
+                \item If successful, the TGS generates a Service Ticket \(({TC,S}\ KS)\) encrypted with the secret key \((KS)\), ensuring only the service can read it; and a new session key \((KC,S)\), shared between the client and the service.
+            \end{itemize}
+        \end{itemize}
+        \end{customquote}
+    \end{minipage} 
+    \hspace{1cm}
+    \begin{minipage}{0.3\textwidth}
+        \centering
+        \includegraphics[width=1.4\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 17-21-43.png}
+    \end{minipage}
+    
+    \item \textbf{Access Service}: Client uses the service ticket to authenticate and access the resource. \\
+    \\
+    \begin{minipage}{0.5\textwidth}
+        \begin{customquote}
+            The client send:
+            \begin{itemize}
+                \item The service ticket encrypted using the service's secret key (\(KS\)), so only the service can decrypt and validate it. 
+                \item The authenticator encrypted using the session key (\(KS,S\)) shared bewteen the client and the service.
+        \end{itemize}
+            The service responds with a response in which confirms succesfully authentication. It encrypts the message with the session key \((KC,S)\) to ensure it's secure and readable only by the client.
+            
+        \end{customquote}
+    \end{minipage} 
+    \hspace{1cm}
+    \begin{minipage}{0.3\textwidth}
+        \centering
+        \includegraphics[width=1.4\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 17-41-06.png}
+    \end{minipage}
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

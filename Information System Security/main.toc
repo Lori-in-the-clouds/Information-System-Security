@@ -27,3 +27,6 @@
 \contentsline {subsection}{\numberline {1.10.3}Out-of-Band (OOB) OTP Summary}{9}{subsection.1.10.3}%
 \contentsline {subsection}{\numberline {1.10.4}Two-/Multi-Factor Authentication (2FA/MFA)}{9}{subsection.1.10.4}%
 \contentsline {section}{\numberline {1.11}Authentication of human beings}{9}{section.1.11}%
+\contentsline {section}{\numberline {1.12}Kerberos Authentication System}{10}{section.1.12}%
+\contentsline {subsection}{\numberline {1.12.1}Players}{10}{subsection.1.12.1}%
+\contentsline {subsection}{\numberline {1.12.2}How it Works?}{10}{subsection.1.12.2}%
