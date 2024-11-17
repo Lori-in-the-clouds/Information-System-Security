@@ -583,6 +583,68 @@ There are 4 key players:
     \end{minipage}
 \end{enumerate}
 
+\subsection{Single Sign-On (SSO)}
+SSO allows users to authenticate once and access multiple services without repeated logins.\\
+\textbf{Types of SSO:}
+\begin{itemize}
+    \item \textbf{Fictitious SSO:}
+    \begin{itemize}
+        \item Relies on tools like password synchronization or management (e.g., password wallets).
+        \item Limited to specific applications.
+    \end{itemize}
+    \item \textbf{Integral SSO:} Uses advanced multi-application methods like Asymmetric Challenge-Response Authentication (CRA) or Kerberos.
+    Often requires application changes.
+    \item \textbf{Multi-Domain SSO:} Expands SSO across domains using technologies like SAML tokens, which generalize Kerberos tickets.
+\end{itemize}
+\textcolor{red}{\textbf{N.B.}} Single Sign-On (SSO) is not exclusive to Kerberos, but Kerberos is one of the prominent technologies that implements SSO capabilities.
+
+\section{Authentication Interoperability}
+Authentication interoperability define methods, standard, and protocol for performing authentication securely and efficiently. Let's start to analyse some framework.
+
+\subsection{OATH}
+The Open Authentication (OATH) framework provides standards for one-time password (OTP) and symmetric key management.
+\begin{itemize}
+    \item \textbf{HOTP:} Uses a shared secret key (K) and a counter (C) to generate an OTP.
+    \\Function:
+    \[ HOTP(K, C) = sel(HMAC-h(K, C))\ \&\ 0x7FFFFFFF\] 
+    The result is truncated and transformed into an N-digit code (e.g., 6 digits)\footnote{K-> shared key, C -> counter, sel -> function to select 4 bytes out of a byte string}.
+    
+    \item \textbf{TOTP:} Similar to HOTP but uses time intervals (TS) instead of counters.\\
+    Function:
+    \[C = (T - T0) / TS\]\
+    With default values: \(T0\) -> Unix epoch, \(TS\) -> 30-second intervals, \(T\) -> unixtime(now).
+    \item \textbf{OCRA} (OATH Challenge-Response Algorithm)
+    \item \textbf{PSKC} (Portable Symmetric Key Container): XML-based format for symmetric key transport.
+    \item \textbf{DSKPP} (Dynamic Symmetric Key Provisioning Protocol): A client-server protocol for securely provisioning symmetric keys.
+\end{itemize}
+
+\subsection{Google Authenticator}
+Supports HOTP and TOTP with adjustments for usability:
+\begin{itemize}
+    \item \textbf{K:} Base-32 encoded.
+    \item \textbf{C:} 64-bit unsigned integer.
+    \item \textbf{sel(X):} Uses the 4 least-significant bits of X to locate a portion of the result.
+    \item \textbf{Defaults:} TS = 30 seconds, N = 6 digits (zero-padded if necessary).
+\end{itemize}
+
+\subsection{FIDO (Fast Identity Online)}
+FIDO, developed by the FIDO Alliance, improves authentication by offering secure, passwordless, and multi-factor methods. It uses biometric data locally to unlock cryptographic keys and employs asymmetric cryptography for signing challenges or transactions. FIDO prevents phishing by ensuring that authentication responses cannot be reused. Each response is a unique signature created over various data, including the Relying Party (RP) identity, making it specific to the service being accessed. Additionally, a new key pair is generated during each registration, which prevents the association of a user’s identity across different services or accounts.
+\subsubsection{FIDO's frameworks include:}
+\begin{itemize}
+    \item \textbf{UAF} (The Universal Authentication Framework): for passwordless login.
+    \item \textbf{U2F} (Universal 2nd Factor) for device-based two-factor authentication.
+    \item \textbf{FIDO2}: integrates U2F with WebAuthn for robust web authentication.
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -30,3 +30,9 @@
 \contentsline {section}{\numberline {1.12}Kerberos Authentication System}{10}{section.1.12}%
 \contentsline {subsection}{\numberline {1.12.1}Players}{10}{subsection.1.12.1}%
 \contentsline {subsection}{\numberline {1.12.2}How it Works?}{10}{subsection.1.12.2}%
+\contentsline {subsection}{\numberline {1.12.3}Single Sign-On (SSO)}{11}{subsection.1.12.3}%
+\contentsline {section}{\numberline {1.13}Authentication Interoperability}{11}{section.1.13}%
+\contentsline {subsection}{\numberline {1.13.1}OATH}{11}{subsection.1.13.1}%
+\contentsline {subsection}{\numberline {1.13.2}Google Authenticator}{11}{subsection.1.13.2}%
+\contentsline {subsection}{\numberline {1.13.3}FIDO (Fast Identity Online)}{12}{subsection.1.13.3}%
+\contentsline {subsubsection}{FIDO's frameworks include:}{12}{section*.10}%
