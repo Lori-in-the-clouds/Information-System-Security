@@ -4,12 +4,48 @@
 % Twoside implica che i capitoli inizino sempre con la prima pagina a sinistra, eventualmente lasciando una pagina vuota nel capitolo precedente. 
 
 \usepackage{tcolorbox}
-% Define the quotebox with a vertical line before the text
+% Blue Quotebox
 \newtcolorbox[auto counter, number within=section]{quotebox}[2][]{colframe=black, colback=white, 
-coltitle=black, fonttitle=\bfseries, sharp corners, 
+coltitle=black, fonttitle=\bfseries, arc=1mm, 
 before=\vskip\baselineskip, 
 left=2pt, % This adds the vertical line
 title={#2},#1}
+
+% Yellow Quotebox
+\newtcolorbox[auto counter, number within=section]{quotebox-yellow}[2][]{%
+    colframe=yellow!80!black, % Border color (dark yellow)
+    colback=yellow!20,        % Background color (light yellow)
+    coltitle=black, % Title color
+    fonttitle=\bfseries,      % Title font
+    arc=1mm,                  % Rounded corners
+    before=\vskip\baselineskip, % Vertical space before the box
+    left=2pt,                 % Vertical line spacing
+    title={#2},#1             % Title handling
+}
+
+% Grey Quotebox
+\newtcolorbox[auto counter, number within=section]{quotebox-grey}[2][]{%
+    colframe=gray!50,       % Border color
+    colback=gray!5,     % Background color (light grey)
+    coltitle=black,      % Title color
+    fonttitle=\bfseries, % Title font
+    arc=1mm,             % Rounded corners
+    before=\vskip\baselineskip, % Vertical space before the box
+    left=2pt,            % Vertical line spacing
+    title={#2},#1        % Title handling
+}
+
+% Red Quotebox
+\newtcolorbox[auto counter, number within=section]{quotebox-red}[2][]{%
+    colframe=red!50!black!75,   % Slightly darker red border for better contrast
+    colback=red!5,          % Light red/pink background
+    coltitle=black,          % Title text color set to black
+    fonttitle=\bfseries,     % Title font
+    arc=1mm,                 % Rounded corners
+    before=\vskip\baselineskip, % Vertical space before the box
+    left=2pt,                % Vertical line spacing
+    title={#2},#1            % Title handling
+}
 
 %prova
 \usepackage[utf8]{inputenc} % For UTF-8 support

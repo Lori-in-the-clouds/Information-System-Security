@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.11.13)  17 NOV 2024 11:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.11.13)  19 NOV 2024 21:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -229,6 +229,9 @@ Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
 \tcb@temp=\box66
 )
 \c@tcb@cnt@quotebox=\count278
+\c@tcb@cnt@quotebox-yellow=\count279
+\c@tcb@cnt@quotebox-grey=\count280
+\c@tcb@cnt@quotebox-red=\count281
  (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2021/02/14 v1.3d Input encoding file
 \inpenc@prehook=\toks31
@@ -245,7 +248,7 @@ Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 Package: expl3 2024-01-22 L3 programming layer (loader) 
  (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count279
+\l__color_backend_stack_int=\count282
 \l__pdf_internal_box=\box67
 ))
 Package: xparse 2023-10-10 L3 Experimental document command parser
@@ -274,13 +277,13 @@ Package zref Info: New property list: main on input line 767.
 Package zref Info: New property: default on input line 768.
 Package zref Info: New property: page on input line 769.
 )
-\c@abspage=\count280
+\c@abspage=\count283
 Package zref Info: New property: abspage on input line 67.
 ) (/usr/share/texlive/texmf-dist/tex/latex/needspace/needspace.sty
 Package: needspace 2010/09/12 v1.3d reserve vertical space
 )
 \mdf@templength=\skip50
-\c@mdf@globalstyle@cnt=\count281
+\c@mdf@globalstyle@cnt=\count284
 \mdf@skipabove@length=\skip51
 \mdf@skipbelow@length=\skip52
 \mdf@leftmargin@length=\skip53
@@ -355,25 +358,25 @@ File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
 \mdf@horizontalspaceofbox=\skip114
 \mdfsubtitleheight=\skip115
 \mdfsubsubtitleheight=\skip116
-\c@mdfcountframes=\count282
+\c@mdfcountframes=\count285
 
 ****** mdframed patching \endmdf@trivlist
 
 ****** -- success******
 
-\mdf@envdepth=\count283
-\c@mdf@env@i=\count284
-\c@mdf@env@ii=\count285
-\c@mdf@zref@counter=\count286
+\mdf@envdepth=\count286
+\c@mdf@env@i=\count287
+\c@mdf@env@ii=\count288
+\c@mdf@zref@counter=\count289
 Package zref Info: New property: mdf@pagevalue on input line 895.
 ) (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
  (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count287
-\Gm@cntv=\count288
-\c@Gm@tempcnt=\count289
+\Gm@cnth=\count290
+\Gm@cntv=\count291
+\c@Gm@tempcnt=\count292
 \Gm@bindingoffset=\dimen183
 \Gm@wd@mp=\dimen184
 \Gm@odd@mp=\dimen185
@@ -400,12 +403,12 @@ Applying: [2021/05/01] Usage of raw or classic option list on input line 252.
 Already applied: [0000/00/00] Usage of raw or classic option list on input line 368.
 ))) (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2024/01/07 v24.1 The Babel package
-\babel@savecnt=\count290
+\babel@savecnt=\count293
 \U@D=\dimen191
 \l@unhyphenated=\language89
  (/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read4
-\bbl@dirlevel=\count291
+\bbl@dirlevel=\count294
  (/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
 Language: english 2017/06/06 v3.3r English support from the babel system
 Package babel Info: Hyphen rules for 'canadian' set to \l@english
@@ -419,7 +422,7 @@ Package babel Info: Importing font and identification data for english
 (babel)             from babel-en.ini. Reported on input line 11.
 ) (/usr/share/texlive/texmf-dist/tex/latex/babelbib/babelbib.sty
 Package: babelbib 2021/01/06 v1.34 babelbib: multilingual bibliographies
-\c@btxromaniannumeral=\count292
+\c@btxromaniannumeral=\count295
 ) (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 ) (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
@@ -435,7 +438,7 @@ Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
 \f@nch@O@orf=\skip125
 ) (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count293
+\c@float@type=\count296
 \float@exts=\toks34
 \float@box=\box73
 \@float@everytoks=\toks35
@@ -467,14 +470,14 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 ) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count294
+\inf@bad=\count297
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count295
-\leftroot@=\count296
+\uproot@=\count298
+\leftroot@=\count299
 LaTeX Info: Redefining \overline on input line 399.
 LaTeX Info: Redefining \colon on input line 410.
-\classnum@=\count297
-\DOTSCASE@=\count298
+\classnum@=\count300
+\DOTSCASE@=\count301
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
@@ -487,20 +490,20 @@ LaTeX Info: Redefining \Bigg on input line 725.
 \big@size=\dimen194
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count299
+\macc@depth=\count302
 LaTeX Info: Redefining \bmod on input line 905.
 LaTeX Info: Redefining \pmod on input line 910.
 LaTeX Info: Redefining \smash on input line 940.
 LaTeX Info: Redefining \relbar on input line 970.
 LaTeX Info: Redefining \Relbar on input line 971.
-\c@MaxMatrixCols=\count300
+\c@MaxMatrixCols=\count303
 \dotsspace@=\muskip16
-\c@parentequation=\count301
-\dspbrk@lvl=\count302
+\c@parentequation=\count304
+\dspbrk@lvl=\count305
 \tag@help=\toks38
-\row@=\count303
-\column@=\count304
-\maxfields@=\count305
+\row@=\count306
+\column@=\count307
+\maxfields@=\count308
 \andhelp@=\toks39
 \eqnshift@=\dimen195
 \alignsep@=\dimen196
@@ -528,22 +531,22 @@ Package: amsthm 2020/05/29 v2.20.6
 ) (/usr/share/texlive/texmf-dist/tex/latex/graphics/dvipsnam.def
 File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 ) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count306
+\lst@mode=\count309
 \lst@gtempboxa=\box77
 \lst@token=\toks48
-\lst@length=\count307
+\lst@length=\count310
 \lst@currlwidth=\dimen257
-\lst@column=\count308
-\lst@pos=\count309
+\lst@column=\count311
+\lst@pos=\count312
 \lst@lostspace=\dimen258
 \lst@width=\dimen259
-\lst@newlines=\count310
-\lst@lineno=\count311
+\lst@newlines=\count313
+\lst@lineno=\count314
 \lst@maxwidth=\dimen260
  (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
-\c@lstnumber=\count312
-\lst@skipnumbers=\count313
+\c@lstnumber=\count315
+\lst@skipnumbers=\count316
 \lst@framebox=\box78
 ) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2023/02/27 1.9 listings configuration
@@ -562,11 +565,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count314
+\c@section@level=\count317
 )
 \@linkdim=\dimen261
-\Hy@linkcounter=\count315
-\Hy@pagecounter=\count316
+\Hy@linkcounter=\count318
+\Hy@pagecounter=\count319
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2024-01-20 v7.01h Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
@@ -574,7 +577,7 @@ Now handling font encoding PD1 ...
 ) (/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count317
+\Hy@SavedSpaceFactor=\count320
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2024-01-20 v7.01h Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
@@ -587,7 +590,7 @@ Package hyperref Info: Plain pages OFF on input line 4194.
 Package hyperref Info: Backreferencing OFF on input line 4199.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4446.
-\c@Hy@tempcnt=\count318
+\c@Hy@tempcnt=\count321
  (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
@@ -599,7 +602,7 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
  (/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
-\Fld@menulength=\count319
+\Fld@menulength=\count322
 \Field@Width=\dimen263
 \Fld@charsize=\dimen264
 Package hyperref Info: Hyper figures OFF on input line 6063.
@@ -613,9 +616,9 @@ Package hyperref Info: PDF/A mode OFF on input line 6093.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count320
-\c@Item=\count321
-\c@Hfootnote=\count322
+\Hy@abspage=\count323
+\c@Item=\count324
+\c@Hfootnote=\count325
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
@@ -624,9 +627,9 @@ File: hpdftex.def 2024-01-20 v7.01h Hyperref driver for pdfTeX
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
 with kernel methods
 )
-\HyAnn@Count=\count323
-\Fld@listcount=\count324
-\c@bookmark@seq@number=\count325
+\HyAnn@Count=\count326
+\Fld@listcount=\count327
+\c@bookmark@seq@number=\count328
  (/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
  (/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
@@ -641,21 +644,21 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 \UL@skip=\skip133
 \UL@hook=\toks49
 \UL@height=\dimen265
-\UL@pe=\count326
+\UL@pe=\count329
 \UL@pixel=\dimen266
 \ULC@box=\box81
 Package: ulem 2019/11/18
 \ULdepth=\dimen267
 ) (/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2023/03/30 v1.9f multicolumn formatting (FMi)
-\c@tracingmulticols=\count327
+\c@tracingmulticols=\count330
 \mult@box=\box82
 \multicol@leftmargin=\dimen268
-\c@unbalance=\count328
-\c@collectmore=\count329
-\doublecol@number=\count330
-\multicoltolerance=\count331
-\multicolpretolerance=\count332
+\c@unbalance=\count331
+\c@collectmore=\count332
+\doublecol@number=\count333
+\multicoltolerance=\count334
+\multicolpretolerance=\count335
 \full@width=\dimen269
 \page@free=\dimen270
 \premulticols=\dimen271
@@ -706,52 +709,52 @@ Package: multicol 2023/03/30 v1.9f multicolumn formatting (FMi)
 \@tempa=\box123
 \@tempa=\box124
 \@tempa=\box125
-\c@minrows=\count333
-\c@columnbadness=\count334
-\c@finalcolumnbadness=\count335
+\c@minrows=\count336
+\c@columnbadness=\count337
+\c@finalcolumnbadness=\count338
 \last@try=\dimen274
 \multicolovershoot=\dimen275
 \multicolundershoot=\dimen276
 \mult@nat@firstbox=\box126
 \colbreak@box=\box127
-\mc@col@check@num=\count336
+\mc@col@check@num=\count339
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 135.
-\c@definition=\count337
-\c@theorem=\count338
+Package hyperref Info: Option `colorlinks' set `true' on input line 171.
+\c@definition=\count340
+\c@theorem=\count341
  (./main.aux (./chapters/prova.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 152.
-LaTeX Font Info:    ... okay on input line 152.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 152.
-LaTeX Font Info:    ... okay on input line 152.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 152.
-LaTeX Font Info:    ... okay on input line 152.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 152.
-LaTeX Font Info:    ... okay on input line 152.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 152.
-LaTeX Font Info:    ... okay on input line 152.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 152.
-LaTeX Font Info:    ... okay on input line 152.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 152.
-LaTeX Font Info:    ... okay on input line 152.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 152.
-LaTeX Font Info:    ... okay on input line 152.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 152.
-LaTeX Font Info:    ... okay on input line 152.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 188.
+LaTeX Font Info:    ... okay on input line 188.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 188.
+LaTeX Font Info:    ... okay on input line 188.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 188.
+LaTeX Font Info:    ... okay on input line 188.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 188.
+LaTeX Font Info:    ... okay on input line 188.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 188.
+LaTeX Font Info:    ... okay on input line 188.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 188.
+LaTeX Font Info:    ... okay on input line 188.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 188.
+LaTeX Font Info:    ... okay on input line 188.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 188.
+LaTeX Font Info:    ... okay on input line 188.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 188.
+LaTeX Font Info:    ... okay on input line 188.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count339
+\scratchcounter=\count342
 \scratchdimen=\dimen277
 \scratchbox=\box128
-\nofMPsegments=\count340
-\nofMParguments=\count341
+\nofMPsegments=\count343
+\nofMParguments=\count344
 \everyMPshowfont=\toks50
-\MPscratchCnt=\count342
+\MPscratchCnt=\count345
 \MPscratchDim=\dimen278
-\MPnumerator=\count343
-\makeMPintoPDFobject=\count344
+\MPnumerator=\count346
+\makeMPintoPDFobject=\count347
 \everyMPtoPDFconversion=\toks51
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -802,8 +805,8 @@ babelbib extension \btxifchangecaseon added to \extrasenglish
 )
 babelbib: Load BibTeX extensions \bibsenglish for english
 babelbib: Set language for keywords in the bibliography fixed to english
-\c@lstlisting=\count345
-Package hyperref Info: Link coloring ON on input line 152.
+\c@lstlisting=\count348
+Package hyperref Info: Link coloring ON on input line 188.
 (./main.out) (./main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
@@ -811,26 +814,26 @@ Package hyperref Info: Link coloring ON on input line 152.
 
 
 LaTeX Font Warning: Font shape `T1/cmr/m/n' in size <15.55197> not available
-(Font)              size <14.4> substituted on input line 155.
+(Font)              size <14.4> substituted on input line 191.
 
-LaTeX Font Info:    Calculating math sizes for size <10.79997> on input line 155.
+LaTeX Font Info:    Calculating math sizes for size <10.79997> on input line 191.
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <7.55994> not available
-(Font)              size <8> substituted on input line 155.
+(Font)              size <8> substituted on input line 191.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <7.55994> not available
-(Font)              size <8> substituted on input line 155.
+(Font)              size <8> substituted on input line 191.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <7.55994> not available
-(Font)              size <8> substituted on input line 155.
+(Font)              size <8> substituted on input line 191.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 155.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 191.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 155.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 191.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
@@ -838,11 +841,11 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
 
 LaTeX Font Warning: Font shape `T1/cmr/m/n' in size <22.39206> not available
-(Font)              size <20.74> substituted on input line 155.
+(Font)              size <20.74> substituted on input line 191.
 
 
 LaTeX Font Warning: Font shape `T1/cmr/bx/n' in size <22.39206> not available
-(Font)              size <20.74> substituted on input line 155.
+(Font)              size <20.74> substituted on input line 191.
 
 (./main.toc)
 \tf@toc=\write5
@@ -1256,15 +1259,15 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 96CEBC3DDA8F9D7942856C2C20824FFD;5501.
  ) 
 Here is how much of TeX's memory you used:
- 25745 strings out of 474222
- 479759 string characters out of 5748732
+ 25773 strings out of 474222
+ 480319 string characters out of 5748732
  1943975 words of memory out of 5000000
- 47499 multiletter control sequences out of 15000+600000
+ 47527 multiletter control sequences out of 15000+600000
  578730 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,12n,107p,762b,645s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0500.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0600.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb>
-Output written on main.pdf (12 pages, 1217699 bytes).
+Output written on main.pdf (12 pages, 1218595 bytes).
 PDF statistics:
  369 PDF objects out of 1000 (max. 8388607)
  281 compressed objects within 3 object streams
