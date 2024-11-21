@@ -220,15 +220,65 @@ This architecture uses a simple packet filter to screen traffic at both the IP a
         Simple, cost-effective, but insecure!
         \end{quotebox-red}   
 \end{center}
-
+\vspace{0.5cm}
 \subsection{Dual-homed Gateway}
+\vspace{0.2cm}
 \begin{quotebox-yellow}{What it does?}
 Uses a system with two network interfaces (hence "dual-homed") to provide a basic firewall between external and internal networks.
 \end{quotebox-yellow}
 
+\begin{minipage}{0.5\textwidth}
+	\vspace{-2cm}
+    \textbf{Key Points:}
+    \begin{itemize}
+        \item Easy to implement with small hardware requirements.
+        \item The internal network can be masquerade.
+    \end{itemize}
+\end{minipage} 
+\hfill
+\begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-21 19-41-54.png}
+\end{minipage}
+\begin{center}
+    \begin{quotebox-red}{Beware}
+        Inflexible, with higher management overhead and reduced flexibility in handling complex network setups.
+    \end{quotebox-red}   
+\end{center}
 
+\subsection{"Screened host" architecture}
+\begin{quotebox-yellow}{What it does?}
+    Uses two primary components: 
+    \begin{itemize}
+        \item \textbf{Router}
+        \item \textbf{Bastion host}
+    \end{itemize}
+    This setup aims to provide enhanced security by controlling the flow of traffic between the internal and external networks.
+\end{quotebox-yellow}
 
-
+\begin{minipage}{0.5\textwidth}
+	\vspace{-1.5cm}
+    \textbf{Key Points:}
+    \begin{itemize}
+        \item Traffic from the internal network (INT) to external (EXT) is blocked unless it’s from the bastion host. Similarly, external traffic is blocked unless directed to the bastion.
+        \item More flexible (skip control over some services / hosts)
+    \end{itemize}
+\end{minipage} 
+\hfill
+\begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{
+        /home/lorenzo/Pictures/Screenshots/Screenshot from 2024-11-21 21-11-47.png}
+\end{minipage}
+\begin{center}
+    \begin{quotebox-red}{Beware}
+        \begin{itemize}
+            \item \textbf{More Expensive and Complex} 
+       to manage: Requires two systems (router + bastion host) instead of just one.
+       \item \textbf{Limited Masking}: Only the host and protocols that go through the bastion host can be masked for security (such as hiding internal IP address or data). However, if the packet filter (PF) uses NAT, it can mask additional traffic and hide internal network details.
+     \end{itemize}
+    \end{quotebox-red}   
+\end{center}
 
 
 
