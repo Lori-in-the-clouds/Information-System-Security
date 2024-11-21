@@ -9,7 +9,8 @@
 coltitle=black, fonttitle=\bfseries, arc=1mm, 
 before=\vskip\baselineskip, 
 left=2pt, % This adds the vertical line
-title={#2},#1}
+title={#2},#1
+}
 
 % Yellow Quotebox
 \newtcolorbox[auto counter, number within=section]{quotebox-yellow}[2][]{%
@@ -64,6 +65,8 @@ title={#2},#1}
     innerbottommargin=0pt % No bottom margin
 ]{customquote}
 %--------------------
+\usepackage{xcolor}
+
 % Dimensione dei margini
 \usepackage[a4paper,top=2cm,bottom=1.5cm,left=1.5cm,right=1.5cm]{geometry} 
 % Dimensione del font
@@ -191,4 +194,5 @@ title={#2},#1}
 \tableofcontents
 %There we have to insert the chapters
 \include{chapters/prova}
+\include{chapters/firewall}
 \end{document}

@@ -1,0 +1,239 @@
+\chapter{Firewall and IDS/IPS} 
+
+\begin{minipage}{0.6\textwidth}
+\section{What is a Firewall?}
+%	\vspace{-0.5cm}
+A firewall acts as a protective barrier, much like a physical wall against fire. It is primarily a controlled connection point between networks with differing security levels. Its key functions include:
+\begin{itemize}
+    \item \textbf{Boundary Protection:} Serving as a network filter between trusted (internal) and untrusted (external) networks.
+    \item \textbf{Compartmentalization:} Dividing network zones based on security levels to enforce stricter control.
+\end{itemize}
+\end{minipage} 
+\hspace{0.5cm}
+\begin{minipage}{0.4\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-21 15-09-40.png}
+\end{minipage}
+
+\section{Ingress vs Egress firewall}
+Firewalls can be classified based on the direction of traffic they manage:
+\begin{itemize}
+    \item An \textbf{ingress firewall} focuses on incoming connections, typically regulating access to public services provided by the network or supporting exchanges initiated by internal users.
+    \item An \textbf{egress firewall} monitors outgoing connections. It's typically used to check the activity of internal personnel [Works well for channel-based services (e.g., TCP applications) but faces challenges with stateless, message-based services (e.g., ICMP, UDP)].
+\end{itemize}
+\section{The three principles of the firewall}
+\begin{enumerate}
+    \item The firewall should be the only connection between the internal and external networks.
+    \item Only the "authorized"  traffic is allowed to pass the firewall.
+    \item The firewall itself must be secure against potential vulnerabilities.
+\end{enumerate}
+These principles were outlined by \textit{D.Cheswick, S.Bellovin}.
+
+\section{Authorization policies}
+\begin{itemize}
+    \item \textbf{Permitlist/allowlist}: All that is not explicitly permitted, is forbidden. 
+    \begin{itemize}
+        \item It offers higher security but it's difficult to manage. 
+    \end{itemize}
+    \item \textbf{Blocklist/denylist}: All that is not explicitly forbidden, is permitted.
+    \begin{itemize}
+        \item It's less secure but it's more easy to manage. 
+    \end{itemize}
+\end{itemize}
+
+\section{Basic components}
+Firewalls include several key components that work together to provide security:
+\begin{itemize}
+    \item \textbf{Packet Filter/ Screening Router / Choke}: Filters traffic at the network level based on packet attributes such as IP headers and transport headers.
+    \item \textbf{Bastion Host}: A secure system with auditing capabilities, often positioned to handle critical traffic.
+    \item \textbf{Application Gateway (Proxy)}:  Acts on behalf of an application, managing access control and providing detailed packet inspection at the application level.
+    \item \textbf{Dual-Homed Gateway}:  A system with two network interfaces and disabled routing, isolating internal and external networks. (In the way we can decide which packets are sent from a network to another).
+\end{itemize}
+
+\section{A which level the controls are made?}
+Firewalls at higher levels provide more security but tend to be slower, while firewalls at lower levels offer less security but greater speed.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-21 15-43-10.png}
+\end{figure}
+\begin{quotebox-yellow}{To undersand:}
+    \textbf{security is better up} \(\rightarrow\) \textbf{speed is better down}\\
+    \textbf{security is better down} \(\rightarrow\) \textbf{speed is better up}
+\end{quotebox-yellow}
+
+\section{Network-Level Controls}
+Firewalls operate at various levels of the network stack applying different controls based on the type of firewall used:
+\begin{itemize}
+    \item \textbf{Packet Filters}: Operate at the network level, inspecting packet headers.
+    \item \textbf{Stateful Packet Filters}: Track connection states for more dynamic filtering.ù
+    \item \textbf{Circuit-Level Gateways / Proxies}: Work at the transport level, ensuring secure connection establishment.
+    \item \textbf{Application-Level Gateways / Proxies}: Provide inspection and control at the application layer, often with more granular rules.
+\end{itemize}
+
+ \subsection{Packet filter}
+ A packet filter inspects packets based on headers, such as IP and transport headers. These filters are traditionally available on routers and now in most OS. They allow for rules like permitting incoming connections to specific services (e.g., a web server) or limiting DNS queries from specific internal servers.
+
+\definecolor{darkgreen}{rgb}{0.0, 0.39, 0.0}  % Custom dark green color
+\begin{itemize}
+    \item \textcolor{darkgreen}{\textbf{Pro:}} 
+    \begin{itemize}
+        \item Independent of applications, scalable, and cost-effective (available in many OS and routers).
+        \item Good performance and low cost.
+    \end{itemize}
+    \item \textcolor{red}{\textbf{Cons:}} 
+    \begin{itemize}
+        \item Vulnerable to attacks like IP spoofing or fragmented packets.
+        \item Difficult to support services using dynamically allocated ports (e.g. FTP).
+        \item Complex configuration and hard to implement user authentication.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Circuit-Level Gateway}
+A circuit-level gateway acts as a transport-level proxy, creating secure communication channels between client and server without inspecting the payload. It protects against Layer 3/Layer 4 attacks like IP fragmentation or TCP handshake exploits.
+\begin{itemize}
+    \item \textcolor{darkgreen}{\textbf{Pro:}} 
+    \begin{itemize}
+        \item Provides protection by isolating the server from attacks.
+        \item Offers client authentication and eliminates many low-level attack vectors.
+    \end{itemize}
+    \item \textcolor{red}{\textbf{Cons:}} 
+    \begin{itemize}
+        \item Still shares many limitations of packet filters and requires modifications to the application for full functionality.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Application-Level Gateway}
+An application-level gateway (or proxy) operates at the application layer, inspecting the payload of packets. These proxies often require modifications to client applications and can enhance security by checking the semantics of application data (e.g., HTTP methods) or performing peer authentication.
+\begin{itemize}
+    \item \textcolor{darkgreen}{\textbf{Pro:}} 
+    \begin{itemize}
+        \item Strong security against application vulnerabilities (e.g., buffer overflow attacks).
+        \item Fine-grained access controls and the ability to mask internal IP addresses.
+        \item May provide protection against attacks like buffer overflows.
+        \item Not transparent to the client and may break the client-server model.
+    \end{itemize}
+    \item \textcolor{red}{\textbf{Cons:}} 
+    \begin{itemize}
+        \item Requires specific proxies for each application and can introduce delays when supporting new applications.
+        \item High resource usage and lower performance due to user-mode operations.
+    \end{itemize}
+\end{itemize} 
+Variants of application-level proxies include \textbf{transparent proxies}, which are less intrusive to clients, and \textbf{strong application proxies}, which focus on checking data semantics, not just syntax.
+
+\subsection{HTTP Proxies}
+An HTTP forward proxy is a server that acts as an intermediary or front-end for client requests. It receives requests from internal users and forwards them to the real external server (So it's a egress control).
+\textbf{Benefits:}
+\\\vspace{-0.8cm}
+\begin{minipage}{0.65\textwidth}
+	\vspace{0.5cm}
+    \begin{itemize}
+        \item \textbf{Shared Cache}: External web pages are cached, reducing load times for all internal users.
+        \item \textbf{Authentication and Authorization}: Enforces user authentication and controls access for internal users.
+        \item \textbf{Various controls} (e.g. allowed sites, transfer direction, data
+        types, …).
+    \end{itemize} 
+\end{minipage} 
+\hspace{0.4cm}
+\begin{minipage}{0.3\textwidth}
+    \centering
+    \includegraphics[width=1.2\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-21 17-21-05.png}
+\end{minipage}
+
+\begin{quotebox-grey}{Type of Proxies}
+    \begin{itemize}
+        \item \textbf{Forward Proxy (HTTP Proxy)}: This type of proxy controls outgoing traffic from the internal network to the external one, enforcing access controls and caching content. It provides features like user authentication and authorization, content filtering, and bandwidth control.
+        \item \textbf{Reverse Proxy (HTTP Reverse Proxy)}: A reverse proxy sits in front of web servers, providing additional services like load balancing, content inspection, TLS acceleration, and caching. It can obfuscate the internal server structure, improving security, and support performance optimizations like dynamic page feeding based on client speed.
+    \end{itemize}
+\end{quotebox-grey}
+
+\begin{quotebox}[colframe=blue!10!white, colback=blue!5!white]{Reverse proxy: possibile configuration}
+\begin{minipage}{0.5\textwidth}
+    \underline{\textbf{Key components:}}
+    \begin{itemize}
+        \item \textbf{External Network (Red Cloud)}
+        \item \textbf{Firewall}
+        \item \textbf{DMZ (Demilitarized Zone)}: A buffer zone between external and internal networks where systems that interact with the external network are placed for added security.
+        \item \textbf{Reverse Proxy}
+        \item \textbf{Internal Network}: The secure area where your actual servers (e.g., serv1, serv2) reside.
+    \end{itemize}    
+\end{minipage} 
+\hspace{0.5cm}
+\begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-21 17-38-55.png}
+\end{minipage}
+\\
+\\\\
+\underline{\textbf{How configurations work?}}
+\\\\
+\begin{minipage}[t]{0.45\textwidth}
+   \textbf{Left configuration: Direct reverse proxy setup}
+   \begin{itemize}
+    \item \textbf{Flow:} External user \(\rightarrow\) Reverse Proxy \(\rightarrow\) Internal Servers (serv1, serv2).  
+    \item \textbf{Benefits:} Internal servers are hidden and protected, while performance and security are improved.
+   \end{itemize}
+\end{minipage} 
+\hspace{1cm}
+\begin{minipage}[t]{0.45\textwidth}
+   \textbf{Right Configuration: Reverse Proxy with VPN}
+   \begin{itemize}
+    \item \textbf{Flow}: External user \(\rightarrow\) Reverse Proxy \(\rightarrow\) Encrypted VPN connection \(\rightarrow\) Internal Servers (serv1, serv2).
+    \item \textbf{Benefit}: Adds an extra layer of security through encryption for communication between the reverse proxy and internal servers.
+   \end{itemize}
+\end{minipage}
+\end{quotebox}
+
+\subsection{WAF (Web Application Firewall)}
+A WAF is a module installed at a proxy (forward and/or reverse) to filter the application traffic. Filters the followings types of traffic:
+\begin{itemize}
+    \item HTTP commands.
+    \item HTTP request/response headers.
+    \item HTTP request/response content.
+\end{itemize}
+\begin{quotebox-grey}{Popular WAF example: \textbf{ModSecurity}}
+    ModSecurity is a widely-used WAF plugin for web servers like Apache and NGINX, offering protection through predefined rules like the OWASP ModSecurity Core Rule Set (CRS).
+\end{quotebox-grey}
+
+\section{Firewall's Architectures}
+\subsection{Packet Filter}
+\vspace{0.2cm}
+\begin{quotebox-yellow}{What it does?}
+This architecture uses a simple packet filter to screen traffic at both the IP and higher protocol levels (like TCP)
+\end{quotebox-yellow}
+\vspace{0.5cm}
+\begin{minipage}{0.5\textwidth}
+    \vspace{-0.5cm}
+    \textbf{Key Points:}
+    \begin{itemize}
+        \item If implemented with a router then it's a "screening router" and there's \textbf{no need for extra dedicated hardware}.
+        \item The packet filter element represents a \textbf{single point of failure}.
+        \item \textbf{There's no need for proxies} or application modifications.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-21 19-10-09.png}
+\end{minipage}
+\begin{center}
+    \begin{quotebox-red}{Beware}
+        Simple, cost-effective, but insecure!
+        \end{quotebox-red}   
+\end{center}
+
+\subsection{Dual-homed Gateway}
+\begin{quotebox-yellow}{What it does?}
+Uses a system with two network interfaces (hence "dual-homed") to provide a basic firewall between external and internal networks.
+\end{quotebox-yellow}
+
+
+
+
+
+
+
+
+
+
+
+

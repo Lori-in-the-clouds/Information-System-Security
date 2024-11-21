@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.11.13)  19 NOV 2024 21:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.11.21)  21 NOV 2024 19:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -414,9 +414,9 @@ Language: english 2017/06/06 v3.3r English support from the babel system
 Package babel Info: Hyphen rules for 'canadian' set to \l@english
 (babel)             (\language0). Reported on input line 102.
 Package babel Info: Hyphen rules for 'australian' set to \l@ukenglish
-(babel)             (\language84). Reported on input line 105.
+(babel)             (\language57). Reported on input line 105.
 Package babel Info: Hyphen rules for 'newzealand' set to \l@ukenglish
-(babel)             (\language84). Reported on input line 108.
+(babel)             (\language57). Reported on input line 108.
 )) (/usr/share/texlive/texmf-dist/tex/generic/babel/locale/en/babel-english.tex
 Package babel Info: Importing font and identification data for english
 (babel)             from babel-en.ini. Reported on input line 11.
@@ -719,30 +719,30 @@ Package: multicol 2023/03/30 v1.9f multicolumn formatting (FMi)
 \colbreak@box=\box127
 \mc@col@check@num=\count339
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 171.
+Package hyperref Info: Option `colorlinks' set `true' on input line 174.
 \c@definition=\count340
 \c@theorem=\count341
- (./main.aux (./chapters/prova.aux))
+ (./main.aux (./chapters/prova.aux) (./chapters/firewall.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 188.
-LaTeX Font Info:    ... okay on input line 188.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 188.
-LaTeX Font Info:    ... okay on input line 188.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 188.
-LaTeX Font Info:    ... okay on input line 188.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 188.
-LaTeX Font Info:    ... okay on input line 188.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 188.
-LaTeX Font Info:    ... okay on input line 188.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 188.
-LaTeX Font Info:    ... okay on input line 188.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 188.
-LaTeX Font Info:    ... okay on input line 188.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 188.
-LaTeX Font Info:    ... okay on input line 188.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 188.
-LaTeX Font Info:    ... okay on input line 188.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 191.
+LaTeX Font Info:    ... okay on input line 191.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 191.
+LaTeX Font Info:    ... okay on input line 191.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 191.
+LaTeX Font Info:    ... okay on input line 191.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 191.
+LaTeX Font Info:    ... okay on input line 191.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 191.
+LaTeX Font Info:    ... okay on input line 191.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 191.
+LaTeX Font Info:    ... okay on input line 191.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 191.
+LaTeX Font Info:    ... okay on input line 191.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 191.
+LaTeX Font Info:    ... okay on input line 191.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 191.
+LaTeX Font Info:    ... okay on input line 191.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count342
@@ -806,7 +806,7 @@ babelbib extension \btxifchangecaseon added to \extrasenglish
 babelbib: Load BibTeX extensions \bibsenglish for english
 babelbib: Set language for keywords in the bibliography fixed to english
 \c@lstlisting=\count348
-Package hyperref Info: Link coloring ON on input line 188.
+Package hyperref Info: Link coloring ON on input line 191.
 (./main.out) (./main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
@@ -814,26 +814,26 @@ Package hyperref Info: Link coloring ON on input line 188.
 
 
 LaTeX Font Warning: Font shape `T1/cmr/m/n' in size <15.55197> not available
-(Font)              size <14.4> substituted on input line 191.
+(Font)              size <14.4> substituted on input line 194.
 
-LaTeX Font Info:    Calculating math sizes for size <10.79997> on input line 191.
+LaTeX Font Info:    Calculating math sizes for size <10.79997> on input line 194.
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <7.55994> not available
-(Font)              size <8> substituted on input line 191.
+(Font)              size <8> substituted on input line 194.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <7.55994> not available
-(Font)              size <8> substituted on input line 191.
+(Font)              size <8> substituted on input line 194.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <7.55994> not available
-(Font)              size <8> substituted on input line 191.
+(Font)              size <8> substituted on input line 194.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 191.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 194.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 191.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 194.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
@@ -841,11 +841,11 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
 
 LaTeX Font Warning: Font shape `T1/cmr/m/n' in size <22.39206> not available
-(Font)              size <20.74> substituted on input line 191.
+(Font)              size <20.74> substituted on input line 194.
 
 
 LaTeX Font Warning: Font shape `T1/cmr/bx/n' in size <22.39206> not available
-(Font)              size <20.74> substituted on input line 191.
+(Font)              size <20.74> substituted on input line 194.
 
 (./main.toc)
 \tf@toc=\write5
@@ -874,7 +874,7 @@ LaTeX Font Warning: Font shape `T1/cmr/m/n' in size <12.96002> not available
 LaTeX Font Warning: Font shape `T1/cmr/bx/n' in size <12.96002> not available
 (Font)              size <12> substituted on input line 17.
 
-</home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-13 20-29-06.png, id=162, 859.21pt x 512.91624pt>
+</home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-13 20-29-06.png, id=243, 859.21pt x 512.91624pt>
 File: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-13 20-29-06.png Graphic file (type png)
 <use /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-13 20-29-06.png>
 Package pdftex.def Info: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-13 20-29-06.png  used on input line 51.
@@ -883,120 +883,110 @@ Package pdftex.def Info: /home/lorenzo/Notes/Information System Security/images/
 
 
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-</home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-14 11-06-55.png, id=174, 538.01pt x 168.63pt>
+</home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-14 11-06-55.png, id=255, 538.01pt x 168.63pt>
 File: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-14 11-06-55.png Graphic file (type png)
 <use /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-14 11-06-55.png>
-Package pdftex.def Info: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-14 11-06-55.png  used on input line 80.
+Package pdftex.def Info: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-14 11-06-55.png  used on input line 79.
 (pdftex.def)             Requested size: 256.07481pt x 80.26218pt.
 
-Overfull \hbox (32.56285pt too wide) in paragraph at lines 69--82
+Overfull \hbox (32.56285pt too wide) in paragraph at lines 68--81
 $[]$   $[]$ 
  []
 
-</home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-14 11-09-10.png, id=175, 538.01pt x 205.76875pt>
+</home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-14 11-09-10.png, id=256, 538.01pt x 205.76875pt>
 File: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-14 11-09-10.png Graphic file (type png)
 <use /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-14 11-09-10.png>
-Package pdftex.def Info: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-14 11-09-10.png  used on input line 99.
+Package pdftex.def Info: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-14 11-09-10.png  used on input line 98.
 (pdftex.def)             Requested size: 256.07481pt x 97.93896pt.
 
-Overfull \hbox (32.56285pt too wide) in paragraph at lines 86--101
+Overfull \hbox (32.56285pt too wide) in paragraph at lines 85--100
 $[]$   $[]$ 
  []
 
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 116--116
+Overfull \hbox (15.0pt too wide) in paragraph at lines 115--115
 [][] 
  []
 
 [4 </home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-13 20-29-06.png> </home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-14 11-06-55.png> </home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-14 11-09-10.png>]
-Overfull \hbox (15.0pt too wide) in paragraph at lines 127--127
+Overfull \hbox (15.0pt too wide) in paragraph at lines 128--128
 [][] 
  []
 
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 146--146
+Overfull \hbox (15.0pt too wide) in paragraph at lines 147--147
 [][] 
  []
 
 [5]
-pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@quotebox.1}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@quotebox-red.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.172 ...e!10!white, colback=blue!5!white]{Attack}
-                                                  
-</home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-14 11-51-24.png, id=202, 463.7325pt x 124.465pt>
+l.173     \begin{quotebox-red}{Attack}
+                                      
+</home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-14 11-51-24.png, id=283, 463.7325pt x 124.465pt>
 File: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-14 11-51-24.png Graphic file (type png)
 <use /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-14 11-51-24.png>
-Package pdftex.def Info: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-14 11-51-24.png  used on input line 174.
+Package pdftex.def Info: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-14 11-51-24.png  used on input line 175.
 (pdftex.def)             Requested size: 187.32707pt x 50.2789pt.
 
-pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@quotebox.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.204 ...olback=blue!5!white]{The Linkedin attack}
-                                                  
-Underfull \hbox (badness 10000) in paragraph at lines 180--206
+Underfull \hbox (badness 10000) in paragraph at lines 181--205
 
  []
 
 
-Overfull \hbox (18.33647pt too wide) in paragraph at lines 180--206
+Overfull \hbox (18.33647pt too wide) in paragraph at lines 181--205
 []   [] 
  []
 
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 206--206
-[][] 
- []
-
-
-pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@quotebox.1}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@quotebox-yellow.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.214 ...te, colback=blue!5!white]{ECB definition}
+l.206 \begin{quotebox-yellow}{The Linkedin attack}
                                                   
-Overfull \hbox (15.0pt too wide) in paragraph at lines 222--222
+Overfull \hbox (15.0pt too wide) in paragraph at lines 208--208
 [][] 
  []
 
 
-pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@quotebox.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.224 ...colback=blue!5!white]{PCI-DSS Definition}
-                                                  
-Overfull \hbox (15.0pt too wide) in paragraph at lines 228--228
+Overfull \hbox (15.0pt too wide) in paragraph at lines 225--225
 [][] 
  []
 
-</home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-14 18-31-56.png, id=203, 856.19875pt x 303.1325pt>
+
+Overfull \hbox (15.0pt too wide) in paragraph at lines 231--231
+[][] 
+ []
+
+</home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-14 18-31-56.png, id=284, 856.19875pt x 303.1325pt>
 File: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-14 18-31-56.png Graphic file (type png)
 <use /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-14 18-31-56.png>
-Package pdftex.def Info: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-14 18-31-56.png  used on input line 249.
+Package pdftex.def Info: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-14 18-31-56.png  used on input line 251.
 (pdftex.def)             Requested size: 250.95113pt x 88.84512pt.
 
-Overfull \hbox (4.13873pt too wide) in paragraph at lines 240--251
+Overfull \hbox (4.13873pt too wide) in paragraph at lines 243--253
 $[]$   $[]$ 
  []
 
 [6 </home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-14 11-51-24.png>]
-</home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-15 11-52-51.png, id=211, 635.37375pt x 322.20375pt>
+</home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-15 11-52-51.png, id=294, 635.37375pt x 322.20375pt>
 File: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-15 11-52-51.png Graphic file (type png)
 <use /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-15 11-52-51.png>
-Package pdftex.def Info: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-15 11-52-51.png  used on input line 268.
+Package pdftex.def Info: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-15 11-52-51.png  used on input line 270.
 (pdftex.def)             Requested size: 179.25159pt x 90.89981pt.
 
-Overfull \hbox (4.1101pt too wide) in paragraph at lines 257--270
+Overfull \hbox (4.1101pt too wide) in paragraph at lines 259--272
 $[]$   $[]$ 
  []
 
-</home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-15 12-04-56.png, id=212, 533.995pt x 272.01625pt>
+</home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-15 12-04-56.png, id=295, 533.995pt x 272.01625pt>
 File: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-15 12-04-56.png Graphic file (type png)
 <use /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-15 12-04-56.png>
-Package pdftex.def Info: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-15 12-04-56.png  used on input line 284.
+Package pdftex.def Info: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-15 12-04-56.png  used on input line 286.
 (pdftex.def)             Requested size: 179.25159pt x 91.30966pt.
 
-Overfull \hbox (4.1101pt too wide) in paragraph at lines 272--286
+Overfull \hbox (4.1101pt too wide) in paragraph at lines 274--288
 $[]$   $[]$ 
  []
 
@@ -1004,25 +994,25 @@ $[]$   $[]$
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@quotebox.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.288 ...!5!white]{Attack on Mutual Symmetric CRA}
+l.290 ...!5!white]{Attack on Mutual Symmetric CRA}
                                                   
-</home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-15 12-09-09.png, id=213, 483.8075pt x 303.1325pt>
+</home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-15 12-09-09.png, id=296, 483.8075pt x 303.1325pt>
 File: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-15 12-09-09.png Graphic file (type png)
 <use /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-15 12-09-09.png>
-Package pdftex.def Info: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-15 12-09-09.png  used on input line 300.
+Package pdftex.def Info: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-15 12-09-09.png  used on input line 302.
 (pdftex.def)             Requested size: 147.07132pt x 92.14767pt.
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 302--302
+Overfull \hbox (15.0pt too wide) in paragraph at lines 304--304
 [][] 
  []
 
-</home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-15 12-43-33.png, id=214, 536.0025pt x 192.72pt>
+</home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-15 12-43-33.png, id=297, 536.0025pt x 192.72pt>
 File: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-15 12-43-33.png Graphic file (type png)
 <use /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-15 12-43-33.png>
-Package pdftex.def Info: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-15 12-43-33.png  used on input line 320.
+Package pdftex.def Info: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-15 12-43-33.png  used on input line 322.
 (pdftex.def)             Requested size: 204.85672pt x 73.65486pt.
 
-Overfull \hbox (9.80055pt too wide) in paragraph at lines 305--322
+Overfull \hbox (9.80055pt too wide) in paragraph at lines 307--324
 $[]$   $[]$ 
  []
 
@@ -1030,222 +1020,343 @@ $[]$   $[]$
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@quotebox.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.327 ...ck=blue!5!white]{Asymmetric CRA analysis}
+l.329 ...ck=blue!5!white]{Asymmetric CRA analysis}
                                                   
-Overfull \hbox (4.11009pt too wide) in paragraph at lines 328--346
+Overfull \hbox (4.11009pt too wide) in paragraph at lines 330--348
 []$[]$   $[]$ 
  []
 
 [7 </home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-14 18-31-56.png> </home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-15 11-52-51.png> </home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-15 12-04-56.png> </home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-15 12-09-09.png> </home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-15 12-43-33.png>]
-</home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-15 13-11-17.png, id=228, 538.01pt x 263.98625pt>
+</home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-15 13-11-17.png, id=311, 538.01pt x 263.98625pt>
 File: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-15 13-11-17.png Graphic file (type png)
 <use /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-15 13-11-17.png>
-Package pdftex.def Info: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-15 13-11-17.png  used on input line 360.
+Package pdftex.def Info: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-15 13-11-17.png  used on input line 358.
 (pdftex.def)             Requested size: 163.88599pt x 80.41296pt.
 
-Overfull \hbox (18.33646pt too wide) in paragraph at lines 349--362
+Overfull \hbox (18.33646pt too wide) in paragraph at lines 351--360
 $[]$   $[]$ 
  []
 
-Package mdframed Info: mdframed works in twoside mode on input line 376.
+
+Underfull \hbox (badness 10000) in paragraph at lines 367--371
+
+ []
+
+Package mdframed Info: mdframed works in twoside mode on input line 371.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 376.
-Package mdframed Info: mdframed works in twoside mode on input line 391.
+(mdframed)              on input line 371.
+Package mdframed Info: mdframed works in twoside mode on input line 388.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 391.
+(mdframed)              on input line 388.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 396.
-</home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 10-54-11.png, id=229, 777.90625pt x 328.22626pt>
+ mdframed uses option nobreak mdframed on input line 393.
+</home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 10-54-11.png, id=312, 777.90625pt x 328.22626pt>
 File: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 10-54-11.png Graphic file (type png)
 <use /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 10-54-11.png>
-Package pdftex.def Info: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 10-54-11.png  used on input line 403.
+Package pdftex.def Info: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 10-54-11.png  used on input line 399.
 (pdftex.def)             Requested size: 230.46576pt x 97.2416pt.
 
-Overfull \hbox (12.64601pt too wide) in paragraph at lines 387--405
+Overfull \hbox (12.64601pt too wide) in paragraph at lines 384--401
 $[]$   $[]$ 
  []
 
-Package mdframed Info: mdframed works in twoside mode on input line 408.
+Package mdframed Info: mdframed works in twoside mode on input line 404.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 408.
-Package mdframed Info: mdframed works in twoside mode on input line 416.
+(mdframed)              on input line 404.
+Package mdframed Info: mdframed works in twoside mode on input line 412.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 416.
-Package mdframed Info: mdframed works in twoside mode on input line 424.
+(mdframed)              on input line 412.
+Package mdframed Info: mdframed works in twoside mode on input line 420.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 424.
+(mdframed)              on input line 420.
+Package mdframed Info: Not enough space on this page on input line 428.
 [8 </home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-15 13-11-17.png> </home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 10-54-11.png>]
+Package mdframed Info: Not enough space on this page on input line 428.
+
 pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@quotebox.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.434 ...olback=blue!5!white]{Example:RSA SecurID}
+l.430 ...lback=blue!5!white]{Example: RSA SecurID}
                                                   
-</home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 12-00-37.png, id=238, 810.02625pt x 440.64626pt>
+</home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 12-00-37.png, id=321, 810.02625pt x 440.64626pt>
 File: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 12-00-37.png Graphic file (type png)
 <use /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 12-00-37.png>
-Package pdftex.def Info: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 12-00-37.png  used on input line 449.
+Package pdftex.def Info: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 12-00-37.png  used on input line 445.
 (pdftex.def)             Requested size: 161.77934pt x 88.00665pt.
 
-Overfull \hbox (14.70802pt too wide) in paragraph at lines 449--450
+Overfull \hbox (14.70802pt too wide) in paragraph at lines 445--446
  [][] 
  []
 
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 451--451
+Overfull \hbox (15.0pt too wide) in paragraph at lines 447--447
 [][] 
  []
 
 
-pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@quotebox.2}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@quotebox-grey.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.465 ...nce of MFA: The iPhone Ransomware (2014)}
+l.461 ...nce of MFA: The iPhone Ransomware (2014)}
                                                   
-Overfull \hbox (15.0pt too wide) in paragraph at lines 467--467
+Overfull \hbox (15.0pt too wide) in paragraph at lines 463--463
 [][] 
  []
 
 
-pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@quotebox.1}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@quotebox-red.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.478 ...e!5!white]{Problems of biometric systems}
+l.474 ...tebox-red}{Problems of biometric systems}
                                                   {
-</home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 15-05-31.png, id=239, 855.195pt x 497.86pt>
+</home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 15-05-31.png, id=322, 855.195pt x 497.86pt>
 File: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 15-05-31.png Graphic file (type png)
 <use /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 15-05-31.png>
-Package pdftex.def Info: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 15-05-31.png  used on input line 487.
+Package pdftex.def Info: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 15-05-31.png  used on input line 483.
 (pdftex.def)             Requested size: 98.04504pt x 57.07417pt.
 
-Overfull \hbox (43.98569pt too wide) in paragraph at lines 481--489
+Overfull \hbox (43.98569pt too wide) in paragraph at lines 477--485
 []$[]$   $[]$ 
  []
 
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 494--494
+Overfull \hbox (15.0pt too wide) in paragraph at lines 490--490
 [][] 
  []
 
 [9 </home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 12-00-37.png> </home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 15-05-31.png>]
-</home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 15-19-27.png, id=246, 148.555pt x 350.30875pt>
+</home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 15-19-27.png, id=330, 148.555pt x 350.30875pt>
 File: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 15-19-27.png Graphic file (type png)
 <use /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 15-19-27.png>
-Package pdftex.def Info: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 15-19-27.png  used on input line 508.
+Package pdftex.def Info: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 15-19-27.png  used on input line 504.
 (pdftex.def)             Requested size: 35.33801pt x 83.33282pt.
 
-Overfull \hbox (21.18495pt too wide) in paragraph at lines 497--510
+Overfull \hbox (21.18495pt too wide) in paragraph at lines 493--506
 $[]$   $[]$ 
  []
 
-</home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 16-35-14.png, id=247, 773.89125pt x 379.4175pt>
+</home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 16-35-14.png, id=331, 773.89125pt x 379.4175pt>
 File: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 16-35-14.png Graphic file (type png)
 <use /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 16-35-14.png>
-Package pdftex.def Info: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 16-35-14.png  used on input line 523.
+Package pdftex.def Info: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 16-35-14.png  used on input line 519.
 (pdftex.def)             Requested size: 256.07481pt x 125.54395pt.
-Package mdframed Info: mdframed works in twoside mode on input line 530.
+Package mdframed Info: mdframed works in twoside mode on input line 526.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 530.
+(mdframed)              on input line 526.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 536.
-</home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 17-02-07.png, id=248, 773.89125pt x 327.2225pt>
+ mdframed uses option nobreak mdframed on input line 532.
+</home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 17-02-07.png, id=332, 773.89125pt x 327.2225pt>
 File: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 17-02-07.png Graphic file (type png)
 <use /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 17-02-07.png>
-Package pdftex.def Info: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 17-02-07.png  used on input line 541.
+Package pdftex.def Info: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 17-02-07.png  used on input line 537.
 (pdftex.def)             Requested size: 199.74083pt x 84.4567pt.
 
-Overfull \hbox (46.09439pt too wide) in paragraph at lines 541--542
+Overfull \hbox (46.09439pt too wide) in paragraph at lines 537--538
  [][] 
  []
 
-Package mdframed Info: mdframed works in twoside mode on input line 549.
+Package mdframed Info: mdframed works in twoside mode on input line 545.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 549.
+(mdframed)              on input line 545.
 
-Underfull \hbox (badness 2221) in paragraph at lines 550--551
+Underfull \hbox (badness 2221) in paragraph at lines 546--547
 \T1/cmr/m/n/9 get de-vice, $[] \OML/cmm/m/it/9 KTGS$ $\OMS/cmsy/m/n/9 !$ \T1/cmr/m/n/9 TGS ticket and
  []
 
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 558.
-</home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 17-21-43.png, id=249, 773.89125pt x 360.34625pt>
+ mdframed uses option nobreak mdframed on input line 554.
+</home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 17-21-43.png, id=333, 773.89125pt x 360.34625pt>
 File: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 17-21-43.png Graphic file (type png)
 <use /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 17-21-43.png>
-Package pdftex.def Info: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 17-21-43.png  used on input line 563.
+Package pdftex.def Info: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 17-21-43.png  used on input line 559.
 (pdftex.def)             Requested size: 215.10406pt x 100.15947pt.
 
-Overfull \hbox (61.45763pt too wide) in paragraph at lines 563--564
+Overfull \hbox (61.45763pt too wide) in paragraph at lines 559--560
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 544--565
+Underfull \hbox (badness 10000) in paragraph at lines 540--561
 
  []
 
-Package mdframed Info: mdframed works in twoside mode on input line 570.
+Package mdframed Info: mdframed works in twoside mode on input line 566.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 570.
+(mdframed)              on input line 566.
 
-Underfull \hbox (badness 1275) in paragraph at lines 573--574
+Underfull \hbox (badness 1275) in paragraph at lines 569--570
 []\T1/cmr/m/n/9 The au-then-ti-ca-tor en-crypted us-ing the ses-sion key
  []
 
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 577.
-</home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 17-41-06.png, id=250, 739.76375pt x 342.27875pt>
+ mdframed uses option nobreak mdframed on input line 573.
+</home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 17-41-06.png, id=334, 739.76375pt x 342.27875pt>
 File: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 17-41-06.png Graphic file (type png)
 <use /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 17-41-06.png>
-Package pdftex.def Info: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 17-41-06.png  used on input line 582.
+Package pdftex.def Info: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 17-41-06.png  used on input line 578.
 (pdftex.def)             Requested size: 215.10406pt x 99.52464pt.
 
-Overfull \hbox (61.45763pt too wide) in paragraph at lines 582--583
+Overfull \hbox (61.45763pt too wide) in paragraph at lines 578--579
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 566--584
+Underfull \hbox (badness 10000) in paragraph at lines 562--580
 
  []
 
 [10 </home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 15-19-27.png> </home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 16-35-14.png> </home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 17-02-07.png> </home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 17-21-43.png>]
 
 LaTeX Font Warning: Font shape `T1/cmr/m/n' in size <7.50009> not available
-(Font)              size <8> substituted on input line 610.
+(Font)              size <8> substituted on input line 606.
 
-LaTeX Font Info:    Calculating math sizes for size <7.50009> on input line 610.
+LaTeX Font Info:    Calculating math sizes for size <7.50009> on input line 606.
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <7.50009> not available
-(Font)              size <8> substituted on input line 610.
+(Font)              size <8> substituted on input line 606.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <3.75005> not available
-(Font)              size <5> substituted on input line 610.
+(Font)              size <5> substituted on input line 606.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <7.50009> not available
-(Font)              size <8> substituted on input line 610.
+(Font)              size <8> substituted on input line 606.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <3.75005> not available
-(Font)              size <5> substituted on input line 610.
+(Font)              size <5> substituted on input line 606.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <7.50009> not available
-(Font)              size <8> substituted on input line 610.
+(Font)              size <8> substituted on input line 606.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <3.75005> not available
-(Font)              size <5> substituted on input line 610.
+(Font)              size <5> substituted on input line 606.
 
-[11 </home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 17-41-06.png>]) [12] (./main.aux (./chapters/prova.aux))
+[11 </home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 17-41-06.png>]) [12]
+\openout2 = `chapters/firewall.aux'.
+
+ (./chapters/firewall.tex
+Chapter 2.
+</home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-21 15-09-40.png, id=361, 1009.7725pt x 405.515pt>
+File: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-21 15-09-40.png Graphic file (type png)
+<use /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-21 15-09-40.png>
+Package pdftex.def Info: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-21 15-09-40.png  used on input line 15.
+(pdftex.def)             Requested size: 204.85672pt x 82.26483pt.
+
+Overfull \hbox (18.33646pt too wide) in paragraph at lines 3--17
+$[]$   $[]$ 
+ []
+
+</home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-21 15-43-10.png, id=362, 1019.81pt x 528.97626pt>
+File: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-21 15-43-10.png Graphic file (type png)
+<use /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-21 15-43-10.png>
+Package pdftex.def Info: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-21 15-43-10.png  used on input line 57.
+(pdftex.def)             Requested size: 256.07481pt x 132.82487pt.
+
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@quotebox-yellow.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.59 \begin{quotebox-yellow}{To undersand:}
+                                            [13
+
+
+
+
+ </home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-21 15-09-40.png>]
+Overfull \hbox (15.0pt too wide) in paragraph at lines 62--62
+[][] 
+ []
+
+[14 </home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-21 15-43-10.png>]
+</home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-21 17-21-05.png, id=378, 853.1875pt x 127.47626pt>
+File: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-21 17-21-05.png Graphic file (type png)
+<use /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-21 17-21-05.png>
+Package pdftex.def Info: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-21 17-21-05.png  used on input line 139.
+(pdftex.def)             Requested size: 184.37524pt x 27.5469pt.
+
+Overfull \hbox (30.7288pt too wide) in paragraph at lines 139--140
+ [][] 
+ []
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@quotebox-grey.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.142 \begin{quotebox-grey}{Type of Proxies}
+                                            
+Overfull \hbox (15.0pt too wide) in paragraph at lines 147--147
+[][] 
+ []
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@quotebox.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.149 ...]{Reverse proxy: possibile configuration}
+                                                  
+</home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-21 17-38-55.png, id=379, 1000.73875pt x 513.92pt>
+File: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-21 17-38-55.png Graphic file (type png)
+<use /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-21 17-38-55.png>
+Package pdftex.def Info: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-21 17-38-55.png  used on input line 163.
+(pdftex.def)             Requested size: 220.60324pt x 113.2823pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 150--184
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 150--184
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 150--184
+
+ []
+
+
+Overfull \hbox (15.0pt too wide) in paragraph at lines 184--184
+[][] 
+ []
+
+[15 </home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-21 17-21-05.png> </home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-21 17-38-55.png>]
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@quotebox-yellow.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.200 \begin{quotebox-yellow}{What it does?}
+                                            
+</home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-21 19-10-09.png, id=386, 874.26625pt x 495.8525pt>
+File: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-21 19-10-09.png Graphic file (type png)
+<use /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-21 19-10-09.png>
+Package pdftex.def Info: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-21 19-10-09.png  used on input line 216.
+(pdftex.def)             Requested size: 204.86063pt x 116.18488pt.
+
+Overfull \hbox (17.05505pt too wide) in paragraph at lines 204--218
+[]$[]$  $[]$ 
+ []
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@quotebox-red.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.219     \begin{quotebox-red}{Beware}
+                                      
+pdfTeX warning (ext4): destination with the same identifier (name{tcb@cnt@quotebox-yellow.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.225 \begin{quotebox-yellow}{What it does?}
+                                            ) [16 </home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-21 19-10-09.png>] (./main.aux (./chapters/prova.aux) (./chapters/firewall.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -1256,21 +1367,21 @@ LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.65205pt have occurred.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 96CEBC3DDA8F9D7942856C2C20824FFD;5501.
+(rerunfilecheck)             Checksum: 5EF0C96982E4015C14B7D98147D3FBA1;8243.
  ) 
 Here is how much of TeX's memory you used:
- 25772 strings out of 474222
- 480305 string characters out of 5748732
+ 25899 strings out of 474222
+ 485737 string characters out of 5748732
  1943975 words of memory out of 5000000
- 47526 multiletter control sequences out of 15000+600000
- 578730 words of font info for 91 fonts, out of 8000000 for 9000
+ 47618 multiletter control sequences out of 15000+600000
+ 579416 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,12n,107p,762b,645s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0500.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0600.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb>
-Output written on main.pdf (12 pages, 1218566 bytes).
+ 108i,12n,107p,763b,630s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0500.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0600.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti0900.pfb>
+Output written on main.pdf (16 pages, 1492519 bytes).
 PDF statistics:
- 369 PDF objects out of 1000 (max. 8388607)
- 281 compressed objects within 3 object streams
- 64 named destinations out of 1000 (max. 500000)
- 327 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 495 PDF objects out of 1000 (max. 8388607)
+ 390 compressed objects within 4 object streams
+ 91 named destinations out of 1000 (max. 500000)
+ 480 words of extra memory for PDF output out of 10000 (max. 10000000)
 

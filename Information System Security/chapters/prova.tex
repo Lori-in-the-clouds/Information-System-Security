@@ -1,35 +1,35 @@
-\chapter{Authentication techiniques protocols, and architecures}
+\chapter{Authentication techniques protocols, and architectures}
 
 Authentication refers to the process of verifying the identity of an entity (whether it's a human, software component, or hardware element) 
 before granting access to resources in a system. Authentication can be applied to various type of "actors", such as:
 \begin{itemize}
     \item \textbf{Human being}
-    \item \textbf{software component}
+    \item \textbf{Software component}
     \item \textbf{Hardware element}
 \end{itemize}
 
 \subsubsection{Authentication vs Authorization}
 \begin{itemize}
-    \item \textbf{Authentication (authC/authN)}: established the indetity of an entity.
+    \item \textbf{Authentication (authC/authN)}: established the identity of an entity.
     \item \textbf{Authorization (authZ)}: determines where a authenticated entity has permission to access.
 \end{itemize}
 
 \section{Authentication factors}
 Authentication can be based on 3 primary factors:
 \begin{itemize}
-    \item \textbf{Knowledge}: Information that only the user knows and can provides as proof of ther identity.
+    \item \textbf{Knowledge}: Information that only the user knows and can provides as proof of their identity.
     \item \textbf{Ownership}: Physical object or device that only the user has access to.
-    \item \textbf{Inherence}: This factor relies on onique biological traits of the user (e.g fingerprint).
+    \item \textbf{Inherence}: This factor relies on unique biological traits of the user (e.g fingerprint).
 \end{itemize}
-\textbf{N.B.} Authentication can be applied not just to human user, but also to processes and devices.
+\textcolor{red}{N.B} Authentication can be applied not just to human user, but also to processes and devices.
 
 \subsection{Risks}
 \begin{itemize}
     \item \textbf{Knowledge:}
     \begin{itemize}
-        \item \underline{Storage} \(\rightarrow \) if passwords are stored improperly, they are vulnerable to thieft. 
+        \item \underline{Storage} \(\rightarrow \) if passwords are stored improperly, they are vulnerable to thefts. 
         \item \underline{Demonstration} \(\rightarrow\) user might inadvertently reveal their password through social engineering.
-        \item \underline{Transmission} \(\rightarrow\) if passwords are sent over ensecured channel, they can be intercepted by attackers. 
+        \item \underline{Transmission} \(\rightarrow\) if passwords are sent over insecure channel, they can be intercepted by attackers. 
     \end{itemize}
     \item \textbf{Ownership:}
     \begin{itemize}
@@ -39,9 +39,9 @@ Authentication can be based on 3 primary factors:
     \end{itemize}
     \item \textbf{Inherence:}
     \begin{itemize}
-        \item \underline{Counterfeiting} \(\rightarrow\) biometric data can be spoofed or replicated by attackers using sophisticated techiniques.
-        \item \underline{Privacy} \(\rightarrow\) the use of biometric data riases the risk of biometric information being exposed.
-        \item \underline{Irreversibility} \(\rightarrow\) biometric traits cannot be raplaced if compromised. 
+        \item \underline{Counterfeiting} \(\rightarrow\) biometric data can be spoofed or replicated by attackers using sophisticated techniques.
+        \item \underline{Privacy} \(\rightarrow\) the use of biometric data raises the risk of biometric information being exposed.
+        \item \underline{Irreversibility} \(\rightarrow\) biometric traits cannot be replaced if compromised. 
     \end{itemize}
 \end{itemize}
 
@@ -52,26 +52,25 @@ Authentication can be based on 3 primary factors:
 \end{figure}
 \textbf{Entities:}
 \begin{itemize}
-    \item \textbf{Subscriber}: appliacant who has succesfully completed identity proofing.
-    \item \textbf{Appliacant}: an indiviual applying to established a digital identity.
+    \item \textbf{Subscriber}: applicant who has successfully completed identity proofing.
+    \item \textbf{Applicant}: an individual applying to established a digital identity.
     \item \textbf{Claimant}: the user trying to prove their identity to access a system or service.
-    \item \textbf{Relying Party}: will request/receive an authN assertion from the verifier to asses user identity (and attributes).
+    \item \textbf{Relying Party}: entity (e.g service provider, website) that requests/receives an authN assertion from the verifier to asses user identity (and attributes).
     \item \textbf{Verifier}: validates the user's credential during each authentication event. 
-    \item \textbf{CSP}: 
-        \begin{itemize}
-            \item Verifies the applicant's indetity during the initial enrollment process. 
-            \item Issue a credential and bines it to an authenticator for the user.
-        \end{itemize} 
+    \item \textbf{CSP}: an entity that issues, manages, and maintains \textbf{credentials} used by individuals to authenticate themselves. 
 \end{itemize}
+\begin{quotebox-red}{Applicant vs Claimer}
+    An applicant needs to enroll in the system for the first time to establish their identity. Instead, a claimant asserts their identity to gain access to the system after enrollment.
+\end{quotebox-red}
 
 
 \section{Generic authentication protocol}
 \begin{minipage}{0.5\textwidth}
     \begin{enumerate}
         \item The user initiates an authentication request by sending their UID.
-        \item The user generates a proof based on their secret, useing a secure function \(F(S_{UID})\), and send this proof to the verifier.
+        \item The user generates a proof based on their secret, using a secure function \(F(S_{UID})\), and send this proof to the verifier.
         \item The verifier checks if the received proof matches the stored representation of the secret.
-        \item If it matches, the user is succesfully authenticated.
+        \item If it matches, the user is successfully authenticated.
     \end{enumerate}
 \end{minipage} 
 \hspace{1cm}
@@ -89,7 +88,7 @@ Authentication can be based on 3 primary factors:
         \item The server verifies the proof:
         \begin{itemize}
             \item If password are stored in cleartext, it directly compares the proof with the stored password.
-            \item If password are stored in hashes, it hasesh the proof and compares it to the store hash \(H_{UID}\).
+            \item If password are stored in hashes, it hashes the proof and compares it to the store hash \(H_{UID}\).
         \end{itemize}
     \end{enumerate}
 \end{minipage} 
@@ -99,23 +98,25 @@ Authentication can be based on 3 primary factors:
     \includegraphics[width=\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-14 11-09-10.png}
 \end{minipage}
 
-\begin{quotebox}[colframe=blue!10!white, colback=blue!5!white]{Problems of reusable Passowrds}
+\begin{quotebox-yellow}{Problems of reusable Passowrds}
     \begin{itemize}
         \item \textbf{PWD Sniffing} (attackers intercept password during transmission)
         \item \textbf{PWD Database attack} (if DB contains plaintext or obfuscated PWD)
         \item \textbf{PWD Guessing} (very dangerous if it can be done offline, e.g against a list of PWD hashes)
         \item \textbf{PWD Enumeration} (PWD brute force attack)
         \begin{itemize}
-            \item If PWD is limited in lenght and/or character type.
+            \item If PWD is limited in length and/or character type.
             \item If authN protocol does not block repeated failures.
         \end{itemize}
         \item \textbf{PWD Duplications} (using the same PWD for one service against another one, due to user PWD reuse)
-        \item \textbf{Crypographic Aging} (as computing power grows, older crypographic methods become vulnerable to new attacks)
-        \item \textbf{PWD capture via server spoofing and phishing} (attackers deceive user into givining away their PWD by pretending to be legitimate service)
+        \item \textbf{Cryptographic Aging} (as computing power grows, older cryptographic methods become vulnerable to new attacks)
+        \item \textbf{PWD capture via server spoofing and phishing} (attackers deceive user into giving away their PWD by pretending to be legitimate service)
     \end{itemize} 
-\end{quotebox}
+\end{quotebox-yellow}
 
-\begin{quotebox}[colframe=blue!10!white, colback=blue!5!white]{Password best practies}
+
+
+\begin{quotebox-grey}{Password best practies}
     Suggestion to reduce password risks:
     \begin{itemize}
         \item Use alphabetical characters (upper case + lower case), digits and special characters
@@ -124,10 +125,10 @@ Authentication can be based on 3 primary factors:
         \item Change password regularly, but not too frequently
         \item Do not reuse passwords across different services
     \end{itemize}
-\end{quotebox}
+\end{quotebox-grey}
 
 
-\begin{quotebox}[colframe=blue!10!white, colback=blue!5!white]{Password storage}
+\begin{quotebox-yellow}{Password storage}
     \begin{itemize}
         \item \textbf{Server Side:}
         \begin{itemize}
@@ -143,7 +144,7 @@ Authentication can be based on 3 primary factors:
             \item \underline{Using a password manager} or encrypted file is a safer alternative.
         \end{itemize}
     \end{itemize}
-\end{quotebox}
+\end{quotebox-yellow}
 
 
 \section{The "dictionary" attack}
@@ -163,16 +164,16 @@ Rainbow Table is a \textbf{space-time trade-off technique} that reduces storage 
 It uses a reduction function \(r:h \rightarrow p\) (which is NOT \(h^{-1}\)) to generate chains of hashes.
 \\ \textbf{Example:}
 \begin{itemize}
-    \item For a 12-digit password, an exhaustive hash table woudl require \(10^{12}rows(P_i:HP_i)\) 
+    \item For a 12-digit password, an exhaustive hash table would require \(10^{12}rows(P_i:HP_i)\) 
     \item rainbow = \(10^9\) rows, each representing 1000 possible passwords.
 \end{itemize}
 
 \begin{center}
 \begin{minipage}{0.5\textwidth}
-    \begin{quotebox}[colframe=blue!10!white, colback=blue!5!white]{Attack}
+    \begin{quotebox-red}{Attack}
         \centering
         \includegraphics[width=0.8\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-14 11-51-24.png}
-\end{quotebox}
+\end{quotebox-red}
 \end{minipage}
 \end{center}
 
@@ -185,7 +186,7 @@ It uses a reduction function \(r:h \rightarrow p\) (which is NOT \(h^{-1}\)) to 
     \begin{itemize}
         \item Generate or ask for the user's password.
         \item Create a unique, random slat for each user.
-        \item Compute the salted hash:\(SHP=hash(password\ ||\ salt)\)
+        \item Compute the salted hash: \(SHP=hash(password\ ||\ salt)\)
         \item Store the triplet \(\{UID,\ SHP,\ salt\}\)
     \end{itemize}
 \end{minipage} 
@@ -194,18 +195,20 @@ It uses a reduction function \(r:h \rightarrow p\) (which is NOT \(h^{-1}\)) to 
     \subsubsection{Password Verification with Salt}
    \begin{itemize}
     \item \textbf{Claimant:} Provides their user ID (UID) and password (PWD).
-    \item \textbf{verifier:} 
+    \item \textbf{Verifier:} 
     \begin{itemize}
         \item Uses the UID to find the stored salted hash (SHP) and salt. 
-        \item Computues \(SHP'=hash(PWD\ || \ salt)\).
+        \item Computes \(SHP'=hash(PWD\ || \ salt)\).
     \end{itemize}
    \end{itemize}
 \end{minipage}
-\begin{quotebox}[colframe=blue!10!white, colback=blue!5!white]{The Linkedin attack}
-In 2012, LinkedIn was breached, exposing 6.5 million unsalted SHA-1 password hashes. The lack of salting allowed attackers to crack at least 236,578 passwords through crowdsourced efforts before restrictions halted the exposure.
-\end{quotebox}
 
-\noindent\rule{1\textwidth}{0.00001pt}
+\begin{quotebox-yellow}{The Linkedin attack}
+    In 2012, LinkedIn was breached, exposing 6.5 million unsalted SHA-1 password hashes. The lack of salting allowed attackers to crack at least 236,578 passwords through crowdsources efforts before restrictions halted the exposure.
+\end{quotebox-yellow}
+
+\noindent{\color{gray!50}\rule{\textwidth}{0.5pt}}
+
 
 \section{Strong authentication definitions}
 The concept of strong authentication (authN) is crucial in ensuring secure identity verification, but it has never been formally defined with a universal definition.
@@ -239,8 +242,7 @@ traffic and easily find the shared secret:
 \subsection{Symmetric CRA}
 \begin{minipage}{0.3\textwidth}
     \vspace{-0.9cm}
-    Symmetric CRA involves a shared secret (like a password or key) between 
-    the claimant and verifier. This method is fast, often utilizing hash 
+    In symmetric CRA, both the client and the server share a secret key that is used to verify the authenticity of a user or system This method is fast, often utilizing hash 
     functions (e.g., SHA1, SHA2, SHA3).
 \end{minipage} 
 \hspace{0.001cm}
@@ -274,7 +276,7 @@ In this case, the initiator explicitly provides its claimed identity (This versi
     \\ \textbf{Process:}
     \begin{itemize}
         \item Alice includes her identity \((C_A)\) and sends an encrypted challenge (\(C_B)\) in the same message.
-        \item Bob responds with his encrypted challenge \(C_A\)to complete the exchange.
+        \item Bob responds with his encrypted challenge \(C_A\) to complete the exchange.
     \end{itemize} 
 
 \end{minipage} 
@@ -284,7 +286,7 @@ In this case, the initiator explicitly provides its claimed identity (This versi
     \includegraphics[width=0.7\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-15 12-04-56.png}
 \end{minipage}
 
-%Now I give you some text and I want that you resume it. I don't want many list (this it no means that I don't want there to be any) I want also that you riorganized the sections 
+%Now I give you some text and I want that you resume it. I don't want many list (this it no means that I don't want there to be any) I want also that you reorganized the sections 
 \begin{quotebox}[colframe=blue!10!white, colback=blue!5!white]{Attack on Mutual Symmetric CRA}
     \begin{minipage}{0.5\textwidth}
         \vspace{-0.5cm}
@@ -348,11 +350,7 @@ In this case, the initiator explicitly provides its claimed identity (This versi
 \section{One-Time Password(OTP)}
 \begin{minipage}{0.6\textwidth}
 \vspace{-1.0cm}
-One-Time Passwords are temporary and valid for a single use in an authentication session. They mitigate risks like password reuse and passive sniffing but can still be vulnerable to man-in-the-middle (MITM) attacks. 
-These passwords are often designed 
-with random characters to prevent 
-guessing, but this can make password instertion difficult for users. 
-input.
+One-Time Passwords are temporary and valid for a single use in an authentication session. They mitigate risks like password reuse and passive sniffing but can still be vulnerable to man-in-the-middle (MITM) attacks. These passwords are often designed  with random characters to prevent guessing, but this can make password insertion difficult for users. 
 \end{minipage} 
 \hspace{0.5cm}
 \begin{minipage}{0.4\textwidth}
@@ -368,20 +366,19 @@ without storing the secret:
 \[Secret = S_{ID}\]
 \[P_1=h(S_{ID}),P_2=h(P_1),...,P_N=h(P_{N-1})\]
 \noindent
-This approach 
-minimizes verifier storage needs and offers robust protection, with users solely 
-responsible for password retention.
-
+This approach minimizes verifier storage needs and offers robust protection, with users solely responsible for password retention.\\
 \begin{customquote}
-\textbf{One-time generation with S/KEY}
-\\In the S/KEY system, the user creates 
-a secret passphrase (PP), which is combined 
-with a server-provided seed to generate a 64-bit 
-password. The passphrase is concatenated with the seed, 
-and an MD4 hash is used to produce the password. 
-The result is presented as six short words from a shared 
-dictionary, making it easy to remember. This method allows secure password generation while using the same passphrase across multiple servers with different seeds. If the passphrase is compromised, security is at risk.
+    \textbf{One-time generation with S/KEY}
+    \\In the S/KEY system, the user creates 
+    a secret passphrase (PP), which is combined 
+    with a server-provided seed to generate a 64-bit 
+    password. The passphrase is concatenated with the seed, 
+    and an MD4 hash is used to produce the password. 
+    The result is presented as six short words from a shared 
+    dictionary, making it easy to remember. This method allows secure password generation while using the same passphrase across multiple servers with different seeds. If the passphrase is compromised, security is at risk.
 \end{customquote}
+
+
 
 \subsection{Time-based OTP (TOPT)}
 \begin{minipage}{0.5\textwidth}
@@ -391,11 +388,10 @@ dictionary, making it easy to remember. This method allows secure password gener
         \textbf{Authentication Process:}
         \begin{itemize}
             \item The claimant sends an authentication request with \(ID\) and the generated OTP \(x\).
-            \item The verifier cecks if \(X\) matches the computed OTP for the corresponding \(ID\) and \(t\).
+            \item The verifier checks if \(X\) matches the computed OTP for the corresponding \(ID\) and \(t\).
         \end{itemize}
     \end{customquote}
     
-
 \end{minipage} 
 \hspace{0.3cm}
 \begin{minipage}{0.5\textwidth}
@@ -431,7 +427,7 @@ dictionary, making it easy to remember. This method allows secure password gener
     \end{itemize}
 \end{customquote}
 
-\begin{quotebox}[colframe=blue!10!white, colback=blue!5!white]{Example:RSA SecurID}
+\begin{quotebox}[colframe=blue!10!white, colback=blue!5!white]{Example: RSA SecurID}
     \begin{minipage}{0.6\textwidth}
     %	\vspace{-0.5cm}
         Authentication process:
@@ -450,7 +446,7 @@ dictionary, making it easy to remember. This method allows secure password gener
     \end{minipage}
 \end{quotebox}
 
-\subsection{Out-of-Band (OOB) OTP Summary}
+\subsection{Out-of-Band (OOB) OTP}
 Out-of-Band OTP requires a \textbf{secure channel} with server authentication 
 to prevent MITM (Man-In-The-Middle) attacks. Traditionally, it uses text or 
 SMS as the communication channel, but this method is increasingly vulnerable 
@@ -462,9 +458,9 @@ Nowadays, a push mechanism over a \textbf{TLS-secured channel} to a registered d
 MFA enhances authentication (authN) by requiring multiple factors, 
 such as a PIN, OTP, or biometrics, to verify identity. These factors can include something you know (like a PIN or password), something you have (like a token or phone), and something you are (like biometric data). MFA also protects the authenticator, for example, by using a PIN to safeguard it, but risks arise if the lock mechanism is weak or if there’s no protection against multiple unlock attempts.
 
-\begin{quotebox}[colframe=blue!10!white, colback=blue!5!white]{Importance of MFA: The iPhone Ransomware (2014)}
+\begin{quotebox-grey}{Importance of MFA: The iPhone Ransomware (2014)}
     In 2014, iCloud accounts with 1FA were hacked, allowing attackers to lock devices remotely. Victims were extorted for \$100, but paying didn’t help as the PayPal account was fake. This incident underscores the need for MFA to secure devices and prevent such attacks.
-\end{quotebox}
+\end{quotebox-grey}
 
 \section{Authentication of human beings}
 To verify whether we're interacting with a human rather than a machine, there are two common approaches:
@@ -475,7 +471,7 @@ To verify whether we're interacting with a human rather than a machine, there ar
 \end{itemize}
 
 
-\begin{quotebox}[colframe=blue!10!white, colback=blue!5!white]{Problems of biometric systems}{
+\begin{quotebox-red}{Problems of biometric systems}{
     There are several issues with biometric systems:
     \begin{itemize}
         \begin{minipage}{0.7\textwidth}
@@ -491,7 +487,7 @@ To verify whether we're interacting with a human rather than a machine, there ar
         \item \textbf{Irreplaceability:} Once compromised, biometric data cannot be changed, unlike a password or PIN. Thus, biometrics are primarily useful for local authentication but unsuitable for global identity systems.
         \item \textbf{Lack of Standardization:} High development costs and dependency on specific vendors are significant drawbacks in current biometric systems.
     \end{itemize}}
-\end{quotebox}
+\end{quotebox-red}
 \newpage
 \section{Kerberos Authentication System}
 \begin{minipage}{0.8\textwidth}
@@ -511,7 +507,7 @@ Kerberos is a widely-used \underline{authentication protocol} based on a Trusted
 \subsection{Players}
 There are 4 key players:
 \begin{itemize}
-    \item \textbf{Client (User/Application:)} he person or application trying to access a resource.
+    \item \textbf{Client (User/Application:)} the person or application trying to access a resource.
     \item \textbf{Authentication Server (AS):} Confirms who you are and issues a Ticket Granting Ticket (TGT).
     \item \textbf{Ticket Granting Server (TGS):} Issues tickets for specific services after seeing the TGT.
     \item \textbf{Service (Server):} The resource you want to access. 
@@ -584,8 +580,8 @@ There are 4 key players:
 \end{enumerate}
 
 \subsection{Single Sign-On (SSO)}
-SSO allows users to authenticate once and access multiple services without repeated logins.\\
-\textbf{Types of SSO:}
+SSO allows users to authenticate once and access multiple services without repeated logins.
+Types of SSO:
 \begin{itemize}
     \item \textbf{Fictitious SSO:}
     \begin{itemize}
@@ -612,7 +608,7 @@ The Open Authentication (OATH) framework provides standards for one-time passwor
     \item \textbf{TOTP:} Similar to HOTP but uses time intervals (TS) instead of counters.\\
     Function:
     \[C = (T - T0) / TS\]\
-    With default values: \(T0\) -> Unix epoch, \(TS\) -> 30-second intervals, \(T\) -> unixtime(now).
+    With default values: \(T0\) -> Unix epoch, \(TS\) -> 30-second intervals, \(T\) -> unixtime (now).
     \item \textbf{OCRA} (OATH Challenge-Response Algorithm)
     \item \textbf{PSKC} (Portable Symmetric Key Container): XML-based format for symmetric key transport.
     \item \textbf{DSKPP} (Dynamic Symmetric Key Provisioning Protocol): A client-server protocol for securely provisioning symmetric keys.
@@ -628,10 +624,10 @@ Supports HOTP and TOTP with adjustments for usability:
 \end{itemize}
 
 \subsection{FIDO (Fast Identity Online)}
-FIDO, developed by the FIDO Alliance, improves authentication by offering secure, passwordless, and multi-factor methods. It uses biometric data locally to unlock cryptographic keys and employs asymmetric cryptography for signing challenges or transactions. FIDO prevents phishing by ensuring that authentication responses cannot be reused. Each response is a unique signature created over various data, including the Relying Party (RP) identity, making it specific to the service being accessed. Additionally, a new key pair is generated during each registration, which prevents the association of a user’s identity across different services or accounts.
+FIDO, developed by the FIDO Alliance, improves authentication by offering secure, password-less, and multi-factor methods. It uses biometric data locally to unlock cryptographic keys and employs asymmetric cryptography for signing challenges or transactions. FIDO prevents phishing by ensuring that authentication responses cannot be reused. Each response is a unique signature created over various data, including the Relying Party (RP) identity, making it specific to the service being accessed. Additionally, a new key pair is generated during each registration, which prevents the association of a user’s identity across different services or accounts.
 \subsubsection{FIDO's frameworks include:}
 \begin{itemize}
-    \item \textbf{UAF} (The Universal Authentication Framework): for passwordless login.
+    \item \textbf{UAF} (The Universal Authentication Framework): for password-less login.
     \item \textbf{U2F} (Universal 2nd Factor) for device-based two-factor authentication.
     \item \textbf{FIDO2}: integrates U2F with WebAuthn for robust web authentication.
 \end{itemize}

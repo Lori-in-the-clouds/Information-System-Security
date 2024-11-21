@@ -1,5 +1,5 @@
 \babel@toc {english}{}\relax 
-\contentsline {chapter}{\numberline {1}Authentication techiniques protocols, and architecures}{3}{chapter.1}%
+\contentsline {chapter}{\numberline {1}Authentication techniques protocols, and architectures}{3}{chapter.1}%
 \contentsline {subsubsection}{Authentication vs Authorization}{3}{section*.2}%
 \contentsline {section}{\numberline {1.1}Authentication factors}{3}{section.1.1}%
 \contentsline {subsection}{\numberline {1.1.1}Risks}{3}{subsection.1.1.1}%
@@ -24,7 +24,7 @@
 \contentsline {section}{\numberline {1.10}One-Time Password(OTP)}{8}{section.1.10}%
 \contentsline {subsection}{\numberline {1.10.1}S/KEY System}{8}{subsection.1.10.1}%
 \contentsline {subsection}{\numberline {1.10.2}Time-based OTP (TOPT)}{8}{subsection.1.10.2}%
-\contentsline {subsection}{\numberline {1.10.3}Out-of-Band (OOB) OTP Summary}{9}{subsection.1.10.3}%
+\contentsline {subsection}{\numberline {1.10.3}Out-of-Band (OOB) OTP}{9}{subsection.1.10.3}%
 \contentsline {subsection}{\numberline {1.10.4}Two-/Multi-Factor Authentication (2FA/MFA)}{9}{subsection.1.10.4}%
 \contentsline {section}{\numberline {1.11}Authentication of human beings}{9}{section.1.11}%
 \contentsline {section}{\numberline {1.12}Kerberos Authentication System}{10}{section.1.12}%
@@ -36,3 +36,19 @@
 \contentsline {subsection}{\numberline {1.13.2}Google Authenticator}{11}{subsection.1.13.2}%
 \contentsline {subsection}{\numberline {1.13.3}FIDO (Fast Identity Online)}{12}{subsection.1.13.3}%
 \contentsline {subsubsection}{FIDO's frameworks include:}{12}{section*.10}%
+\contentsline {chapter}{\numberline {2}Firewall and IDS/IPS}{13}{chapter.2}%
+\contentsline {section}{\numberline {2.1}What is a Firewall?}{13}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Ingress vs Egress firewall}{13}{section.2.2}%
+\contentsline {section}{\numberline {2.3}The three principles of the firewall}{13}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Authorization policies}{13}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Basic components}{13}{section.2.5}%
+\contentsline {section}{\numberline {2.6}A which level the controls are made?}{14}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Network-Level Controls}{14}{section.2.7}%
+\contentsline {subsection}{\numberline {2.7.1}Packet filter}{14}{subsection.2.7.1}%
+\contentsline {subsection}{\numberline {2.7.2}Circuit-Level Gateway}{14}{subsection.2.7.2}%
+\contentsline {subsection}{\numberline {2.7.3}Application-Level Gateway}{15}{subsection.2.7.3}%
+\contentsline {subsection}{\numberline {2.7.4}HTTP Proxies}{15}{subsection.2.7.4}%
+\contentsline {subsection}{\numberline {2.7.5}WAF (Web Application Firewall)}{16}{subsection.2.7.5}%
+\contentsline {section}{\numberline {2.8}Firewall's Architectures}{16}{section.2.8}%
+\contentsline {subsection}{\numberline {2.8.1}Packet Filter}{16}{subsection.2.8.1}%
+\contentsline {subsection}{\numberline {2.8.2}Dual-homed Gateway}{16}{subsection.2.8.2}%
