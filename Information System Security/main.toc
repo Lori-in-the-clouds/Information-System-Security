@@ -50,6 +50,14 @@
 \contentsline {subsection}{\numberline {2.7.4}HTTP Proxies}{15}{subsection.2.7.4}%
 \contentsline {subsection}{\numberline {2.7.5}WAF (Web Application Firewall)}{16}{subsection.2.7.5}%
 \contentsline {section}{\numberline {2.8}Firewall's Architectures}{16}{section.2.8}%
-\contentsline {subsection}{\numberline {2.8.1}Packet Filter}{16}{subsection.2.8.1}%
-\contentsline {subsection}{\numberline {2.8.2}Dual-homed Gateway}{16}{subsection.2.8.2}%
+\contentsline {subsection}{\numberline {2.8.1}"Packet Filter" architecture}{16}{subsection.2.8.1}%
+\contentsline {subsection}{\numberline {2.8.2}"Dual-homed Gateway" architecture}{16}{subsection.2.8.2}%
 \contentsline {subsection}{\numberline {2.8.3}"Screened host" architecture}{17}{subsection.2.8.3}%
+\contentsline {subsection}{\numberline {2.8.4}"Screened subnet" architecture}{17}{subsection.2.8.4}%
+\contentsline {subsection}{\numberline {2.8.5}"Screened subnet" architecture (version 2)}{18}{subsection.2.8.5}%
+\contentsline {section}{\numberline {2.9}Local/Personal Firewall}{18}{section.2.9}%
+\contentsline {section}{\numberline {2.10}Protection offered by a firewall}{18}{section.2.10}%
+\contentsline {section}{\numberline {2.11}Intrusion Detection System (IDS)}{19}{section.2.11}%
+\contentsline {subsection}{\numberline {2.11.1}IDS functional features}{19}{subsection.2.11.1}%
+\contentsline {subsection}{\numberline {2.11.2}IDS topological features}{19}{subsection.2.11.2}%
+\contentsline {section}{\numberline {2.12}Intrusion Prevention System (IPS)}{20}{section.2.12}%

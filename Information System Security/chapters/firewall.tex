@@ -193,9 +193,8 @@ A WAF is a module installed at a proxy (forward and/or reverse) to filter the ap
 \begin{quotebox-grey}{Popular WAF example: \textbf{ModSecurity}}
     ModSecurity is a widely-used WAF plugin for web servers like Apache and NGINX, offering protection through predefined rules like the OWASP ModSecurity Core Rule Set (CRS).
 \end{quotebox-grey}
-
 \section{Firewall's Architectures}
-\subsection{Packet Filter}
+\subsection{"Packet Filter" architecture}
 \vspace{0.2cm}
 \begin{quotebox-yellow}{What it does?}
 This architecture uses a simple packet filter to screen traffic at both the IP and higher protocol levels (like TCP)
@@ -221,7 +220,7 @@ This architecture uses a simple packet filter to screen traffic at both the IP a
         \end{quotebox-red}   
 \end{center}
 \vspace{0.5cm}
-\subsection{Dual-homed Gateway}
+\subsection{"Dual-homed Gateway" architecture}
 \vspace{0.2cm}
 \begin{quotebox-yellow}{What it does?}
 Uses a system with two network interfaces (hence "dual-homed") to provide a basic firewall between external and internal networks.
@@ -247,6 +246,7 @@ Uses a system with two network interfaces (hence "dual-homed") to provide a basi
 \end{center}
 
 \subsection{"Screened host" architecture}
+\vspace{0.2cm}
 \begin{quotebox-yellow}{What it does?}
     Uses two primary components: 
     \begin{itemize}
@@ -279,6 +279,178 @@ Uses a system with two network interfaces (hence "dual-homed") to provide a basi
      \end{itemize}
     \end{quotebox-red}   
 \end{center}
+
+\subsection{"Screened subnet" architecture} 
+\vspace{0.2cm}
+\begin{quotebox-yellow}{What it does?}
+A DMZ (De-Militarized Zone) is created between an internal network and a external network.
+The DMZ  acts as a buffer zone to isolate external entities from the internal network, such as web servers or remote access points.
+\end{quotebox-yellow}
+\begin{minipage}{0.5\textwidth}
+	%\vspace{-1.5cm}
+    \textbf{Traffic flows:}
+    \begin{itemize}
+        \item The first firewall controls access from the external network to the DMZ, ensuring only authorized traffic can reach the public-facing systems.
+        \item The second firewall restricts traffic from the DMZ to the internal network, allowing only specific and necessary connections.
+    \end{itemize}
+    \textcolor{darkgreen}{\textbf{It the most secure solution}} \textbf{because this setup hides the internal network from external users, reducing exposure to attacks.}
+\end{minipage} 
+\hfill
+\begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{
+        /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-22 10-22-22.png}
+\end{minipage}
+
+
+\begin{center}
+    \begin{quotebox-red}{Beware}
+      \begin{itemize}
+        \item \textbf{Higher cost} due to the additional hardware.
+        \item \textbf{The DMZ is home not only to the gateway} but also to other host (typically the public servers).
+      \end{itemize} 
+    \end{quotebox-red}   
+\end{center}
+\newpage
+\subsection{"Screened subnet" architecture (version 2)}
+\vspace{0.2cm}
+\begin{quotebox-yellow}{What it does?}
+    In this version of the Screened Subnet architecture, the packet filters (\textbf{PF}) and gateway (\textbf{GW}) are merged into a single device that is called \textbf{AKA} ("three-legged firewall").
+\end{quotebox-yellow}
+
+
+\begin{minipage}{0.4\textwidth}
+	%\vspace{-1.5cm}
+    \textbf{Three-Legged design:}
+    \begin{itemize}
+        \item One interface connecting to the \textbf{External network} (untrusted).
+        \item One interface connecting to the \textbf{Internal network} (trusted).
+        \item One interface connecting to the DMZ (where public-facing services reside).
+    \end{itemize}
+\end{minipage} 
+\hfill
+\begin{minipage}{0.6\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{
+        /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-22 10-59-27.png}
+\end{minipage}
+
+\begin{center}
+    \begin{quotebox-red}{Beware}
+      It's \textcolor{darkgreen}{\textbf{more simple}} than the previous version but presents a \textbf{single point of failure}.
+    \end{quotebox-red}   
+\end{center}
+\noindent{\color{gray!50}\rule{\textwidth}{0.5pt}}
+
+\section{Local/Personal Firewall}
+This image represents three different firewall configurations: \textbf{Network firewall}, \textbf{Local firewall} and \textbf{Personal firewall}. In the previous pages we have considered the network firewall, now let's start to analyze the Local/Personal firewall. \\
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-22 11-51-30.png}
+\end{figure}
+\\
+\noindent
+\textbf{A local or personal firewall} is installed directly on a device to protect it from unauthorized access or attacks. Unlike a normal network firewall, it may limit the PROCESSES that are permitted:
+\begin{itemize}
+    \item To open network channels towards other nodes (client behavior).
+    \item To answer network requests (server behavior).
+\end{itemize}
+
+\noindent
+These features make local firewalls essential for containing malware, blocking trojans, or preventing accidental misconfigurations. \textbf{However, in order to be effective, the firewall management MUST be separated from system management.}
+
+\section{Protection offered by a firewall}
+A firewall is 100\% effective only for attacks over/against blocked channels.
+The other channels require other protection technique:
+\begin{itemize}
+    \item \textbf{VPNs}
+    \item \textbf{intrusion detection systems (IDS)}
+    \item \textbf{application-level protections}
+\end{itemize}
+\noindent{\color{gray!50}\rule{\textwidth}{0.5pt}}
+\section{Intrusion Detection System (IDS)}
+\begin{quotebox-yellow}{Definition}
+An \textbf{Intrusion Detection System (IDS)}text is a security mechanism designed to:
+\begin{itemize}
+    \item identify actors using a system or a network without authorization (and their actions).
+    \item  identify authorized actors who violate their privileges.
+\end{itemize}
+\textbf{Hypothesis}
+\begin{itemize}
+    \item The behavior “pattern” of non-authorized users differs from that of the authorized ones
+\end{itemize}
+\end{quotebox-yellow}
+
+\subsection{IDS functional features}
+\begin{itemize}
+    \item \textbf{Passive IDS:} Observes and detects issues but doesn’t act to stop them.\\ \underline{Techniques:}
+    \begin{itemize}
+        \item Cryptographic checksums to detect changes in files.
+        \item Pattern matching to identify attack signatures (e.g., malware signatures).
+    \end{itemize}
+    \item \textbf{Active IDS:} Monitors activity dynamically and reacts when thresholds are exceeded.\\ \underline{Techniques:}
+    \begin{itemize}
+        \item Tracks normal behavior to identify anomalies (\textbf{"learning"}).
+        \item Gathers detailed statistics on traffic and actions (\textbf{text"monitoring"}).
+        \item Triggers alerts or responses when unusual patterns occur (\textbf{"reaction}).
+    \end{itemize}
+\end{itemize}
+
+\subsection{IDS topological features}
+\begin{itemize}
+    \item \textbf{HIDS (Host-Based IDS):} Monitors individual devices (hosts).
+    \begin{itemize}
+        \item Analyzes logs from the OS, services, or applications.
+        \item Uses built-in OS tools to track internal activity.
+    \end{itemize}
+    \item \textbf{NIDS (Network-Based IDS):} Monitors traffic at the network level.
+    \item Uses network traffic monitoring tools.
+\end{itemize}
+
+\begin{quotebox-grey}{NIDS Architecture}
+\underline{\textbf{Components:}}
+\begin{itemize}
+    \item \textbf{Sensor:} The frontline tool that analyzes traffic or logs looking for suspect patterns. Generates security alerts and can modify access controls (e.g., block traffic).
+    \item \textbf{Director:} Coordinates sensors and manages a central database.
+    \item \textbf{Message System:}  Ensures secure communication among IDS components.
+\end{itemize}
+\begin{minipage}{0.5\textwidth}
+%	\vspace{-0.5cm}
+\underline{\textbf{Workflow:}}
+\begin{enumerate}
+    \item Traffic from the external network enters through the firewall.
+    \item (Net) sensors monitor traffic before it reaches the DMZ or internal network.
+    \item Within the DMZ, host sensors monitor server activities.
+    \item Traffic entering the internal network is further monitored by both host and network sensors.
+    \item All sensors report suspicious activities to the IDS director.
+    \item The IDS director consolidates this data and raises alerts or takes action if any patterns of intrusion or policy violations are detected.
+\end{enumerate}
+\end{minipage} 
+\hspace{0.2cm}
+\begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{/home/lorenzo/Pictures/Screenshots/Screenshot from 2024-11-22 14-41-40.png}
+\end{minipage}
+\end{quotebox-grey}
+
+\section{Intrusion Prevention System (IPS)}
+\vspace{0.2cm}
+\begin{quotebox-yellow}{Definition}
+An \textbf{Intrusion Prevention System (IPS)} is an advanced security technology (not a product) that identifies unauthorized activities like an IDS but actively blocks or mitigates them in real time (= IDS + distributed dynamic firewall).\\ Often, Intrusion Prevention Systems (IPS) are integrated with Intrusion Detection Systems (IDS) into a unified solution called \textbf{Intrusion Detection and Prevention System (IDPS)}
+\end{quotebox-yellow}
+\noindent
+\textcolor{red}{\textbf{N.B.}} IPS requires careful configuration and monitoring to balance its protective capabilities with the risk of blocking innocent traffic.
+\begin{center}
+\begin{quotebox-red}{Why is it useful to merge IPS with IDS?}
+    IPS already has some of IDS's features, such as detection capabilities. But merging IPS with IDS brings many advantages because:
+    \begin{itemize}
+        \item \textbf{IDS} excels in providing deep visibility into all network activity, including suspicious behavior that might not warrant immediate action.
+        \item \textbf{IPS} actively blocks threats, but in doing so, it may not focus as much on monitoring benign-but-suspicious activities.
+    \end{itemize}
+\end{quotebox-red}
+\end{center}
+
+
 
 
 
