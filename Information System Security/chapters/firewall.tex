@@ -404,7 +404,9 @@ An \textbf{Intrusion Detection System (IDS)}text is a security mechanism designe
         \item Uses built-in OS tools to track internal activity.
     \end{itemize}
     \item \textbf{NIDS (Network-Based IDS):} Monitors traffic at the network level.
-    \item Uses network traffic monitoring tools.
+    \begin{itemize}
+        \item Uses network traffic monitoring tools.
+    \end{itemize}
 \end{itemize}
 
 \begin{quotebox-grey}{NIDS Architecture}
@@ -438,8 +440,6 @@ An \textbf{Intrusion Detection System (IDS)}text is a security mechanism designe
 \begin{quotebox-yellow}{Definition}
 An \textbf{Intrusion Prevention System (IPS)} is an advanced security technology (not a product) that identifies unauthorized activities like an IDS but actively blocks or mitigates them in real time (= IDS + distributed dynamic firewall).\\ Often, Intrusion Prevention Systems (IPS) are integrated with Intrusion Detection Systems (IDS) into a unified solution called \textbf{Intrusion Detection and Prevention System (IDPS)}
 \end{quotebox-yellow}
-\noindent
-\textcolor{red}{\textbf{N.B.}} IPS requires careful configuration and monitoring to balance its protective capabilities with the risk of blocking innocent traffic.
 \begin{center}
 \begin{quotebox-red}{Why is it useful to merge IPS with IDS?}
     IPS already has some of IDS's features, such as detection capabilities. But merging IPS with IDS brings many advantages because:
@@ -449,12 +449,21 @@ An \textbf{Intrusion Prevention System (IPS)} is an advanced security technology
     \end{itemize}
 \end{quotebox-red}
 \end{center}
+\noindent
+\textcolor{red}{\textbf{N.B.}} IPS requires careful configuration and monitoring to balance its protective capabilities with the risk of blocking innocent traffic.
 
+\section{Next-Generation Firewall (NGFW)}
+A Next-Generation Firewall (NGFW) enhances traditional firewalls by offering features like \textbf{application identification}, regardless of the network port used, and traffic decryption. It can integrate with \textbf{authentication systems} such as Active Directory, enabling per-user and per-application security policies. Additionally, NGFWs provide advanced protection by \textbf{filtering traffic based on known vulnerabilities}, threats, and malware.
 
+\section{Unified Threat Management (UTM)}
+\textbf{Unified Threat Management (UTM) integrates multiple security features} such as firewalls, VPNs, anti-malware, content inspection, and IDPS into a single device. The goal is to simplify security management by consolidating various solutions, reducing complexity and costs, though the specific capabilities depend on the manufacturer.
 
-
-
-
+\section{Honey pot / Honey net}
+A honeypot is a decoy system designed to attract attackers and analyze their behavior, while a honeynet is a network of these decoy systems used to study both external and internal attacks. These tools help in identifying and understanding attack methods.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-22 16-02-59.png}
+\end{figure}
 
 
 

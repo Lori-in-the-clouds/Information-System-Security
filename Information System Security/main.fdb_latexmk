@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1732286727.49587 "/home/lorenzo/Notes/Information System Security/main.tex" "main.pdf" "main" 1732286732.4216 0
+["pdflatex"] 1732288146.44463 "/home/lorenzo/Notes/Information System Security/main.tex" "main.pdf" "main" 1732288151.49061 0
   "/etc/texmf/web2c/texmf.cnf" 1732195213.81483 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/lorenzo/Notes/Information System Security/main.tex" 1732220347.68426 6299 9d4f34a75aca68d826354e23855e408f ""
   "/home/lorenzo/Pictures/Screenshots/Screenshot from 2024-11-21 21-11-47.png" 1732219907.01913 47858 124bf71b81eab5a0e874e7093073622f ""
@@ -213,9 +213,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1732195230.63458 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1732195334 8214750 e27d48c63acf3b6c65333d5708dd1774 ""
-  "chapters/firewall.aux" 1732286732.05438 4637 970e92d687c56676ec7c4c66b9e61e8f "pdflatex"
-  "chapters/firewall.tex" 1732286727.08033 23687 2e179034d5af6c2c7dbe8d527a206ad0 ""
-  "chapters/prova.aux" 1732286730.66936 6712 36af578c077c04687debd6e2a3ab740b "pdflatex"
+  "chapters/firewall.aux" 1732288151.18584 5032 2b9a99f4a42734fcdb93813fdac05f7d "pdflatex"
+  "chapters/firewall.tex" 1732288146.01879 25081 0a0c4f99cdbe9bbba46e35a39bf2b43f ""
+  "chapters/prova.aux" 1732288149.76783 6718 ac09468f9bff1f9635819e62378ff77c "pdflatex"
   "chapters/prova.tex" 1732197412.41479 33672 f26b24c4c97e4a63ce29717a940da78d ""
   "images/Screenshot from 2024-11-13 20-29-06.png" 1731526168.93624 111088 e2c654ce2ddf50e50b9ce29204bb1df1 ""
   "images/Screenshot from 2024-11-14 11-06-55.png" 1731578844.14 36290 f534127fcb4c93b1969b465171525527 ""
@@ -244,10 +244,11 @@
   "images/Screenshot from 2024-11-22 10-22-22.png" 1732267366.33648 53287 87022b69e793b306b22246bd640fdac4 ""
   "images/Screenshot from 2024-11-22 10-59-27.png" 1732269578.65324 39227 7e055598dce6280ec1025d93da52f420 ""
   "images/Screenshot from 2024-11-22 11-51-30.png" 1732272718.11774 65264 fc738edbd3f4b39334389f245dc1fc00 ""
-  "main.aux" 1732286732.05538 386 c7d556a144a79ed9f81907eabb768db5 "pdflatex"
-  "main.out" 1732286732.06038 10358 52630b5891df70b106d3212d8acb3232 "pdflatex"
+  "images/Screenshot from 2024-11-22 16-02-59.png" 1732287797.459 139683 eefa6510d37132e36275a26083964298 ""
+  "main.aux" 1732288151.18584 386 c36d5e149ed408021705aaab9447573d "pdflatex"
+  "main.out" 1732288151.19084 10980 943bab5c8fd5e3a2c38fa9de82dd3a9e "pdflatex"
   "main.tex" 1732220347.68426 6299 9d4f34a75aca68d826354e23855e408f ""
-  "main.toc" 1732286732.06038 5537 3f00a1f1eee2c96380d8c71de23e0164 "pdflatex"
+  "main.toc" 1732288151.19084 5812 e4e93c5b070c3f03146c8c54d8371b91 "pdflatex"
   (generated)
   "chapters/firewall.aux"
   "chapters/prova.aux"
