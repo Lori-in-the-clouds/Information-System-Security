@@ -291,8 +291,33 @@ encryptable.
 \item The encrypted data is packaged into a TLS record (header+payload).
 \end{enumerate}
 
-\subsection{}
+\subsection{Perfect Forward Secrecy}
+If a server has a certificate valid for both signature and encryption, it can be used bot for authN (via Signature) and Key Exchange (Asymmetric Encryption of the Session Key). If an attacker copies all the encrypted traffic and later discovers the server's SK, the attacker can decrypt all traffic (\textbf{past}, \textbf{present} and \textbf{future}).\\
+\textbf{Perfect Forward Secrecy} is a technique in which: if a PK/SK pair is compromised, only the \textbf{present} and \textbf{future} traffic can be decrypted.\\
+This mechanism (implemented in TLS) is achieved through the use of \textbf{ephemeral keys} (temporary keys) that are generated for each session and are not stored. For \textbf{authenticity}, the one-time key must be signed (the server’s SK is only used for signing, granting server authN). However, it cannot have an associated X.509 certificate, as the CA process is slow and often not available online. "Ephemeral" mechanisms are:
+\begin{itemize}
+    \item Suitable for DH (Diffie-Helmann).
+    \item Slow for RSA \(\rightarrow\) a compromised would be to re-use N times the same key. 
+\end{itemize}
+This means that with Perfect Forward Secrecy:
+\begin{itemize}
+    \item If the \textbf{short term SK} is compromised \(\rightarrow\) the attacker can decrypt \textbf{only the present and future} (typically only for the session) traffic.
+    \item If the \textbf{long term SK} is compromised \(\rightarrow\) the server can \textbf{no longer perform authN} but at least the attacker cannot decrypt any traffic. 
+\end{itemize}
+\begin{quotebox-grey}{Example}
+ECDHE (Elliptic Curve Diffie-Helmann Ephemeral) is a key exchange protocol that provides PFS.
+\end{quotebox-grey}
 
+\subsection{TLS Downgrade Attack}
+When the client negotiates with the server which version of TLS to use: 
+\begin{itemize}
+    \item The client always send (in \texttt{Client Hello}) the \textbf{highest supported version}.
+    \item The server notifies (in \texttt{Server Hello}) the version to be used, which must be the highest in common.
+\end{itemize}
+An attacker could send fake server response, forcing a version downgrade until a vulnerable one is reached, and then execute an attack. 
+\begin{quotebox-red}{Beware}
+Initial messages, before the setup of the secure channel, are not protected by the security protocol. 
+\end{quotebox-red}
 
 
 

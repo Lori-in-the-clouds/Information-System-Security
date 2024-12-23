@@ -80,4 +80,5 @@
 \contentsline {subsection}{\numberline {3.5.6}TLS Session \textbf {\(\&\)} Connections}{25}{subsection.3.5.6}%
 \contentsline {subsection}{\numberline {3.5.7}Relationship among Keys and Sessions}{25}{subsection.3.5.7}%
 \contentsline {subsection}{\numberline {3.5.8}TLS Record Protocol (authenticate-then-encrypt)}{25}{subsection.3.5.8}%
-\contentsline {subsection}{\numberline {3.5.9}}{26}{subsection.3.5.9}%
+\contentsline {subsection}{\numberline {3.5.9}Perfect Forward Secrecy}{26}{subsection.3.5.9}%
+\contentsline {subsection}{\numberline {3.5.10}TLS Downgrade Attack}{26}{subsection.3.5.10}%
