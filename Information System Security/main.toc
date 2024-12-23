@@ -74,4 +74,10 @@
 \contentsline {section}{\numberline {3.5}TLS (Transport Layer Security)}{23}{section.3.5}%
 \contentsline {subsection}{\numberline {3.5.1}TLS - AuthN and Integrity}{24}{subsection.3.5.1}%
 \contentsline {subsection}{\numberline {3.5.2}TLS - Confidentiality}{24}{subsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.5.3}TLS Handshake Protocol}{24}{subsection.3.5.3}%
+\contentsline {subsection}{\numberline {3.5.3}TLS Architecture}{24}{subsection.3.5.3}%
+\contentsline {subsection}{\numberline {3.5.4}TLS Handshake Protocol}{24}{subsection.3.5.4}%
+\contentsline {subsection}{\numberline {3.5.5}TLS Session ID}{25}{subsection.3.5.5}%
+\contentsline {subsection}{\numberline {3.5.6}TLS Session \textbf {\(\&\)} Connections}{25}{subsection.3.5.6}%
+\contentsline {subsection}{\numberline {3.5.7}Relationship among Keys and Sessions}{25}{subsection.3.5.7}%
+\contentsline {subsection}{\numberline {3.5.8}TLS Record Protocol (authenticate-then-encrypt)}{25}{subsection.3.5.8}%
+\contentsline {subsection}{\numberline {3.5.9}}{26}{subsection.3.5.9}%
