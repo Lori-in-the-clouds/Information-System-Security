@@ -318,8 +318,111 @@ An attacker could send fake server response, forcing a version downgrade until a
 \begin{quotebox-red}{Beware}
 Initial messages, before the setup of the secure channel, are not protected by the security protocol. 
 \end{quotebox-red}
+\noindent
+This behaviour does not (always) mean that we are under attack, it could be simply a \textbf{Insecure downgrade} (\(\rightarrow\) Some servers do not send the correct response, rather they close the connection. Then the client has no choice to try again with a lower protocol version).
 
+\section{Virtual Servers and TLS}
+\textcolor{red}{\textbf{Problem:}} the \textbf{Virtual Servers problem} is very frequent with \textbf{web hosting}: different logical names are associated to the \textbf{same IP address} (e.g.: \texttt{home.myweb.it=1.2.3.4} and \texttt{food.myweb.it=1.2.3.4}).\\
+This problem is easily solved in \textbf{HTTP/1.1}: the client uses \textbf{Host header} to specify the Logical Name of the server it want to connect to. \\
+But it is a problem for HTTPS, where the domain name is encrypted (because
+TLS, transport layer security protocol, is activated before HTTP, application layer protocol).\\
+\\
+\textcolor{green}{\textbf{Solutions:}}
+\begin{itemize}
+    \item Collective (wildcard) certificates: the private key is shared by all servers. e.g. \texttt{*.myweb.it}.
+    Different browsers may react differently to this solution.
+    \item Certificate with a list of servers in the SAN (subjectAltName) field: The private key is
+    shared among all servers, and the certificate needs to be reissued whenever a server is
+    added or removed.
+    \item The SNI (Server Name Indication) extension: The client sends the domain name in the
+    initial message. The server can then choose the correct certificate. Limited support by browsers and servers.
+\end{itemize}
+\section{ALPN extension (Application-Layer Protocol Negotiation)}
+The \textbf{ALPN extension} was created to \textbf{speed up} connection creation by avoiding negotiation \texttt{round-trips}. ALPN works in the following way:
+\begin{itemize}
+    \item (ClientHello) ALPN = true + list of supported application protocols;
+    \item (ServerHello) ALPN = true + selected application protocols;
+\end{itemize}
+\textcolor{red}{\textbf{N.B.}} It is particularly important to negotiate HTTP/2 and QUIC, since (for example)
+Chrome and Firefox support HTTP/2 only over TLS.
+\begin{quotebox-yellow}{}
+    ALPN is useful also for those servers that use different certificates for the different application
+    protocols.
+\end{quotebox-yellow}
 
+\section{TLS Fallback - Signaling Cipher Suite Value}
+The \textbf{SCSV estension} is used to prevent protocol downgrade attacks. SCSV works in the following way:
+\begin{itemize}
+    \item When a connection to a server is closed during the Handshake protocol negotiation
+    phase, the client (upon opening downgraded connection) should send to the server a
+    new (dummy) ciphersuite called \textbf{TLS\_FALLBACK\_SCSV};
+    \item Upon receiving TLS\_FALLBACK\_SCSV and a version lower then the highest one supported, the server must send a new Fatal Alert value: "inappropriate\_fallback".\\
+    \\
+    Immediately after sending this value, the \textbf{TLS channel is closed} \(\rightarrow\) the client should
+    retry with its highest protocol version;
+\end{itemize}
+\textcolor{red}{\textbf{N.B.}} However, many servers do \textbf{not} support SCSV, but at least \textbf{most} of them have fixed this bad behaviour \(\rightarrow\) browsers can \textbf{disable insecure downgrade}.
 
-    
+\section{DTLS (Datagram Transport Layer Security)}
+\textbf{DTLS} tries to apply the concepts of TLS to \textbf{datagram security} (e.g. UDP). It does not
+offer the same security properties as TLS and is in competition with IPsec and Application Security.\\
+For example, if we use \textbf{SIP} (\textbf{Session Initiation Protocol}) we could implement security with:
+\begin{itemize}
+    \item IPsec
+    \item TLS (SIP over TCP)
+    \item DTLS (SIP over UDP)
+    \item Secure SIP
+\end{itemize}
 
+\section{HTTP Security}
+In\textbf{HTTP/1.0} some \textbf{bad security mechanisms} are defined:
+\begin{itemize}
+    \item \textbf{Address-based Access Control}: performed by the server on the IP address of client. 
+    \item \textbf{Password-based Access Control}: \textbf{username} and \textbf{password} are sent encoded (base64).
+\end{itemize}
+Both of them are \textbf{highly insecure} since HTTP assumes we are using a Secure Channel. 
+\begin{quotebox-yellow}{}
+From HTTP/1.1 \textbf{digest authN} based on Symmetric CRA was introduce.
+\end{quotebox-yellow}
+
+\subsection{HTTP Basic Authentication}
+\begin{minipage}{0.5\textwidth}
+%	\vspace{-0.5cm}
+    \begin{enumerate}
+        \item After having created the channel using \textbf{HTTP/1.0}, the server automatically responds
+        with an "authentication failed" message but does \textbf{not} close the channel, because the client (maybe) did not know that authN was needed \(\rightarrow\) the servers sends an \textbf{authN request} to the client;
+        \item The client's browser will open a pop-up that asks the client to enter its credentials in order to perform authN.
+        \item The client submits its credentials encoded in Base64 (\textbf{not encrypted} \(\rightarrow\) \textbf{no secure}).
+        
+            \includegraphics[width=0.9\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-24 11-31-43.png}
+
+        \item The server can \textbf{verify} the credentials and (eventually) send the information requested by the client. 
+    \end{enumerate}
+\end{minipage} 
+\hspace{0.2cm}
+\begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=1.1\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-24 11-29-20.png}
+\end{minipage}
+
+\subsection{HTTP Digest Authentication}
+The keyed-digest introduced in \textbf{HTTP/1.1} is computed in the following way:
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-24 11-52-15.png}
+\end{figure}
+\noindent
+The sever may even insert an \textbf{"opaque"} field to send some state information to the client.
+\\
+\begin{minipage}{0.7\textwidth}
+%	\vspace{-0.5cm}
+    \begin{enumerate}
+        \item After having created the channel using \textbf{HTPP/1.1}, the server \textbf{automatically} responds with a "\texttt{Authentication failed}" message but \textbf{not} close the channel, because the client maybe did \textbf{not} know that authN was needed, so the server sends an \textbf{authN request} to the client containing the \textbf{nonce} and the \textbf{opaque} values encoded in Base64.
+        \item The server can then \textbf{verify} the credentials and (eventually) send the information request by the client.
+    \end{enumerate} 
+\end{minipage} 
+\hspace{1cm}
+\begin{minipage}{0.3\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-24 12-05-23.png}
+\end{minipage}

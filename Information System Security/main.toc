@@ -82,3 +82,10 @@
 \contentsline {subsection}{\numberline {3.5.8}TLS Record Protocol (authenticate-then-encrypt)}{25}{subsection.3.5.8}%
 \contentsline {subsection}{\numberline {3.5.9}Perfect Forward Secrecy}{26}{subsection.3.5.9}%
 \contentsline {subsection}{\numberline {3.5.10}TLS Downgrade Attack}{26}{subsection.3.5.10}%
+\contentsline {section}{\numberline {3.6}Virtual Servers and TLS}{27}{section.3.6}%
+\contentsline {section}{\numberline {3.7}ALPN extension (Application-Layer Protocol Negotiation)}{27}{section.3.7}%
+\contentsline {section}{\numberline {3.8}TLS Fallback - Signaling Cipher Suite Value}{27}{section.3.8}%
+\contentsline {section}{\numberline {3.9}DTLS (Datagram Transport Layer Security)}{27}{section.3.9}%
+\contentsline {section}{\numberline {3.10}HTTP Security}{28}{section.3.10}%
+\contentsline {subsection}{\numberline {3.10.1}HTTP Basic Authentication}{28}{subsection.3.10.1}%
+\contentsline {subsection}{\numberline {3.10.2}HTTP Digest Authentication}{28}{subsection.3.10.2}%
