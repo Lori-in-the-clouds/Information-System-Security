@@ -89,3 +89,9 @@
 \contentsline {section}{\numberline {3.10}HTTP Security}{28}{section.3.10}%
 \contentsline {subsection}{\numberline {3.10.1}HTTP Basic Authentication}{28}{subsection.3.10.1}%
 \contentsline {subsection}{\numberline {3.10.2}HTTP Digest Authentication}{28}{subsection.3.10.2}%
+\contentsline {subsection}{\numberline {3.10.3}HTTP \& TLS/SSL}{29}{subsection.3.10.3}%
+\contentsline {subsubsection}{TSL AuthN at the Application Layer}{29}{section*.13}%
+\contentsline {subsubsection}{AuthN in Web applications}{29}{section*.14}%
+\contentsline {subsubsection}{Web Form Security}{29}{section*.15}%
+\contentsline {section}{\numberline {3.11}HTTP Strict Transport Security (HSTS)}{29}{section.3.11}%
+\contentsline {subsection}{\numberline {3.11.1}HTTP Public Key Pinning (HPKT)}{30}{subsection.3.11.1}%

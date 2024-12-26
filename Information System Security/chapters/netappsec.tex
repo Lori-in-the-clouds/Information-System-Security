@@ -412,17 +412,133 @@ The keyed-digest introduced in \textbf{HTTP/1.1} is computed in the following wa
     \includegraphics[width=0.4\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-24 11-52-15.png}
 \end{figure}
 \noindent
-The sever may even insert an \textbf{"opaque"} field to send some state information to the client.
-\\
-\begin{minipage}{0.7\textwidth}
+\begin{itemize}
+    \item The sever may even insert an \textbf{"opaque"} field to send some state information to the client.
+    \item The server uses a nonce to prevent replay attacks.
+\end{itemize}
+
+
+\begin{minipage}{0.5\textwidth}
 %	\vspace{-0.5cm}
     \begin{enumerate}
         \item After having created the channel using \textbf{HTPP/1.1}, the server \textbf{automatically} responds with a "\texttt{Authentication failed}" message but \textbf{not} close the channel, because the client maybe did \textbf{not} know that authN was needed, so the server sends an \textbf{authN request} to the client containing the \textbf{nonce} and the \textbf{opaque} values encoded in Base64.
+        \item The clint's browser will open a pop-up that asks the client to perform authN \(\rightarrow\) the client computes the keyed-digest and sends it, together with the \textbf{opaque}, to the server. 
         \item The server can then \textbf{verify} the credentials and (eventually) send the information request by the client.
     \end{enumerate} 
 \end{minipage} 
-\hspace{1cm}
-\begin{minipage}{0.3\textwidth}
+\hspace{0.3cm}
+\begin{minipage}{0.5\textwidth}
     \centering
     \includegraphics[width=\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-24 12-05-23.png}
 \end{minipage}
+
+\newpage
+\subsection{HTTP \& TLS/SSL}
+We can use both HTTP and TLS/SSL by activating them in one of the following orders:
+\begin{itemize}
+    \item \textbf{TLS then HTTP}: the client connects to the server using TLS and then sends the HTTP request (\(\rightarrow\) Content inspection is not possible!).
+    \item \textbf{HTTP then TLS}: the client connect to the server using HTTP and then upgrades the connection to TLS (\(\rightarrow\) We see the HTTP methods until the upgrade!).
+\end{itemize}
+\begin{quotebox-red}{Beware}
+They are \textbf{not} equivalent as the activation order has an impact over \texttt{applications}, \texttt{firewall} and IDS.
+\end{quotebox-red}
+In general the most used approach is "TLS then <proto>" (e.g. HTTPS).
+
+\begin{customquote}
+\vspace{-0.4cm}
+\subsubsection{TSL AuthN at the Application Layer}
+Via client authentication it’s possible to identify the user that opened the channel (without asking for his username and password).\\
+The identification process of a client can be done at the application level, but it is not a
+standard feature of TLS.
+\end{customquote}
+
+\begin{customquote}
+\vspace{-0.4cm}
+\subsubsection{AuthN in Web applications}
+\begin{quotebox-yellow}{}
+The \textbf{earlier} access control is performed, the \textbf{smaller} is the attack surface.
+\end{quotebox-yellow}
+\begin{minipage}{0.4\textwidth}
+\vspace{-1cm}
+Moreover, there is no need to repeat authentication across different parts of the application if the user's identity is securely propagated throughout the application. Some web servers support a (semi-)automatic mapping 
+between the credential extracted from the X.509 certificate and the users of the HTTP service and/or the OS.
+\end{minipage} 
+\hspace{0cm}
+\begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=1.1\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-26 10-52-14.png}
+\end{minipage}
+\end{customquote}
+
+\begin{customquote}
+\vspace{-0.4cm}
+\subsubsection{Web Form Security}
+Technically speaking, the security of the page containing the form is not important (e.g. http://www.ecomm.it/login.html). The actual security depends on the URI of the method used to send the data to the server (e.g <form … action=“https://www...>).
+Yet, as a form of psychological help for the users, we should also look to implement security in the page containing the form
+\end{customquote}
+
+\section{HTTP Strict Transport Security (HSTS)}
+The \textbf{HSTS extension} is used by HTTP server to declare that its interaction with \textbf{User Agent} (\textbf{UA} \(\rightarrow\) e.g. browser, etc...) \textbf{must only be via HTTPS}, effectively preventing Protocol Downgrade and Cookie Hijacking attacks.\\ HSTS is applied \textbf{only} upon receiving a \textbf{valid HTTPS response}. Its validity is renewed at every access and it may:
+\begin{itemize}
+    \item Include subdomains (recommended).
+    \item Be pre-loaded into the servers.
+\end{itemize}
+\begin{quotebox-grey}{Syntax}   
+\begin{minipage}{0.4\textwidth}
+    The syntax is:
+    \begin{center}
+        \includegraphics[width=1.1\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-26 11-24-04.png}  
+    \end{center}
+\end{minipage} 
+\hspace{1cm}
+\begin{minipage}{0.4\textwidth}
+    \textbf{Example:}
+    \begin{center}
+        \includegraphics[width=1.1\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-26 11-48-14.png} 
+    \end{center} 
+\end{minipage}
+\newline
+\\
+Upon receiving an answer from the server that will contain the \textbf{HSTS Header}, inside there will be specified:
+\begin{itemize}
+    \item The expiration data in seconds.
+    \item (Optionally) the subdomains.
+    \item (Optionally) the option of being added to the client's pre-load list.
+\end{itemize}
+\end{quotebox-grey}
+
+\subsection{HTTP Public Key Pinning (HPKT)}
+\begin{minipage}{0.7\textwidth}
+%	\vspace{-0.5cm}
+The \textbf{HPKP extension} is used by HTTP servers to declare that it is using a certain \textbf{PK} by specifying the Digest of the PK and/or one or more CAs in its chain (except the root CA). The User Agent (UA) caches this key and will refuse to connect to a site presenting a different key. 
+\end{minipage} 
+\hspace{0.3cm}
+\begin{minipage}{0.3\textwidth}
+    \centering
+    \includegraphics[width=0.7\textwidth]{/home/lorenzo/Notes/Information System Security/images/image copy.png}
+\end{minipage}
+
+\begin{itemize}
+    \item HPKP is a \textbf{TOFU} (\textbf{Trust On First USe}) technique.
+    \item HPKP is dangerous if we lose control of the key.
+    \item HPKP can cause problems with key updates \(\rightarrow \) always include a backup key.
+\end{itemize}
+\begin{quotebox-grey}{Syntax}
+    \begin{minipage}{0.4\textwidth}
+    %	\vspace{-0.5cm}
+        The syntax is:
+        \begin{center}
+            \includegraphics[width=1.1\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-26 12-31-44.png} 
+            \vspace{1cm}
+            \includegraphics[width=1.1\textwidth]{/home/lorenzo/Pictures/Screenshots/Screenshot from 2024-12-26 12-33-07.png} 
+        \end{center} 
+    \end{minipage} 
+    \hspace{0.5cm}
+    \begin{minipage}{0.4\textwidth}
+        \textbf{Example}
+        \centering
+        \includegraphics[width=1.1\textwidth]{/home/lorenzo/Notes/Information System Security/images/image copy 2.png}
+    \end{minipage}
+\end{quotebox-grey}
+
+
