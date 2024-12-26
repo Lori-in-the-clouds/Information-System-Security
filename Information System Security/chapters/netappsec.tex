@@ -529,16 +529,28 @@ The \textbf{HPKP extension} is used by HTTP servers to declare that it is using 
         The syntax is:
         \begin{center}
             \includegraphics[width=1.1\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-26 12-31-44.png} 
-            \vspace{1cm}
-            \includegraphics[width=1.1\textwidth]{/home/lorenzo/Pictures/Screenshots/Screenshot from 2024-12-26 12-33-07.png} 
         \end{center} 
+        %\vspace{1cm}
+        \begin{center}
+            \includegraphics[width=1.1\textwidth]{/home/lorenzo/Pictures/Screenshots/Screenshot from 2024-12-26 12-33-07.png} 
+        \end{center}
+        
     \end{minipage} 
-    \hspace{0.5cm}
+    \hspace{1cm}
     \begin{minipage}{0.4\textwidth}
         \textbf{Example}
-        \centering
+        \begin{center}
         \includegraphics[width=1.1\textwidth]{/home/lorenzo/Notes/Information System Security/images/image copy 2.png}
+        \end{center}
     \end{minipage}
+    The \textbf{HPKP Header} includes:
+    \begin{itemize}
+        \item The digest of the PK computed with SHA-256.
+        \item The expiration date in seconds.
+        \item (Optionally) the subdomains.
+        \item (Optionally) the report URI that is used to report violations.
+    \end{itemize}
+    \textcolor{red}{\textbf{N.B.}} HPKP can work in \textbf{enforcing} or \textbf{report-only mode}.
 \end{quotebox-grey}
 
 

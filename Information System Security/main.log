@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.11.21)  26 DEC 2024 12:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.11.21)  26 DEC 2024 12:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1833,28 +1833,28 @@ File: /home/lorenzo/Notes/Information System Security/images/Screenshot from 202
 <use /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-26 12-31-44.png>
 Package pdftex.def Info: /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-26 12-31-44.png  used on input line 531.
 (pdftex.def)             Requested size: 215.7003pt x 44.80142pt.
-</home/lorenzo/Pictures/Screenshots/Screenshot from 2024-12-26 12-33-07.png, id=736, 990.70125pt x 205.76875pt>
-File: /home/lorenzo/Pictures/Screenshots/Screenshot from 2024-12-26 12-33-07.png Graphic file (type png)
-<use /home/lorenzo/Pictures/Screenshots/Screenshot from 2024-12-26 12-33-07.png>
-Package pdftex.def Info: /home/lorenzo/Pictures/Screenshots/Screenshot from 2024-12-26 12-33-07.png  used on input line 533.
-(pdftex.def)             Requested size: 215.7003pt x 44.80142pt.
 
-Overfull \hbox (19.6102pt too wide) in paragraph at lines 531--534
+Overfull \hbox (19.6102pt too wide) in paragraph at lines 531--532
  [] 
  []
 
+</home/lorenzo/Pictures/Screenshots/Screenshot from 2024-12-26 12-33-07.png, id=736, 990.70125pt x 205.76875pt>
+File: /home/lorenzo/Pictures/Screenshots/Screenshot from 2024-12-26 12-33-07.png Graphic file (type png)
+<use /home/lorenzo/Pictures/Screenshots/Screenshot from 2024-12-26 12-33-07.png>
+Package pdftex.def Info: /home/lorenzo/Pictures/Screenshots/Screenshot from 2024-12-26 12-33-07.png  used on input line 535.
+(pdftex.def)             Requested size: 215.7003pt x 44.80142pt.
 
-Overfull \hbox (19.6102pt too wide) in paragraph at lines 531--534
+Overfull \hbox (19.6102pt too wide) in paragraph at lines 535--536
  [] 
  []
 
 </home/lorenzo/Notes/Information System Security/images/image copy 2.png, id=737, 990.70125pt x 609.27625pt>
 File: /home/lorenzo/Notes/Information System Security/images/image copy 2.png Graphic file (type png)
 <use /home/lorenzo/Notes/Information System Security/images/image copy 2.png>
-Package pdftex.def Info: /home/lorenzo/Notes/Information System Security/images/image copy 2.png  used on input line 540.
+Package pdftex.def Info: /home/lorenzo/Notes/Information System Security/images/image copy 2.png  used on input line 543.
 (pdftex.def)             Requested size: 215.7003pt x 132.65596pt.
 
-Overfull \hbox (19.6102pt too wide) in paragraph at lines 538--541
+Overfull \hbox (19.6102pt too wide) in paragraph at lines 543--544
  [] 
  []
 
@@ -1880,7 +1880,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  108i,12n,107p,763b,708s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0500.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0600.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt0900.pfb>
-Output written on main.pdf (30 pages, 3657566 bytes).
+Output written on main.pdf (30 pages, 3657885 bytes).
 PDF statistics:
  874 PDF objects out of 1000 (max. 8388607)
  688 compressed objects within 7 object streams
