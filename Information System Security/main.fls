@@ -434,6 +434,40 @@ INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 202
 INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-27 13-04-27.png
 INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-27 13-04-27.png
 INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-27 13-04-27.png
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm0600.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx0600.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm0500.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx0500.tfm
+INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-27 15-26-15.png
+INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-27 15-26-15.png
+INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-27 15-26-15.png
+INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-27 15-26-15.png
+INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-27 15-26-15.png
+INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-27 15-57-24.png
+INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-27 15-57-24.png
+INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-27 15-57-24.png
+INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-27 15-57-24.png
+INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-27 15-57-24.png
+INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-27 15-56-26.png
+INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-27 15-56-26.png
+INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-27 15-56-26.png
+INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-27 15-56-26.png
+INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-27 15-56-26.png
+INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-27 17-23-56.png
+INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-27 17-23-56.png
+INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-27 17-23-56.png
+INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-27 17-23-56.png
+INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-27 17-23-56.png
+INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-27 17-38-40.png
+INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-27 17-38-40.png
+INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-27 17-38-40.png
+INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-27 17-38-40.png
+INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-27 17-38-40.png
+INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-27 18-09-09.png
+INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-27 18-09-09.png
+INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-27 18-09-09.png
+INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-27 18-09-09.png
+INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-27 18-09-09.png
 INPUT ./chapters/prova.tex
 INPUT ./chapters/prova.tex
 OUTPUT chapters/prova.aux
@@ -530,7 +564,6 @@ INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 202
 INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 17-41-06.png
 INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 17-41-06.png
 INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-16 17-41-06.png
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm0600.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm0800.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
@@ -541,7 +574,6 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm0500.tfm
 INPUT ./chapters/firewall.tex
 INPUT ./chapters/firewall.tex
 OUTPUT chapters/firewall.aux
