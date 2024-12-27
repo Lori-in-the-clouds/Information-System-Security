@@ -266,6 +266,9 @@ INPUT main.aux
 INPUT ./chapters/1-Introduction.aux
 INPUT ./chapters/1-Introduction.aux
 INPUT chapters/1-Introduction.aux
+INPUT ./chapters/2-Cryptography.aux
+INPUT ./chapters/2-Cryptography.aux
+INPUT chapters/2-Cryptography.aux
 INPUT ./chapters/prova.aux
 INPUT ./chapters/prova.aux
 INPUT chapters/prova.aux
@@ -410,6 +413,27 @@ INPUT /home/lorenzo/Notes/Information System Security/images/image copy 12.png
 INPUT /home/lorenzo/Notes/Information System Security/images/image copy 12.png
 INPUT /home/lorenzo/Notes/Information System Security/images/image copy 12.png
 INPUT /home/lorenzo/Notes/Information System Security/images/image copy 12.png
+INPUT ./chapters/2-Cryptography.tex
+INPUT ./chapters/2-Cryptography.tex
+OUTPUT chapters/2-Cryptography.aux
+INPUT ./chapters/2-Cryptography.tex
+INPUT ./chapters/2-Cryptography.tex
+INPUT chapters/2-Cryptography.tex
+INPUT /home/lorenzo/Notes/Information System Security/images/image copy 13.png
+INPUT /home/lorenzo/Notes/Information System Security/images/image copy 13.png
+INPUT /home/lorenzo/Notes/Information System Security/images/image copy 13.png
+INPUT /home/lorenzo/Notes/Information System Security/images/image copy 13.png
+INPUT /home/lorenzo/Notes/Information System Security/images/image copy 13.png
+INPUT /home/lorenzo/Notes/Information System Security/images/image copy 14.png
+INPUT /home/lorenzo/Notes/Information System Security/images/image copy 14.png
+INPUT /home/lorenzo/Notes/Information System Security/images/image copy 14.png
+INPUT /home/lorenzo/Notes/Information System Security/images/image copy 14.png
+INPUT /home/lorenzo/Notes/Information System Security/images/image copy 14.png
+INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-27 13-04-27.png
+INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-27 13-04-27.png
+INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-27 13-04-27.png
+INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-27 13-04-27.png
+INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-27 13-04-27.png
 INPUT ./chapters/prova.tex
 INPUT ./chapters/prova.tex
 OUTPUT chapters/prova.aux
@@ -723,6 +747,9 @@ INPUT main.aux
 INPUT ./chapters/1-Introduction.aux
 INPUT ./chapters/1-Introduction.aux
 INPUT chapters/1-Introduction.aux
+INPUT ./chapters/2-Cryptography.aux
+INPUT ./chapters/2-Cryptography.aux
+INPUT chapters/2-Cryptography.aux
 INPUT ./chapters/prova.aux
 INPUT ./chapters/prova.aux
 INPUT chapters/prova.aux
