@@ -77,7 +77,21 @@ It applies protection \textbf{only} when it's needed. This means that data is \t
         \centering
         \includegraphics[width=0.3\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-22 16-57-52.png}
     \end{center}
-    A \textbf{Secure Socket} is created on top of the already existing "normal" socket, effectively creating a \textbf{new level} called \textbf{Secure Session Level (SSL)}. The Secure Socket implements all the security functions and can be used by any application that wants to communicate in a secure way. Thanks to \textbf{SSL} we can: 
+    A \textbf{Secure Socket} is created on top of the already existing "normal" socket, effectively creating a \textbf{new level} called \textbf{Secure Session Level (SSL)}. The Secure Socket implements all the security functio3.12.1 Web-Based Payment Systems
+    The steps are:
+    1. The merchant M presents the products or services on their website
+    for the carholder C to browser.
+    2. C places an order through the merchant’s website, initiating the pay-
+    ment process.
+    3. M redirects C to a payment gateway PG.
+    4. PG will create a Secure TLS channel between the PG itself and C.
+    5. C provide the credit card data.
+    6. Inside the PG, a Virtual POS (Point Of Sale) will handle the data
+    and will ask to the payment network (of the specific credit card) if they
+    are valid.
+    7. If the provided credit card data are correct, the payment network will
+    return a positive answer.
+    8. Finally M isns and can be used by any application that wants to communicate in a secure way. Thanks to \textbf{SSL} we can: 
     \begin{itemize}
         \item Simplify the work of application developer
         \item Avoid implementation errors
@@ -525,7 +539,7 @@ The \textbf{HPKP extension} is used by HTTP servers to declare that it is using 
 \end{itemize}
 \begin{quotebox-grey}{Syntax}
     \begin{minipage}{0.4\textwidth}
-    %	\vspace{-0.5cm}
+    \vspace{-0.5cm}
         The syntax is:
         \begin{center}
             \includegraphics[width=1.1\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-26 12-31-44.png} 
@@ -543,6 +557,8 @@ The \textbf{HPKP extension} is used by HTTP servers to declare that it is using 
         \includegraphics[width=1.1\textwidth]{/home/lorenzo/Notes/Information System Security/images/image copy 2.png}
         \end{center}
     \end{minipage}
+    \noindent
+    \\
     The \textbf{HPKP Header} includes:
     \begin{itemize}
         \item The digest of the PK computed with SHA-256.
@@ -553,4 +569,88 @@ The \textbf{HPKP extension} is used by HTTP servers to declare that it is using 
     \textcolor{red}{\textbf{N.B.}} HPKP can work in \textbf{enforcing} or \textbf{report-only mode}.
 \end{quotebox-grey}
 
+\noindent{\color{gray!50}\rule{\textwidth}{0.5pt}}
+%---------------------------------
+\section{E-Payment System}
+What happen in the past:
+\begin{itemize}
+    \item Failure of digital cash due to technical and legal reasons.
+    \item Failure of a dedicated payment protocol. (SET-Secure Electronic Transaction) caused by technical and organizational challenges.
+    \begin{quotebox-red}{Beware}
+    Providing users with specialized software can compromise the security of the system. 
+    \end{quotebox-red}
+\end{itemize}
+Currently, the most widely used approach is transmitting credit card numbers over a TLS channel. However, this does not guarantee protection against fraud: in the past, VISA Europe reported that internet transactions accounted for about 50\% of fraud attempts, despite representing only 2\% of total transactions.
 
+\newpage
+\subsection{Web-Based Payment Systems}
+The steps are:
+\\
+\\
+\begin{minipage}{0.6\textwidth}
+%	\vspace{-0.5cm}
+    \begin{enumerate}
+        \item The \textbf{merchant M} presents the products or services on their website for the \textbf{carholder C} to browser. 
+        \item \textbf{C} places an order through the merchant's website, initiating the payment process.
+        \item \textbf{M} redirects \textbf{C} to a \textbf{payment gateway PG}.
+        \item \textbf{PG} will create a \textbf{Secure TLS channel} between the \textbf{PG} itself and \textbf{C}.
+        \item \textbf{C} provide the credit card data.
+        \item Inside the \textbf{PG}, a \textbf{Virtual POS (Point Of Sale)} will handle the data and will ask to the payment network (of the specific credit card) if they are valid.
+        \item If the provided credit card data are correct, the payment network will return a
+        positive answer.
+        \item Finally \textbf{M} is informed of the confirmation of the transaction and it will provide the goods to \textbf{C}.
+    \end{enumerate} 
+\end{minipage} 
+\hspace{0.3cm}
+\begin{minipage}{0.4\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-26 14-27-18.png}
+\end{minipage}
+\noindent
+\\
+\\
+\\
+Different \textbf{PG} can have different \textbf{deduction fees} (e.g 5\%,10\%,etc...) which cumulates with the price proposed by \textbf{M}.\\
+In order for all of this work, \textbf{C must have TLS enabled} in its browser. 
+\begin{quotebox-grey}{Consequences}
+\begin{itemize}
+    \item The effective security depends upon the configuration of both the server and the client.
+    \item The \textbf{PG} has all the information (payment + goods) while \textbf{M} knows only info about the goods.
+\end{itemize}
+\end{quotebox-grey}
+
+\subsection{PCI DSS (Payment Card Industry Data Security Standard)}
+The \textbf{PCI DSS} standard is required by \textbf{all credit issuers} or internet-based transactions. It contains very detailed technical prescriptions (compared to other security standards):
+\begin{itemize}
+    \item \textbf{Design, Build and Operate a Protected Network:}
+    \begin{itemize}
+        \item \textbf{R1}:install and maintain a configuration with a firewall to protect access to cardholders’ data.
+        \item \textbf{R2}: do not use pre-defined system passwords or other security parameters set by
+        the manufacturer.
+    \end{itemize}
+    \item \textbf{Protect the Cardholders’ Data:}
+    \begin{itemize}
+        \item \textbf{R3}: protect the stored cardholders’ data.
+        \item \textbf{R4}: encrypt the cardholders’ data hen transmitted across an open public network.
+    \end{itemize}
+    \item \textbf{Establish and Follow a Program For Vulnerability Management:}
+    \begin{itemize}
+        \item \textbf{R5}: use an antivirus and regularly update it.
+        \item \textbf{R6}: develop and maintain protected applications and systems.
+    \end{itemize}
+    \item \textbf{Implement Strong Access Control:}
+    \begin{itemize}
+        \item \textbf{R7}: limit the access to the cardholders’ data only to those needed for a specific risk.
+        \item \textbf{R8}: assign a single unique ID to each user.
+        \item \textbf{R9}: limit physical access to the cardholders’ data.
+    \end{itemize}
+    \item \textbf{Regularly Monitor and Test the Networks:}
+    \begin{itemize}
+        \item \textbf{R10}: monitor and track all accesses to the network resources and cardholders’ data.
+        \item \textbf{R11}: periodically test the protection systems and procedures.
+    \end{itemize}
+    \item \textbf{Adopt a Security Policy:}
+    \begin{itemize}
+        \item \textbf{R12}: adopt a security policy.
+    \end{itemize}
+\end{itemize}
