@@ -232,11 +232,44 @@ Block algorithms are designed to encrypt \textbf{fixed-size} blocks of data, so 
 \textbf{Sream Encryption Algorithms} are another kind of Symmetric Encryption algorithms that \textbf{not} require the division of the \textbf{P} in blocks, as they tipically works with a \textbf{single} bit or byte at a time. This category contains the \textbf{only perfect algorithm} which is called \textbf{One-Time-Pad}: the algorithm requires a \textbf{K} as long as \textbf{P}, for this reason it's \textbf{not} of pratical use (unless \textbf{P} is very small).\\Real stream algorithms use \textbf{pseudo-random key generators}, which \textbf{must} be synchronized between sender and receiver. For example, \textbf{RC4} and \textbf{SEAL} are some \textbf{old}
 instances of stream algorithms, while CTR can be considered a stram algorithm when \textbf{N=1}.
 \end{minipage} 
-\hspace{0.5cm}
+\hspace{0.3cm}
 \begin{minipage}{0.4\textwidth}
     \centering
     \includegraphics[width=\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-28 11-20-36.png}
 \end{minipage}
+\noindent
+\\
+\\
+The \textbf{K} is \textbf{randomly generated} and is used to XOR the \textbf{P} in order to obtain the \textbf{C}. This
+makes stream algorithms really fast and unpredictable, which is good for security.
+Decryption can be done \textbf{only} by using the \textbf{same K} \(\rightarrow \) if an attacker can delete part of the
+\textbf{C}, decryption will be wrong since the \textbf{C}’s length is not the same as the \textbf{K}.
+\noindent   
+\begin{quotebox-grey}{Salsa20 and ChaCh20}
 
+    \textbf{Salsa20} and \textbf{ChaCha20} are stream algorithms that use \textbf{128-256 bits K}. ChaCha20 is an improvement of Salsa20: it is \textbf{faster} on some architecture and has more \textbf{Diffusion Bits} (\(\rightarrow \) changing one input bits propagates the change t more output bits).
+    \begin{itemize}
+        \item Base Operation: 32 bits ARX(Add-Rotate-XOR).
+        \item Base function: \(
+        f(\text{Key}_{256}, \text{Nonce}_{64}, \text{Counter}_{64}) = 512 \text{-bit keystream block}
+        \)
+    \end{itemize}
+    This allows \textbf{O(1)} decryption time for any random block. Salsa20 performs 20 random mixes of the \textbf{P}, while the \textbf{Salsa20/12} and \textbf{Salsa20/8} variants perform 12 and 8 respectively, making them faster but less secure. Meanwhile, ChaCha20 has been standardized and heavily adopted, especially in \textbf{IETF} Protocols. However, IETF uses a slightly modified version of ChaCha20
+    that limits the maximum size of encryptable data to \textbf{256GB}. To overcome this limit we would need to use the original ChaCha20.
+\end{quotebox-grey}
+
+\section{Length of Secret Keys}
+%	\vspace{-0.5cm}
+The \textbf{K} should be adequate, meaning that if the encryption algorithm is well designed and the \textbf{K} is kept secret, then the \textbf{only} possible attack is a \textbf{Brute Force Attack} wich requires approximately: \[T=2^{Nbit}\]
+(Where \(N^{Nbit}\) refers to the key lenght in bits). 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{/home/lorenzo/Notes/Information System Security/images/image copy 17.png}
+\end{figure}
+\begin{itemize}
+    \item \textbf{Symmetric Encryption Algorithms: K}s under 128 bits are \textbf{insecure}.
+    \item \textbf{Asymmetric Encryption Algorithms: K}s under 2048 bits are \textbf{insecure}.
+\end{itemize}
+The area of low security increases with time, as computer become more powerful. Longer K means keeping data secret for longer, at the cost of an increase in time needed to encrypt data.
 
 
