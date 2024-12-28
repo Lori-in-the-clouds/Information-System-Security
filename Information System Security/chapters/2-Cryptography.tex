@@ -193,7 +193,50 @@ Block algorithms are designed to encrypt \textbf{fixed-size} blocks of data, so 
     Depending on the chosen \textbf{Padding Technique}, we can allow or avoid different kind of attacks. Some techniques also offer minimal integrity control (e.g. if the key is wrong or data is manipulated, the padding bytes are incoherent).When the data size is smaller than the block size, special techniques such as \textbf{CFB} (\textbf{Cipher FeedBack}) or \textbf{OFB} (\textbf{Output FeedBack}) are the preferred.\\
     Even if the plaintext is an exact multiple of the block size, padding must still be added to avoid errors in the interpretation of the last block. 
     \vspace{0.1cm}
-    \item \textbf{CTS (Ciphertext Stealing)}
+    \item \textbf{CTS (Ciphertext Stealing)}: CTS allows the use of block algorithms \textbf{without} the need of Padding. CTS works in the following way:
+    \begin{enumerate}
+        \item The last (partial block) \(P_N\) is filled with a copy of the last bytes taken from the penultimate block \(P_{N-1}\).
+        \item The copied bytes are \textbf{removed} form the (now partial) penultimate block.
+        \item After encryption, the last and penultimate block' positions are \textbf{exchanged}.
+    \end{enumerate}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\textwidth]{/home/lorenzo/Notes/Information System Security/images/image copy 15.png}   
+    \end{figure}
+    \textcolor{red}{\textbf{N.B.}} CTS is particularly useful when we cannot increase the size of the data after encryption, such as in storage encryption. The computation time of encryption slightly increases due to the need for additional steps, such as modifying and swapping blocks.
+    \vspace{0.1cm}
+    \item \textbf{CTR (Counter Mode)}: CTR modifies block algorithm in order to encipher N bits at a time (often N = 1). CTR can be used \textbf{only} to encipher \textbf{P} smaller than one block size. It does not require padding and allows random direct access to any ciphertext block (no dependency between blocks). Requires a \textbf{nonce} and a \textbf{counter}, combined by a suitable function (concatenation, XOR, etc.) to generate the input block. CTR works in the following way:
+    \begin{enumerate}
+        \item \textbf{f(nonce, counter)} outputs exactly one block size of data.
+        \item This block gets encrypted with the \textbf{K}.
+        \item The \textbf{leftmost group} (meaning the first N bits) are extrapolated from the block and are \textbf{XOR}ed with the corresponding \(P_i\)’s group, which in turn generates the corresponding \(C_i\)’s group.
+    \end{enumerate}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\textwidth]{/home/lorenzo/Notes/Information System Security/images/image copy 16.png}
+    \end{figure}
+    \begin{quotebox-red}{Cancellation attacks}
+        CTR mode is vulnerable to cancellation attacks because it relies on synchronized counters between sender and receiver.    
+    \end{quotebox-red}
+    \begin{quotebox-yellow}{CTR as a stream ciphertext}
+    The byte-oriented CTR mode of a block algorithm may be considered a stream algorithm.
+    \end{quotebox-yellow}
+    \textcolor{red}{\textbf{N.B.}} Moreover, if a group is \textbf{modified}, the error does not propagate to the successive group since group are independent \(\rightarrow \) it is possible to decrypt a random group \textbf{without} having decrypt the others.
+    \\\textbf{Parallel encryption and decryption are possible.} 
 \end{itemize}
 \end{itemize}
+
+\subsection{Stream Encryption Algorithms}
+\begin{minipage}{0.6\textwidth}
+%	\vspace{-0.5cm}
+\textbf{Sream Encryption Algorithms} are another kind of Symmetric Encryption algorithms that \textbf{not} require the division of the \textbf{P} in blocks, as they tipically works with a \textbf{single} bit or byte at a time. This category contains the \textbf{only perfect algorithm} which is called \textbf{One-Time-Pad}: the algorithm requires a \textbf{K} as long as \textbf{P}, for this reason it's \textbf{not} of pratical use (unless \textbf{P} is very small).\\Real stream algorithms use \textbf{pseudo-random key generators}, which \textbf{must} be synchronized between sender and receiver. For example, \textbf{RC4} and \textbf{SEAL} are some \textbf{old}
+instances of stream algorithms, while CTR can be considered a stram algorithm when \textbf{N=1}.
+\end{minipage} 
+\hspace{0.5cm}
+\begin{minipage}{0.4\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-28 11-20-36.png}
+\end{minipage}
+
+
 
