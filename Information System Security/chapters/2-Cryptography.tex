@@ -244,7 +244,8 @@ The \textbf{K} is \textbf{randomly generated} and is used to XOR the \textbf{P} 
 makes stream algorithms really fast and unpredictable, which is good for security.
 Decryption can be done \textbf{only} by using the \textbf{same K} \(\rightarrow \) if an attacker can delete part of the
 \textbf{C}, decryption will be wrong since the \textbf{C}’s length is not the same as the \textbf{K}.
-\noindent   
+\noindent 
+\begin{center}  
 \begin{quotebox-grey}{Salsa20 and ChaCh20}
 
     \textbf{Salsa20} and \textbf{ChaCha20} are stream algorithms that use \textbf{128-256 bits K}. ChaCha20 is an improvement of Salsa20: it is \textbf{faster} on some architecture and has more \textbf{Diffusion Bits} (\(\rightarrow \) changing one input bits propagates the change t more output bits).
@@ -257,19 +258,293 @@ Decryption can be done \textbf{only} by using the \textbf{same K} \(\rightarrow 
     This allows \textbf{O(1)} decryption time for any random block. Salsa20 performs 20 random mixes of the \textbf{P}, while the \textbf{Salsa20/12} and \textbf{Salsa20/8} variants perform 12 and 8 respectively, making them faster but less secure. Meanwhile, ChaCha20 has been standardized and heavily adopted, especially in \textbf{IETF} Protocols. However, IETF uses a slightly modified version of ChaCha20
     that limits the maximum size of encryptable data to \textbf{256GB}. To overcome this limit we would need to use the original ChaCha20.
 \end{quotebox-grey}
+\end{center}
 
 \section{Length of Secret Keys}
 %	\vspace{-0.5cm}
 The \textbf{K} should be adequate, meaning that if the encryption algorithm is well designed and the \textbf{K} is kept secret, then the \textbf{only} possible attack is a \textbf{Brute Force Attack} wich requires approximately: \[T=2^{Nbit}\]
 (Where \(N^{Nbit}\) refers to the key lenght in bits). 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\textwidth]{/home/lorenzo/Notes/Information System Security/images/image copy 17.png}
-\end{figure}
+\\
+\\
+\\
+\begin{minipage}{0.6\textwidth}
+%	\vspace{-0.5cm}
 \begin{itemize}
     \item \textbf{Symmetric Encryption Algorithms: K}s under 128 bits are \textbf{insecure}.
     \item \textbf{Asymmetric Encryption Algorithms: K}s under 2048 bits are \textbf{insecure}.
-\end{itemize}
+\end{itemize} 
+\end{minipage} 
+\hspace{0cm}
+\begin{minipage}{0.4\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{/home/lorenzo/Notes/Information System Security/images/image copy 17.png}
+\end{minipage}
+\noindent
 The area of low security increases with time, as computer become more powerful. Longer K means keeping data secret for longer, at the cost of an increase in time needed to encrypt data.
+\newpage
+\section{Asymmetric Cryptography}
+\begin{minipage}{0.6\textwidth}
+%	\vspace{-0.5cm}
+Asymmetric Cryptography uses two different \textbf{K}:
+\begin{itemize}
+    \item \textbf{Private Key} (\textbf{SK})
+    \item \textbf{Public Key} (\textbf{PK})
+\end{itemize}
+These keys are generated in such a way that \textbf{SK} \(\neq\) \textbf{PK}. The keys have \textbf{inverse functionality} \(\rightarrow \) data encrypted with one \textbf{K} can be decrypted \textbf{only} by the other \textbf{K}. This kind of cryptography has a \textbf{high computational load}, for that reason it is \textbf{only} used to transmit \textbf{K} used in Symmetric Cryptography and to create \textbf{digital signatures}.
+\end{minipage} 
+\hspace{0.3cm}
+\begin{minipage}{0.4\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{/home/lorenzo/Notes/Information System Security/images/image copy 18.png}
+\end{minipage}
 
+\subsection{Digital Signature}
+\begin{minipage}{0.6\textwidth}
+	\vspace{-0.3cm}
+To perform a \textbf{digital signature} the author encrypts the message with its \textbf{SK}. The message can be then be decrypted by anyone who has access to the PK of the author. The message is \textbf{not} secret, but it is \textbf{signed by the author} (
+    \(\rightarrow \) digital signature provides \textbf{data authN}) and \textbf{integrity}.
+\end{minipage} 
+\hspace{0.3cm}
+\begin{minipage}{0.4\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-28 15-25-58.png}
+\end{minipage}
+\subsection{Confidentiality without Shared Secrets}
+\begin{minipage}{0.6\textwidth}
+	\vspace{-0.6cm}
+It is possible to generate a \textbf{secret message} for a particular \textbf{user X} just by encrypting it with
+its PK. By doing so, we ensure that the message can \textbf{only} be decrypted by \textbf{X}, since \textbf{X} is the
+\textbf{only one} who knows the \textbf{SK}. 
+\end{minipage} 
+\hspace{0.3cm}
+\begin{minipage}{0.4\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-28 15-28-47.png}
+\end{minipage}
+\vspace{-0.5cm}
+\subsection{Secret Key Exchange}
+\begin{minipage}{0.5\textwidth}
+\vspace{-0.5cm}
+Using asymmetric algorithms for secret key exchange enables confidentiality without
+the need for shared secrets, and is often used to securely transmit a secret key for
+symmetric encryption.
+\end{minipage} 
+\hspace{0.3cm}
+\begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-28 15-34-16.png}
+\end{minipage}
 
+\vspace{-0.2cm}
+\noindent
+\begin{center}
+\begin{quotebox-yellow}{Diffie-Helmann Algorithm}
+    The Diffie-Hellman (DH) algorithm is one of the first public-key algorithms invented and is primarily used for key agreement. The process is as follows:
+
+    \begin{itemize}
+        \item Alice (A) and Bob (B) agree on two public integers:
+        \begin{itemize}
+            \item \( p \): a large prime number
+            \item \( g \): a primitive root modulo \( p \) (typically \( g = 2, 3, \) or \( 5 \))
+        \end{itemize}
+        \item The length of the DH key is determined by the number of bits in \( p \).
+        \item Alice randomly chooses an integer \( x > 0 \) and computes:
+        \(
+        X = g^x \mod p
+        \)
+        \item Bob randomly chooses an integer \( y > 0 \) and computes:
+        \(
+        Y = g^y \mod p
+        \)
+        \item A and B exchange \( X \) and \( Y \).
+        \item Alice computes the shared secret key:
+        \(
+        K_A = Y^x \mod p
+        \)
+        \item Bob computes the shared secret key:
+        \(
+        K_B = X^y \mod p
+        \)
+        \item It follows that:
+        \(
+        K_A = K_B = g^{xy} \mod (p)
+        \)
+    \end{itemize}
+    Also this approach is not completely secure, since it can be
+    attacked using the \textbf{Diffie-Hellman MITM attack}. The way in which the algorithm works and the attack is performed are explained by the following figures:
+    \begin{figure}[H]
+        \centering
+        \vspace{-0.1cm}
+        \includegraphics[width=0.6\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-28 15-40-45.png}
+    \end{figure}
+\end{quotebox-yellow}
+\end{center}
+
+\subsection{Elliptic Curve Cryptography}
+
+An \textbf{Elliptic Curve Cryptosystem (ECC)} executes operations on the surface of a 2D elliptic
+curve, instead of using modular arithmetic. These problems are more complex than the modular
+arithmetic ones, but at the same time they allow to use shorter keys (up to \(\frac{1}{10}\)). Most of the
+algorithm we have seen (except RSA) have been revisited to adapt them to the elliptic curve:
+\begin{itemize}
+    \item \textbf{ECDSA} for Digital Signature;
+    \item \textbf{ECDH} fro Key Agreement;
+    \item \textbf{ECMQV} for AuthN Key Agreement;
+    \item \textbf{ECIES} for Key Distribution;
+\end{itemize}
+
+\section{Digest for message integrity}
+All the previous methods can guarantee (to a certain extent and for a certain time) that a message from a sender to the receiver \textbf{cannot} be understood by a third-party. However, it is still possible for an attacker to intercept the traffic from the 2 parties and \textbf{change} the encrypted message (Spoofing attack), even in an \textbf{unpredictable} way. Upon receiving the corrupted message, the receiver discard it and (probably) asks for retransmission, causing an(indirect) DoS attack.
+\begin{center}
+\begin{quotebox-red}{Beware}
+Integrity is \textbf{not} about \textbf{preventing} modifications of data, it actually means that when data is received, the receiver can \textbf{verify} if the data has been modified or \textbf{not}.
+\end{quotebox-red}
+\end{center}
+\noindent
+\begin{minipage}{0.5\textwidth}
+\vspace{-1.5cm}
+To \textbf{guarantee integrity} the most common technique is to compute a \textbf{Digest}: fixed length summary of the whole message. Digests must be protected, as, conceptually, they are similar
+to a checksum. But since checksum are easy to attack, Digests must to be calculated via a \textbf{Cryptographic Hash Function}.
+\end{minipage} 
+\hspace{0cm}
+\begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{/home/lorenzo/Notes/Information System Security/images/image copy 19.png}
+\end{minipage}
+
+\subsection{Hash Functions}
+\textbf{Cryptographic Hash Functions} make Digests:
+\begin{itemize}
+    \item \textbf{Fast to compute}
+    \item \textbf{Impossible or very difficult to invert}
+\end{itemize}
+Moreover, good Cryptographic Hash Functions should make it difficult to create  \textbf{Collisions}: collision happens when two different messages produce the same Digest.
+Generally, Cryptographic Hash Functions work like this:
+\\
+\\
+\begin{minipage}{0.6\textwidth}
+	\vspace{-0.8cm}
+\begin{enumerate}
+    \item Split the message $M$ into $N$ blocks: $M_1, M_2, \dots, M_N$
+    \item Iteratively applying a base function $f$ to each block.
+    \[
+    V_k = f(V_{k-1}, M_k) \quad \text{with} \quad V_0 = IV \quad \text{and} \quad h = V_N
+    \]
+\end{enumerate} 
+\end{minipage} 
+\hspace{0cm}
+\begin{minipage}{0.4\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-28 16-13-17.png}
+\end{minipage}
+
+\begin{quotebox-grey}{Common Cryptographic Hash Functions}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{/home/lorenzo/Notes/Information System Security/images/image copy 20.png}
+    \end{figure}
+\end{quotebox-grey}
+
+\subsection{SHA-2 family}
+Each algorithm in the \textbf{SHA-2 Family} has the same \textbf{block size (512 bits)}, but they have \textbf{increasingly higher Digest size}. The Digest size is important because a bigger Digest provoke less collisions (or aliasing).
+If a Cryptographic Hash Function is \textbf{well designed} and generates a \(N_{bits}\) Digest, then the \textbf{probability of aliasing} is: \[P_A \propto \frac{1}{2^N}\]
+\vspace{-0.3cm}
+\begin{center}
+    \begin{quotebox-red}{Birthday Paradox}
+        The \textbf{Birthday Paradox} is a statistical consideration that warns us of the risks of making Digests too big: a \(N_{bits}\) Digest is \textbf{insecure} when more than \(2^{\frac{N}{2}}\) digests are generated. This is because the probability to have a collision is \textbf{PA \(\thicksim\) 50\%}.
+    \end{quotebox-red}
+\end{center}
+\textcolor{red}{\textbf{N.B.}} A cryptosystem is \textbf{balanced} when the Encryption algorithm and Digest function have the same resistance. For example, SHA-256 and SHA-512 have been designed for AES-128 and AES-256 respectively.
+\subsection{SHA-3 family}
+SHA-3 is based on the \textbf{Keccak} algorithm, it uses an elegant design that is easy to analyse and performs very well on many different computing devices.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-28 17-37-14.png}
+\end{figure}
+\section{KDF (Key Derivation Function)}
+KDFs are \textbf{Cryptographic Hash Functions} used to create a random \textbf{K}:
+\[
+K = \text{KDF}(P, S, I)
+\]
+Where:
+\begin{itemize}
+    \item \textbf{\( P \) is the password} or passphrase.
+    \item \textbf{\( S \) is the salt}, which makes the key \( K \) harder to guess given \( P \).
+    \item \textbf{\( I \) is the number of iterations}, used to slow down the computation and increase security.
+\end{itemize}
+\noindent
+\begin{customquote}
+The main KDF is \textbf{PBKDF2}:
+\[
+\text{DK} = \text{PBKDF2}(\text{PRF}, \text{P}, \text{S}, I, \text{dkLen})
+\]
+Where \textbf{P}, \textbf{S} and \textbf{I} are the same as above, while:
+\begin{itemize}
+    \item \textbf{PRF}: is a \textbf{Pseudo-Random Function} that outputs a value of lenght \textbf{hLen}.
+    \item \textbf{dkLen}: is the \textbf{Desired Lenght of the DK}.
+\end{itemize}
+The derived key, \( DK \), is generated by concatenating subkeys \( T_1, T_2, \dots, T_{dkLen/hLen} \), where each \( |T_i| = hLen \).
+\end{customquote}
+\noindent{\color{gray!50}\rule{\textwidth}{0.5pt}}
+\section{MIC, MAC \& MID}
+In the telecommunication and networking environment, the \textbf{MIC (Message Integrity Code)} is the code that is added to the message to guarantee integrity. Meanwhile, in the application
+field, the same code is named MAC (Message Authentication Field), since, if the message
+has not been modified \(\rightarrow \) data authN.\\
+Since the MIC/MAC code is an addition to the original message, a \textbf{unique MID} (\textbf{Message IDentifier}) is also concatenated with the message, in order to avoid Replay attacks.
+
+\section{Digest Protection}
+In the simple case in which a Digest is used to verify that a file on disk has not been changed, a good approach could be to store the digest in a \textbf{different and secure place}. But when the data is being \textbf{transmitted}, Digests \textbf{cannot} be exchanged OOB \(\rightarrow \) Digests \textbf{must be intrinsically secure}. To achieve this, there are two main techniques:
+\begin{itemize}
+    \item \textbf{AuthN by means of Keyed Digest}
+    \item \textbf{Authenticated Encryption}
+\end{itemize}
+
+\subsection{AuthN by means of Keyed Digest}
+The Digest \textbf{d} is sent along with the message \textbf{M}, but it is calculated using \textbf{both} the \textbf{M} and the
+\textbf{K}, which is shared \textbf{only} between sender and receiver (symmetric key).
+\\
+\\
+\begin{minipage}{0.5\textwidth}
+\vspace{-1cm}
+The following operations are perfomed:
+\begin{itemize}
+    \item \textbf{Sender}: \(d = \text{digest}(K, M)\).
+    \item \textbf{Transmission}: \(M || d\).
+    \item \textbf{Receiver}: \(d' = \text{digest}(K, M)\).
+    \item \textbf{Verification}: If \(d == d'\), the message is authenticated, otherwise an alarm is raised.
+\end{itemize}
+
+\end{minipage} 
+\hspace{0.3cm}
+\begin{minipage}{0.5\textwidth}
+    \centering
+    \includegraphics[width=0.6\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-28 17-18-08.png}
+\end{minipage}
+
+\noindent
+This technique also guarantees \textbf{data authN}, since \textbf{only} who knows the \textbf{K} can compare the receive digest with the one calculated from the received data (\(\rightarrow \) the Keyed Digest is the fastest way to guarantee \textbf{integrity} and \textbf{data authN}).
+\vspace{-0.5cm}
+\begin{center}
+    \begin{quotebox-red}{}
+        However, it does \textbf{not} provide \textbf{non-repudiation}, since it is \textbf{not} possible to determine which
+        party created the data, because both have the means (data and \textbf{K}) to create the Keyed Digest.
+    \end{quotebox-red}   
+\end{center}
+\begin{itemize}
+    \item \textbf{HMAC}: is the \textbf{best way} to compute a \textbf{secure MAC} starting from a hash function \textbf{H}.
+    \textbf{H} must have a block of size \textbf{B} bytes, an output of \textbf{L} bytes, where \(B > L\).\\ Moreover, in order to work with HMAC we need:
+    \begin{itemize}
+        \item \textbf{ipad}: \(0x36\) repeated \(B\) times.
+        \item \textbf{opad}: \(0x5C\) repeated \(B\) times.
+        \item A \textbf{K} bigger or equal to \textbf{L} (\( |K| > L \)). \textbf{Never} use a \textbf{K} smaller than \textbf{L}! (e.g using SHA-1 with HMAC means that \textbf{K must} be of \textbf{at least 160 bits}):
+        \begin{itemize}
+            \item if \(|K| > B\) \(\rightarrow \) \(K'=H(K)\).
+            \item else \(\rightarrow \) \(K'=K\).
+            \item if \(|K'|>B\) \(\rightarrow \) \(K'\) is 0-padded up to \textbf{B} bytes; 
+        \end{itemize}
+    \end{itemize}
+    \[
+        \text{hmac-H} = H\left( K' \oplus \text{opad} || H(K' \oplus \text{ipad} || \text{data}) \right)
+        \]
+    \item \textbf{CBC-MAC}:
+\end{itemize}
