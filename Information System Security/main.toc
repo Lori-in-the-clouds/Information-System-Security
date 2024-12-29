@@ -39,102 +39,105 @@
 \contentsline {section}{\numberline {2.10}Digital Signature}{22}{section.2.10}%
 \contentsline {subsection}{\numberline {2.10.1}PKC (Public Key Certificate)}{23}{subsection.2.10.1}%
 \contentsline {subsection}{\numberline {2.10.2}PKI (Public Key Infrastructure)}{24}{subsection.2.10.2}%
-\contentsline {chapter}{\numberline {3}Authentication techniques protocols, and architectures}{25}{chapter.3}%
-\contentsline {subsubsection}{Authentication vs Authorization}{25}{section*.5}%
-\contentsline {section}{\numberline {3.1}Authentication factors}{25}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Risks}{25}{subsection.3.1.1}%
-\contentsline {section}{\numberline {3.2}Digital Authentication model (NIST SP800.63B)}{26}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Generic authentication protocol}{26}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Password base authentication}{26}{section.3.4}%
-\contentsline {section}{\numberline {3.5}The "dictionary" attack}{27}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Rainbow Table attack}{27}{section.3.6}%
-\contentsline {section}{\numberline {3.7}Salting Passwords: A Defense Against Dictionary and Rainbow Table Attacks}{28}{section.3.7}%
-\contentsline {subsubsection}{Steps for each user (UID):}{28}{section*.6}%
-\contentsline {subsubsection}{Password Verification with Salt}{28}{section*.7}%
-\contentsline {section}{\numberline {3.8}Strong authentication definitions}{28}{section.3.8}%
-\contentsline {section}{\numberline {3.9}Challenge-Response Authentication (CRA)}{28}{section.3.9}%
-\contentsline {subsection}{\numberline {3.9.1}Symmetric CRA}{29}{subsection.3.9.1}%
-\contentsline {subsection}{\numberline {3.9.2}Mutual symmetric CRA}{29}{subsection.3.9.2}%
-\contentsline {subsubsection}{Version 1: Basic Exchange}{29}{section*.8}%
-\contentsline {subsubsection}{Version 2: Improved Performance}{29}{section*.9}%
-\contentsline {subsection}{\numberline {3.9.3}Asymmetric CRA}{29}{subsection.3.9.3}%
-\contentsline {subsubsection}{Applications}{29}{section*.10}%
-\contentsline {subsubsection}{Security:}{30}{section*.11}%
-\contentsline {subsubsection}{Problems:}{30}{section*.12}%
-\contentsline {section}{\numberline {3.10}One-Time Password(OTP)}{30}{section.3.10}%
-\contentsline {subsection}{\numberline {3.10.1}S/KEY System}{30}{subsection.3.10.1}%
-\contentsline {subsection}{\numberline {3.10.2}Time-based OTP (TOPT)}{30}{subsection.3.10.2}%
-\contentsline {subsection}{\numberline {3.10.3}Out-of-Band (OOB) OTP}{31}{subsection.3.10.3}%
-\contentsline {subsection}{\numberline {3.10.4}Two-/Multi-Factor Authentication (2FA/MFA)}{31}{subsection.3.10.4}%
-\contentsline {section}{\numberline {3.11}Authentication of human beings}{31}{section.3.11}%
-\contentsline {section}{\numberline {3.12}Kerberos Authentication System}{32}{section.3.12}%
-\contentsline {subsection}{\numberline {3.12.1}Players}{32}{subsection.3.12.1}%
-\contentsline {subsection}{\numberline {3.12.2}How it Works?}{32}{subsection.3.12.2}%
-\contentsline {subsection}{\numberline {3.12.3}Single Sign-On (SSO)}{33}{subsection.3.12.3}%
-\contentsline {section}{\numberline {3.13}Authentication Interoperability}{33}{section.3.13}%
-\contentsline {subsection}{\numberline {3.13.1}OATH}{33}{subsection.3.13.1}%
-\contentsline {subsection}{\numberline {3.13.2}Google Authenticator}{33}{subsection.3.13.2}%
-\contentsline {subsection}{\numberline {3.13.3}FIDO (Fast Identity Online)}{34}{subsection.3.13.3}%
-\contentsline {subsubsection}{FIDO's frameworks include:}{34}{section*.13}%
-\contentsline {chapter}{\numberline {4}Firewall and IDS/IPS}{35}{chapter.4}%
-\contentsline {section}{\numberline {4.1}What is a Firewall?}{35}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Ingress vs Egress firewall}{35}{section.4.2}%
-\contentsline {section}{\numberline {4.3}The three principles of the firewall}{35}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Authorization policies}{35}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Basic components}{35}{section.4.5}%
-\contentsline {section}{\numberline {4.6}A which level the controls are made?}{36}{section.4.6}%
-\contentsline {section}{\numberline {4.7}Network-Level Controls}{36}{section.4.7}%
-\contentsline {subsection}{\numberline {4.7.1}Packet filter}{36}{subsection.4.7.1}%
-\contentsline {subsection}{\numberline {4.7.2}Circuit-Level Gateway}{36}{subsection.4.7.2}%
-\contentsline {subsection}{\numberline {4.7.3}Application-Level Gateway}{37}{subsection.4.7.3}%
-\contentsline {subsection}{\numberline {4.7.4}HTTP Proxies}{37}{subsection.4.7.4}%
-\contentsline {subsection}{\numberline {4.7.5}WAF (Web Application Firewall)}{38}{subsection.4.7.5}%
-\contentsline {section}{\numberline {4.8}Firewall's Architectures}{38}{section.4.8}%
-\contentsline {subsection}{\numberline {4.8.1}"Packet Filter" architecture}{38}{subsection.4.8.1}%
-\contentsline {subsection}{\numberline {4.8.2}"Dual-homed Gateway" architecture}{38}{subsection.4.8.2}%
-\contentsline {subsection}{\numberline {4.8.3}"Screened host" architecture}{39}{subsection.4.8.3}%
-\contentsline {subsection}{\numberline {4.8.4}"Screened subnet" architecture}{39}{subsection.4.8.4}%
-\contentsline {subsection}{\numberline {4.8.5}"Screened subnet" architecture (version 2)}{40}{subsection.4.8.5}%
-\contentsline {section}{\numberline {4.9}Local/Personal Firewall}{40}{section.4.9}%
-\contentsline {section}{\numberline {4.10}Protection offered by a firewall}{40}{section.4.10}%
-\contentsline {section}{\numberline {4.11}Intrusion Detection System (IDS)}{41}{section.4.11}%
-\contentsline {subsection}{\numberline {4.11.1}IDS functional features}{41}{subsection.4.11.1}%
-\contentsline {subsection}{\numberline {4.11.2}IDS topological features}{41}{subsection.4.11.2}%
-\contentsline {section}{\numberline {4.12}Intrusion Prevention System (IPS)}{42}{section.4.12}%
-\contentsline {section}{\numberline {4.13}Next-Generation Firewall (NGFW)}{42}{section.4.13}%
-\contentsline {section}{\numberline {4.14}Unified Threat Management (UTM)}{42}{section.4.14}%
-\contentsline {section}{\numberline {4.15}Honey pot / Honey net}{42}{section.4.15}%
-\contentsline {chapter}{\numberline {5}Security of network applications}{43}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Standard situation}{43}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Channel Security}{43}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Message/Data security}{43}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Different implementation}{44}{section.5.4}%
-\contentsline {subsubsection}{Security Internal to Applications}{44}{section*.14}%
-\contentsline {subsubsection}{Security External to Applications}{44}{section*.15}%
-\contentsline {section}{\numberline {5.5}TLS (Transport Layer Security)}{44}{section.5.5}%
-\contentsline {subsection}{\numberline {5.5.1}TLS - AuthN and Integrity}{45}{subsection.5.5.1}%
-\contentsline {subsection}{\numberline {5.5.2}TLS - Confidentiality}{45}{subsection.5.5.2}%
-\contentsline {subsection}{\numberline {5.5.3}TLS Architecture}{45}{subsection.5.5.3}%
-\contentsline {subsection}{\numberline {5.5.4}TLS Handshake Protocol}{46}{subsection.5.5.4}%
-\contentsline {subsection}{\numberline {5.5.5}TLS Session ID}{46}{subsection.5.5.5}%
-\contentsline {subsection}{\numberline {5.5.6}TLS Session \textbf {\(\&\)} Connections}{46}{subsection.5.5.6}%
-\contentsline {subsection}{\numberline {5.5.7}Relationship among Keys and Sessions}{47}{subsection.5.5.7}%
-\contentsline {subsection}{\numberline {5.5.8}TLS Record Protocol (authenticate-then-encrypt)}{47}{subsection.5.5.8}%
-\contentsline {subsection}{\numberline {5.5.9}Perfect Forward Secrecy}{47}{subsection.5.5.9}%
-\contentsline {subsection}{\numberline {5.5.10}TLS Downgrade Attack}{48}{subsection.5.5.10}%
-\contentsline {section}{\numberline {5.6}Virtual Servers and TLS}{48}{section.5.6}%
-\contentsline {section}{\numberline {5.7}ALPN extension (Application-Layer Protocol Negotiation)}{48}{section.5.7}%
-\contentsline {section}{\numberline {5.8}TLS Fallback - Signaling Cipher Suite Value}{49}{section.5.8}%
-\contentsline {section}{\numberline {5.9}DTLS (Datagram Transport Layer Security)}{49}{section.5.9}%
-\contentsline {section}{\numberline {5.10}HTTP Security}{49}{section.5.10}%
-\contentsline {subsection}{\numberline {5.10.1}HTTP Basic Authentication}{49}{subsection.5.10.1}%
-\contentsline {subsection}{\numberline {5.10.2}HTTP Digest Authentication}{49}{subsection.5.10.2}%
-\contentsline {subsection}{\numberline {5.10.3}HTTP \& TLS/SSL}{51}{subsection.5.10.3}%
-\contentsline {subsubsection}{TSL AuthN at the Application Layer}{51}{section*.16}%
-\contentsline {subsubsection}{AuthN in Web applications}{51}{section*.17}%
-\contentsline {subsubsection}{Web Form Security}{51}{section*.18}%
-\contentsline {section}{\numberline {5.11}HTTP Strict Transport Security (HSTS)}{51}{section.5.11}%
-\contentsline {subsection}{\numberline {5.11.1}HTTP Public Key Pinning (HPKT)}{52}{subsection.5.11.1}%
-\contentsline {section}{\numberline {5.12}E-Payment System}{52}{section.5.12}%
-\contentsline {subsection}{\numberline {5.12.1}Web-Based Payment Systems}{53}{subsection.5.12.1}%
-\contentsline {subsection}{\numberline {5.12.2}PCI DSS (Payment Card Industry Data Security Standard)}{53}{subsection.5.12.2}%
+\contentsline {subsection}{\numberline {2.10.3}Verification of a Signature/Certificate}{24}{subsection.2.10.3}%
+\contentsline {section}{\numberline {2.11}Performance}{24}{section.2.11}%
+\contentsline {section}{\numberline {2.12}CNSA}{25}{section.2.12}%
+\contentsline {chapter}{\numberline {3}Authentication techniques protocols, and architectures}{26}{chapter.3}%
+\contentsline {subsubsection}{Authentication vs Authorization}{26}{section*.5}%
+\contentsline {section}{\numberline {3.1}Authentication factors}{26}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Risks}{26}{subsection.3.1.1}%
+\contentsline {section}{\numberline {3.2}Digital Authentication model (NIST SP800.63B)}{27}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Generic authentication protocol}{27}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Password base authentication}{27}{section.3.4}%
+\contentsline {section}{\numberline {3.5}The "dictionary" attack}{28}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Rainbow Table attack}{28}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Salting Passwords: A Defense Against Dictionary and Rainbow Table Attacks}{29}{section.3.7}%
+\contentsline {subsubsection}{Steps for each user (UID):}{29}{section*.6}%
+\contentsline {subsubsection}{Password Verification with Salt}{29}{section*.7}%
+\contentsline {section}{\numberline {3.8}Strong authentication definitions}{29}{section.3.8}%
+\contentsline {section}{\numberline {3.9}Challenge-Response Authentication (CRA)}{29}{section.3.9}%
+\contentsline {subsection}{\numberline {3.9.1}Symmetric CRA}{30}{subsection.3.9.1}%
+\contentsline {subsection}{\numberline {3.9.2}Mutual symmetric CRA}{30}{subsection.3.9.2}%
+\contentsline {subsubsection}{Version 1: Basic Exchange}{30}{section*.8}%
+\contentsline {subsubsection}{Version 2: Improved Performance}{30}{section*.9}%
+\contentsline {subsection}{\numberline {3.9.3}Asymmetric CRA}{30}{subsection.3.9.3}%
+\contentsline {subsubsection}{Applications}{30}{section*.10}%
+\contentsline {subsubsection}{Security:}{31}{section*.11}%
+\contentsline {subsubsection}{Problems:}{31}{section*.12}%
+\contentsline {section}{\numberline {3.10}One-Time Password(OTP)}{31}{section.3.10}%
+\contentsline {subsection}{\numberline {3.10.1}S/KEY System}{31}{subsection.3.10.1}%
+\contentsline {subsection}{\numberline {3.10.2}Time-based OTP (TOPT)}{31}{subsection.3.10.2}%
+\contentsline {subsection}{\numberline {3.10.3}Out-of-Band (OOB) OTP}{32}{subsection.3.10.3}%
+\contentsline {subsection}{\numberline {3.10.4}Two-/Multi-Factor Authentication (2FA/MFA)}{32}{subsection.3.10.4}%
+\contentsline {section}{\numberline {3.11}Authentication of human beings}{32}{section.3.11}%
+\contentsline {section}{\numberline {3.12}Kerberos Authentication System}{33}{section.3.12}%
+\contentsline {subsection}{\numberline {3.12.1}Players}{33}{subsection.3.12.1}%
+\contentsline {subsection}{\numberline {3.12.2}How it Works?}{33}{subsection.3.12.2}%
+\contentsline {subsection}{\numberline {3.12.3}Single Sign-On (SSO)}{34}{subsection.3.12.3}%
+\contentsline {section}{\numberline {3.13}Authentication Interoperability}{34}{section.3.13}%
+\contentsline {subsection}{\numberline {3.13.1}OATH}{34}{subsection.3.13.1}%
+\contentsline {subsection}{\numberline {3.13.2}Google Authenticator}{34}{subsection.3.13.2}%
+\contentsline {subsection}{\numberline {3.13.3}FIDO (Fast Identity Online)}{35}{subsection.3.13.3}%
+\contentsline {subsubsection}{FIDO's frameworks include:}{35}{section*.13}%
+\contentsline {chapter}{\numberline {4}Firewall and IDS/IPS}{36}{chapter.4}%
+\contentsline {section}{\numberline {4.1}What is a Firewall?}{36}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Ingress vs Egress firewall}{36}{section.4.2}%
+\contentsline {section}{\numberline {4.3}The three principles of the firewall}{36}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Authorization policies}{36}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Basic components}{36}{section.4.5}%
+\contentsline {section}{\numberline {4.6}A which level the controls are made?}{37}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Network-Level Controls}{37}{section.4.7}%
+\contentsline {subsection}{\numberline {4.7.1}Packet filter}{37}{subsection.4.7.1}%
+\contentsline {subsection}{\numberline {4.7.2}Circuit-Level Gateway}{37}{subsection.4.7.2}%
+\contentsline {subsection}{\numberline {4.7.3}Application-Level Gateway}{38}{subsection.4.7.3}%
+\contentsline {subsection}{\numberline {4.7.4}HTTP Proxies}{38}{subsection.4.7.4}%
+\contentsline {subsection}{\numberline {4.7.5}WAF (Web Application Firewall)}{39}{subsection.4.7.5}%
+\contentsline {section}{\numberline {4.8}Firewall's Architectures}{39}{section.4.8}%
+\contentsline {subsection}{\numberline {4.8.1}"Packet Filter" architecture}{39}{subsection.4.8.1}%
+\contentsline {subsection}{\numberline {4.8.2}"Dual-homed Gateway" architecture}{39}{subsection.4.8.2}%
+\contentsline {subsection}{\numberline {4.8.3}"Screened host" architecture}{40}{subsection.4.8.3}%
+\contentsline {subsection}{\numberline {4.8.4}"Screened subnet" architecture}{40}{subsection.4.8.4}%
+\contentsline {subsection}{\numberline {4.8.5}"Screened subnet" architecture (version 2)}{41}{subsection.4.8.5}%
+\contentsline {section}{\numberline {4.9}Local/Personal Firewall}{41}{section.4.9}%
+\contentsline {section}{\numberline {4.10}Protection offered by a firewall}{41}{section.4.10}%
+\contentsline {section}{\numberline {4.11}Intrusion Detection System (IDS)}{42}{section.4.11}%
+\contentsline {subsection}{\numberline {4.11.1}IDS functional features}{42}{subsection.4.11.1}%
+\contentsline {subsection}{\numberline {4.11.2}IDS topological features}{42}{subsection.4.11.2}%
+\contentsline {section}{\numberline {4.12}Intrusion Prevention System (IPS)}{43}{section.4.12}%
+\contentsline {section}{\numberline {4.13}Next-Generation Firewall (NGFW)}{43}{section.4.13}%
+\contentsline {section}{\numberline {4.14}Unified Threat Management (UTM)}{43}{section.4.14}%
+\contentsline {section}{\numberline {4.15}Honey pot / Honey net}{43}{section.4.15}%
+\contentsline {chapter}{\numberline {5}Security of network applications}{44}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Standard situation}{44}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Channel Security}{44}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Message/Data security}{44}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Different implementation}{45}{section.5.4}%
+\contentsline {subsubsection}{Security Internal to Applications}{45}{section*.14}%
+\contentsline {subsubsection}{Security External to Applications}{45}{section*.15}%
+\contentsline {section}{\numberline {5.5}TLS (Transport Layer Security)}{45}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}TLS - AuthN and Integrity}{46}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}TLS - Confidentiality}{46}{subsection.5.5.2}%
+\contentsline {subsection}{\numberline {5.5.3}TLS Architecture}{46}{subsection.5.5.3}%
+\contentsline {subsection}{\numberline {5.5.4}TLS Handshake Protocol}{47}{subsection.5.5.4}%
+\contentsline {subsection}{\numberline {5.5.5}TLS Session ID}{47}{subsection.5.5.5}%
+\contentsline {subsection}{\numberline {5.5.6}TLS Session \textbf {\(\&\)} Connections}{47}{subsection.5.5.6}%
+\contentsline {subsection}{\numberline {5.5.7}Relationship among Keys and Sessions}{48}{subsection.5.5.7}%
+\contentsline {subsection}{\numberline {5.5.8}TLS Record Protocol (authenticate-then-encrypt)}{48}{subsection.5.5.8}%
+\contentsline {subsection}{\numberline {5.5.9}Perfect Forward Secrecy}{48}{subsection.5.5.9}%
+\contentsline {subsection}{\numberline {5.5.10}TLS Downgrade Attack}{49}{subsection.5.5.10}%
+\contentsline {section}{\numberline {5.6}Virtual Servers and TLS}{49}{section.5.6}%
+\contentsline {section}{\numberline {5.7}ALPN extension (Application-Layer Protocol Negotiation)}{49}{section.5.7}%
+\contentsline {section}{\numberline {5.8}TLS Fallback - Signaling Cipher Suite Value}{50}{section.5.8}%
+\contentsline {section}{\numberline {5.9}DTLS (Datagram Transport Layer Security)}{50}{section.5.9}%
+\contentsline {section}{\numberline {5.10}HTTP Security}{50}{section.5.10}%
+\contentsline {subsection}{\numberline {5.10.1}HTTP Basic Authentication}{50}{subsection.5.10.1}%
+\contentsline {subsection}{\numberline {5.10.2}HTTP Digest Authentication}{50}{subsection.5.10.2}%
+\contentsline {subsection}{\numberline {5.10.3}HTTP \& TLS/SSL}{52}{subsection.5.10.3}%
+\contentsline {subsubsection}{TSL AuthN at the Application Layer}{52}{section*.16}%
+\contentsline {subsubsection}{AuthN in Web applications}{52}{section*.17}%
+\contentsline {subsubsection}{Web Form Security}{52}{section*.18}%
+\contentsline {section}{\numberline {5.11}HTTP Strict Transport Security (HSTS)}{52}{section.5.11}%
+\contentsline {subsection}{\numberline {5.11.1}HTTP Public Key Pinning (HPKT)}{53}{subsection.5.11.1}%
+\contentsline {section}{\numberline {5.12}E-Payment System}{53}{section.5.12}%
+\contentsline {subsection}{\numberline {5.12.1}Web-Based Payment Systems}{54}{subsection.5.12.1}%
+\contentsline {subsection}{\numberline {5.12.2}PCI DSS (Payment Card Industry Data Security Standard)}{54}{subsection.5.12.2}%

@@ -716,6 +716,70 @@ of a \textbf{Certification Authority (CA)}, which grants, at the same time:
 The \textbf{PKI} is an infrastructure which performs two kinds of tasks:
 \begin{itemize}
     \item \textbf{Technical}: creates certificates.
-    \item \textbf{Administrative}: checks the identity of the requester of the certificate, \textbf{before} creating it;
-    
+    \item \textbf{Administrative}: checks the identity of the requester of the certificate, \textbf{before} creating it.
+ 
 \end{itemize}
+The \textbf{revocation} can be requested by:
+\begin{itemize}
+    \item The \textbf{Owner}  \(\rightarrow \) meaning control of the SK has been lost.
+    \item The \textbf{Creator} of the certificate \(\rightarrow \) in case the requester presented a fake identity. 
+\end{itemize}
+When a certificate gets revoked, the CA adds the certificate to a \textbf{list} that contains every \textbf{nonvalid certificate}. The revocation mechanism can be done in 2 ways:
+\begin{itemize}
+    \item \textbf{CRL (Certificate Revocation List)}: is a list of revoked certificates that is \textbf{generated and signed} by the CA (\(\rightarrow \) the CA guarantees the list's \textbf{authenticity}) and \textbf{integrity}.
+    \begin{quotebox-red}{Problem}
+        The main problem of CRLs is that the entire CRL must be download, even if we need to check one single certificate.
+    \end{quotebox-red}
+    \item \textbf{OCSP (On-line Certificate Status Protocol)}: is the mechanism used to perform r\textbf{real-time} checks of certificates (e.g. during
+    a transaction). OSCP is a \textbf{client-server protocol} in which is possible to request to a
+    specific CA if the certificate is valid or \textbf{not} at the \textbf{current time}.\\
+    The response is \textbf{signed by the CA} (\(\rightarrow \) it is not possible for an attacker to provide
+    fake answers).
+\end{itemize}
+
+\subsection{Verification of a Signature/Certificate}
+To \textbf{verify the signature} we have to:
+\\
+\begin{minipage}{0.6\textwidth}
+%	\vspace{-0.5cm}
+\begin{itemize}
+    \item Request its PKC, which is signed by a CA.
+    \item Request CA's PKC, which is signed by another CA.
+    \item Repeat recursively from 2 until we end up with a \textbf{self-signed certificate} form a \textbf{Root CA}.
+\end{itemize}
+\textcolor{red}{\textbf{N.B.}} Each device contains a list of \textbf{root CA} who’s signatures are \textbf{automatically}considered valid.
+If a device is left \textbf{unattended}, an attacker could modify this list using admin privileges and
+successfully fake the whole certification tree.
+\end{minipage} 
+\hspace{0.3cm}
+\begin{minipage}{0.4\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-29 16-39-43.png}
+\end{minipage}
+\noindent{\color{gray!50}\rule{\textwidth}{0.5pt}}
+\section{Performance}
+Cryptographic performance does \textbf{not} depend on RAM, but on CPU and cache size: some CPU have even special hardware just for cryptographic algorithms. Performance can become a problem on servers or when implementing security on network nodes, in this case, it is possible to use:
+\begin{itemize}
+    \item \textbf{Cryptographic Accelerators (HSM or Hardware Security Mode)}: it has some primitive instructions to perform some security algorithms.
+    \item \textbf{Special Purpose Accelerators}: accelerators that not only implement in hardware cryptographic operations but also implement packet processing for some security protocols.
+    \item \textbf{Generic Accelerators}: they speed up computation for whatever protocol implements a particular encryption algorithm;
+\end{itemize}
+\newpage
+\section{CNSA}
+The \textbf{Commercial National Security Algorithm} is a suite released in 2018 by NSA. It includes the following algorithms:
+\begin{itemize}
+    \item \textbf{Symmetric Encryption}: AES-256, now any key shorter than 256 bits is not considered secure enough for symmetric encryption.
+    \begin{itemize}
+        \item CTR mode is suggested to protect real time data for low bandwidth applications.
+        \item GCM is suggested for high bandwidth applications.
+    \end{itemize}
+    \item \textbf{Hash}: SHA-384.
+    \item \textbf{Key Agreement}: ECDH and ECMQV.
+    \item \textbf{Digital Signature}: ECDSA with EC on the curve P-384;
+\end{itemize}
+For old systems (a.k.a legacy systems) it is suggested to use for:
+\begin{itemize}
+    \item \textbf{Key Agreement}: DH-3072.
+    \item \textbf{Key Exchange \& Digital Signature}: RSA-3072.
+\end{itemize}
+
