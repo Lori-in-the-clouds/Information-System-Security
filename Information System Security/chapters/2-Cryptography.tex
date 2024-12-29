@@ -546,5 +546,88 @@ This technique also guarantees \textbf{data authN}, since \textbf{only} who know
     \[
         \text{hmac-H} = H\left( K' \oplus \text{opad} || H(K' \oplus \text{ipad} || \text{data}) \right)
         \]
-    \item \textbf{CBC-MAC}:
+    \item \textbf{CBC-MAC}: is another way to compute a digest \textbf{without} using a hash function, but just by using a Symmetric Encryption Block Algorithm, which is applied in CBC mode and using a \textbf{null IV}. Of the whole algorithm's output, \textbf{only} the \textbf{last (encrypted) block} is used as the \textbf{MAC}.
+    \\ 
+    \begin{customquote}
+    \vspace{-0.4cm}
+    \subsubsection{Process}
+    \begin{itemize}
+        \item The message \(M\) is split into \(N\) blocks \(M_1, M_2, \dots, M_N\).
+        \item The MAC is computed iteratively: \(V_0 = 0\) and for each block \(k\), compute:
+        \[
+        V_k = \text{enc}(K, M_k \oplus V_{k-1})
+        \]
+        \item The final MAC is the last encrypted block \(V_N\).
+    \end{itemize}
+    \end{customquote}
+    CBC-MAC does \textbf{not} guarantee \textbf{confidentiality} because the IV is fixed, but it guarantees \textbf{integrity} thanks to CBC: if the message is modified in any point, the last (encrypted) block \textbf{will} be different.\\
+    \textcolor{red}{\textbf{N.B.}} CBC-MAC is secure \textbf{only} for fixed-lenght message \(\rightarrow \) attacks that change the length of the message can be successful.
 \end{itemize}
+
+\section{Integrity \& Confidentiality Combinations}
+\textbf{Integrity} and \textbf{confidentiality} can both be achieved with the combined use of two algorithms
+and with \textbf{two distinct K}s:
+\begin{itemize}
+    \item Symmetric Encryption with \(K_1\) is used to gain \textbf{confidentiality}.
+    \item AuthN by means of Keyed Digest with \(K_2\) is used for \textbf{integrity}.
+\end{itemize}
+There are various ways to combine these two algorithms:
+\begin{itemize}
+    \item \textbf{A\&E (Authenticate \& Encrypt)}: Encrypt the message and then authenticate it using a MAC. Insecure unless performed as a single step (used by SSH).
+    \[enc(K_1.P)\ ||\ mac(K_2,P)\]
+    \item \textbf{AtE (Authenticate then Encrypt)}: compute the MAC on the plaintext and then encrypt both the message and MAC. Secure if used with CBC or stream encryption (used by SSL and TLS). The \textbf{Ate} is still vulnerable to DoS attacks.
+    \[enc(K_1,P\ ||\ mac(K_2,P))\]
+    \vspace{-0.6cm}
+    \item \textbf{EtA (Encrypt-then-Authenticate)}: Encrypt the message, then compute the MAC on the ciphertext. This is the most secure method (used by IPsec). With \textbf{AtE} solution is possible to avoid DoS attacks since the MAC can be calculated using \textbf{C} (fast operation) \textbf{without} the need to decrypt it (slow operation).
+    \[C=enc(K_1,P)\rightarrow C\ ||\ mac(K_2,C)\]
+\end{itemize}
+
+\section{AE (Authenticated Encryption)}
+
+The \textbf{AE} concept uses a \textbf{single operation} that, once performed, guarantees: \textbf{payload confidentiality}, \textbf{data authN} and \textbf{integrity}. This is achieved by using just a \textbf{single K} and a
+\textbf{single algorithm} \(\rightarrow \)  \textbf{better speed} and less likelihood of errors due to the combination of different functions. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{/home/lorenzo/Notes/Information System Security/images/image copy 21.png}
+\end{figure}
+\begin{quotebox-red}{Beware}
+    AE does \textbf{not} provide \textbf{non-repudiation} because both peers share the same key.
+\end{quotebox-red}
+\vspace{0.1cm}
+\noindent
+AE can work in 6 standard modes:
+\begin{itemize}
+    \item \textbf{OCB 2.0} (Offset Codebook Mode): the fastest one, on-line single-pass AEAD.
+    \item \textbf{AESKW} (AES Key Wrap).
+    \item \textbf{CCM} (CTR mode with CBC-MAC): the slowest one, off-line double-pass (half as fast as
+    single-pass).
+    \item \textbf{EAX} (EtA then (X)translate): very good for constrained systems, on-line double-pass
+    AEAD.
+    \item \textbf{Encrypt then MAC}
+    \item \textbf{GCM} (Galois/Counter Mode): the most popular one, on-line single-pass AEAD, it is
+    also parallelizable.
+\end{itemize}
+A \textbf{lightweight environment} solution to all of this modes is \textbf{ASCON}.
+\vspace{0.2cm}
+\begin{customquote}
+\vspace{-0.4cm}
+\subsubsection{IGE (Infinite Grable Extension)}
+\begin{minipage}{0.5\textwidth}
+	\vspace{-0.5cm}
+IGE is an \textbf{AE algorithm} that works like
+CBC, but with one addition that makes
+any \textbf{modification} of any block \textbf{propagate
+to every block after that one}.\\
+This is important, because it means that
+by having the last block with fixed content
+\(\rightarrow \) in the decryption phase \textbf{integrity is verified only if} the last block has the excepted content. 
+\end{minipage} 
+\hspace{0cm}
+\begin{minipage}{0.4\textwidth}
+    \centering
+    \includegraphics[width=0.7\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-29 12-20-11.png}
+\end{minipage}
+
+\end{customquote}
+
+\section{Digital Signature}
