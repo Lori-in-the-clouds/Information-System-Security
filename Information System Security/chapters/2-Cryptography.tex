@@ -631,3 +631,91 @@ by having the last block with fixed content
 \end{customquote}
 
 \section{Digital Signature}
+To achieve \textbf{non-repudiation} we can use Digests and Asymmetric Cryptography:
+\\
+\\
+\begin{minipage}{0.6\textwidth}
+\begin{itemize}
+    \item The hash of the message \textbf{M} gets encrypted with the private key \textbf{SK} of the sender \textbf{S}.
+    \item The sender transmits (\textbf{M || H}) to the receiver.
+    \item The receiver decrypts \textbf{H} with the public key \textbf{PK} of the sender:
+    \[
+    X\ =\ dec(S.PK,H)
+    \]
+    \item if (\textbf{X == hash(M)}) the message is authenticated, else something has been changed during the transmission.
+\end{itemize}
+\end{minipage} 
+\hspace{0.3cm}
+\begin{minipage}{0.4\textwidth}
+    \centering
+    \includegraphics[width=0.9\textwidth]{/home/lorenzo/Notes/Information System Security/images/image copy 22.png}
+\end{minipage}
+\newpage
+\noindent
+Changing anything in the Encrypted Data or in the Digital Signature provoke a \textbf{failure} in the verification phase (\(\rightarrow \) because it is \textbf{not} possible to say whether the modification affected the Data or
+the Signature).\\
+The signature is bound to the data \textbf{M} because is calculated using its \textbf{hash(M)} \(\rightarrow \) the Signature \textbf{cannot} be attached to other data.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{/home/lorenzo/Notes/Information System Security/images/image copy 23.png}
+    \caption{Digital Signature stored with the data}
+\end{figure}
+\begin{center}
+    \begin{quotebox-grey}{Digital vs Handwritten Signatures}
+        \begin{itemize}
+            \item \textbf{Digital Signature} = authentication + integrity. A private key generates infinite digital signatures (one per document).
+            \item \textbf{Handwritten Signature} = authentication only, it does not ensure that the document has not been altered after signing.
+        \end{itemize}
+    \end{quotebox-grey}   
+\end{center}
+
+\subsection{PKC (Public Key Certificate)}
+The last piece needed to provide \textbf{full non-repudiation} is a mechanism that can guarantee the association between a PK and an identity: this mechanism is called \textbf{PKC}.\\  
+A PKC is a \textbf{data structure} used to \textbf{securely bind} a \textbf{PK} to some attributes, typically an identity or an IP address. The security of this binding is provided by the Digital Signature
+of a \textbf{Certification Authority (CA)}, which grants, at the same time:
+\begin{itemize}
+    \item A proof of \textbf{authN}: it is a valid certificate because it has been created by a CA.
+    \item A proof of \textbf{integrity}
+\end{itemize}
+\textcolor{red}{\textbf{N.B.}} Like any real-life document, the PKC has a limited lifetime and it can be \textbf{revoked}.\\
+\\
+\underline{PKCs must be encoded in one of the following formats:}
+\begin{itemize}
+    \item \textbf{X.509} \(\rightarrow \) is a PKC format that is composed by:
+    \\
+    \begin{minipage}{0.6\textwidth}
+    	\vspace{0.4cm}
+    \begin{itemize}
+        \item \textbf{Version}
+        \item \textbf{Serial Number}
+        \item \textbf{Signature Algorithm}
+        \item \textbf{Issuer}: name of the CA that created the certificate, it uses the following fields:
+        \begin{itemize}
+            \item \textbf{C} stands for country.
+            \item \textbf{O} stands for organization.
+            \item \textbf{OU} stands for organizational unit \(\rightarrow \) the department who created the certificate.
+        \end{itemize}
+        \item \textbf{Validity}: period of time for which the certificate is considered valid.
+        \item \textbf{Subject}:  entity (\textbf{identity} or \textbf{IP address}) that is controlling the \textbf{SK} corresponding
+        to the \textbf{PK} being certified.
+        \item \textbf{Subject Public Key Info}: it contains the PK bit by bit, the algorithm and the
+        key’s length.
+        \item \textbf{CA Digital Signature}
+    \end{itemize} 
+    \end{minipage} 
+    \hspace{0cm}
+    \begin{minipage}{0.4\textwidth}
+        \centering
+        \includegraphics[width=0.9\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-29 14-29-23.png}
+    \end{minipage}
+    \item \textbf{non X.509}: PGP and SPKI.
+    \item \textbf{PKCS\#6}: RSA, its considered obsolete.
+\end{itemize}
+
+\subsection{PKI (Public Key Infrastructure)}
+The \textbf{PKI} is an infrastructure which performs two kinds of tasks:
+\begin{itemize}
+    \item \textbf{Technical}: creates certificates.
+    \item \textbf{Administrative}: checks the identity of the requester of the certificate, \textbf{before} creating it;
+    
+\end{itemize}
