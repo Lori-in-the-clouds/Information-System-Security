@@ -167,6 +167,176 @@ packet flow between two nodes, we \textbf{always} need two SAs, one A → B and 
 \subsection{Local "Database"}
 SAs are managed via two \textbf{Local "Databases"}:
 \begin{itemize}
-    \item \textbf{SPD (Security Policy Database)}: 
+    \item \textbf{SPD (Security Policy Database)}: contains the list of \textbf{Security Policies} (\textbf{SP}) to apply to different packet flows.
+    The SPD is configured \textbf{a-priori} (e.g. manually) or connected to an \textbf{automatic system} (e.g. ISPS (Internet Security Policy System)).
+    \item \textbf{SAD (SA Database)}:  a runtime "database" that contains a list of the \textbf{active} SAs and their characteristics (e.g. algorithms, keys, parameters).
 \end{itemize}
 
+\subsection{Sending Packet with IPsec}
+When a node wants to send a packet and IPsec is installed on that node, the following questions need to be answered:
+\\
+\\
+\begin{minipage}{0.6\textwidth}
+%	\vspace{-0.5cm}
+    \begin{itemize}
+        \item Which SP should be applied to this packet? \(\rightarrow \) check the SPD:
+        \begin{itemize}
+            \item If a SP is provided \(\rightarrow \) it is applied
+            \item If \textbf{no} SP is provided \(\rightarrow \)  the packet goes straight to L2 for transmission.
+        \end{itemize}
+        \item Is this the first packet of the flow? → check the SAD:
+        \begin{itemize}
+            \item If an SA is present \(\rightarrow \) IPsec applies the associated parameters that are used to
+            protect the packet and then sends it to L2 for transmission.
+            \item If \textbf{no} corresponding SA is present \(\rightarrow \) IPsec creates the corresponding SA and proceeds as above.
+        \end{itemize}
+    \end{itemize} 
+\end{minipage} 
+\hspace{0.3cm}
+\begin{minipage}{0.4\textwidth}
+    \centering
+    \includegraphics[width=0.9\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-30 21-58-23.png}
+\end{minipage}
+
+\subsection{Transport Mode in IPsec}
+\begin{minipage}{0.6\textwidth}
+%	\vspace{-0.5cm}
+Transport Mode is used for \textbf{End-to-End Security} by Hosts but \textbf{not} by Gateways.\\
+The original packet is cut in two parts so that a new header (the \textbf{IPsec Header}) can be added
+in between. The IPv4 header will say that it is transporting an IPsec Packet, while in the IPsec
+Header there is a field that says what is the \textbf{actual} Transport Protocol (e.g. TCP, UDP) used
+by the packet. 
+\end{minipage} 
+\hspace{0.3cm}
+\begin{minipage}{0.4\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-30 22-03-48.png}
+\end{minipage}
+\begin{itemize}
+    \item \textcolor{green}{\textbf{Pro}}: it is \textbf{fast}.
+    \item \textcolor{red}{\textbf{Con}}: \textbf{no} protection of the IPv4 header. 
+\end{itemize}
+
+\subsection{Tunnel Mode in IPsec}
+\begin{minipage}{0.6\textwidth}
+%	\vspace{-0.5cm}
+\textbf{Tunnel Mode} is used to create a VPN, usually, among Gateways.\\
+In Tunnel Mode, the entire original IP packet, including \textbf{both the header and payload}, is encapsulated within a new IP packet. This provides \textbf{comprehensive protection} for the original packet, as encryption and authentication are applied to the encapsulated content.
+Since the entire original IP packet (including the header) is encapsulated, all variable fields of
+the inner header are fully protected, ensuring confidentiality and integrity (\textbf{Protection of End-to-End (E2E) Header Fields}). 
+\end{minipage} 
+\hspace{0.5cm}
+\begin{minipage}{0.4\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-30 22-18-55.png}
+\end{minipage}
+
+\begin{center}
+\vspace{-0.4cm}
+\begin{quotebox-red}{Beware}
+    The Secure IPsec Tunnel is \textbf{not} created among Routers, but between the Gateways,
+    since Gateways are the actual \textbf{contact point} between a secure network and an unsecure one
+    \(\rightarrow \) the Gateway has the role of adding protection by creating a Secure IPsec Tunnel
+\end{quotebox-red}
+\end{center}
+\begin{itemize}
+    \item \textcolor{green}{\textbf{Pro}}: full packet confidentiality.
+    \item \textcolor{red}{\textbf{Con}}: it is \textbf{slow}.
+\end{itemize}
+\newpage
+\subsection{AH (Authentication Header)}
+There are two version of \textbf{AH}:
+\begin{itemize}
+    \item \textbf{1v Version}: it provides \textbf{integrity} and \textbf{sender authN}. System who use this version
+    \textbf{must} support \textbf{Keyed-MD5} and can \textbf{optionally} support \textbf{Keyed-SHA1}.
+    \item \textbf{2v Version}: it provides \textbf{integrity}, \textbf{sender authN} and \textbf{partial} protection from Replay
+    attacks. System who use this version \textbf{must} support \textbf{HMAC-MD5-96} and \textbf{HMAC-SHA1-96}.
+\end{itemize}
+The format of the header that is being added to the IPsec packet has:
+\\    
+\\
+\begin{minipage}{0.6\textwidth}
+%	\vspace{-0.5cm}
+    \begin{itemize}
+        \item \textbf{Next Header} (1 byte): it contains the real transporting protocol of the packet, since in the IP header there will be written that it is transporting AH.
+        \item \textbf{Lenght} (1 byte): describes the length of the packet.
+        \item \textbf{Reserved} (2 bytes): for future use.
+        \item \textbf{SPI} (\textbf{Security Parameter Index}, 4 bytes): refer in a quick and easy way to all the parameters that are needed to protect the packet.
+        \item \textbf{Sequence Number} (4 bytes): it is different from the one in the IP header, as it is used to avoid Replay attacks.
+        \item \textbf{ICV} (\textbf{Integrity Check Value}): Digest that provides \textbf{data authN}.
+    \end{itemize}
+\end{minipage} 
+\hspace{0.3cm}
+\begin{minipage}{0.4\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{/home/lorenzo/Pictures/Screenshots/Screenshot from 2024-12-30 22-34-23.png}
+\end{minipage}
+\\  
+\\   
+\\
+\noindent
+\begin{minipage}{0.6\textwidth}
+%	\vspace{-0.5cm}
+Once an IPsec packet with AH Header has been received, the ICV is extracted. Meanwhile the whole packet is normalized, in order to put the packet in the same conditions as it was at the sender in order to correctly compute the Digest. The SPI is also extracted from the AH header to get the correct entry from the SAD, which contains the correct parameters needed to compute the Digest.\\
+\\
+\textbf{After} having computed the Digest of the normalized packet, it is compared with the extracted
+ICV:
+\begin{itemize}
+    \item If the values are the same \(\rightarrow \) the Sender is authN and the integrity of the packet is
+    confirmed.
+    \item If the values are \textbf{not} the same \(\rightarrow \) the sender is \textbf{not} authN and/or the packet has been manipulated;
+\end{itemize} 
+\end{minipage} 
+\hspace{0.3cm}
+\begin{minipage}{0.4\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-30 22-43-13.png}
+\end{minipage}
+\\    
+\\
+\\
+\noindent
+\textbf{Sender authN} is guaranteed by the fact that the SA in the SAD has been implicitly arranged with the sender node. Thus, real authN comes into play when we create the SA.
+
+\subsection{ESP (Encapsulating Security Payload)}
+If AH’s security properties are \textbf{not} enough and we want \textbf{confidentiality} \(\rightarrow \) \textbf{ESP} is needed.\\
+As AH, ESP comes in two versions:
+\begin{itemize}
+    \item \textbf{v1 Version}: it achieves \textbf{only confidentiality} using \textbf{DES-CBC}.
+    \item \textbf{v2 Version}: it provides also \textbf{payload authN}. The \textbf{advantage} is that the packet dimension is \textbf{reduced} and \textbf{only} one SA is saved.
+\end{itemize}
+\textcolor{red}{\textbf{N.B.}}  IPsec’s architecture allows us to use AH and ESP at the same time, if needed.
+\\
+\\
+ESP can be used in two modes:
+\begin{itemize}
+    \begin{minipage}{0.6\textwidth}
+    \vspace{0.2cm}
+    \item \textbf{Transport Mode}: The \textbf{ESP Header} is inserted in \textbf{between} the IPv4 Header and the Payload, while the \textbf{ESP Trailer} is \textbf{appended} at the end of the whole packet. Finally, \textbf{everything}, from the ESP header up to the trailer, gets then \textbf{encrypted}. 
+    \begin{itemize}
+        \item \textcolor{green}{\textbf{Pro}}: the payload is hidden.
+        \item \textcolor{red}{\textbf{Con}}: the IP Header remains in clear. 
+    \end{itemize}
+    \end{minipage} 
+    \hspace{0.0cm}
+    \begin{minipage}{0.4\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-30 23-01-28.png}
+    \end{minipage}
+
+    \begin{minipage}{0.6\textwidth}
+    %	\vspace{-0.5cm}
+    \item \textbf{Tunnel Mode}: The first Tunnel is created, then the \textbf{ESP Header} is inserted in between the \textbf{IPv4 Tunnel Header} and the \textbf{IPv4 End-to-End Header}, while the \textbf{ESP Trailer} is appended at the end of the whole packet. As in Transport Mode, \textbf{everything}, from the ESP header up to the
+    trailer, gets then \textbf{encrypted}.
+    \begin{itemize}
+        \item \textcolor{green}{\textbf{Pro}}: the original  Header and the Payload are \textbf{hidden}.
+        \item \textcolor{red}{\textbf{Con}}: \textbf{larger}packet size.
+    \end{itemize}
+    \end{minipage} 
+    \hspace{0.0cm}
+    \begin{minipage}{0.4\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-30 23-09-37.png}
+    \end{minipage}
+
+\end{itemize}
