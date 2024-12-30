@@ -1,0 +1,21 @@
+\chapter{Security Implementations in OSI Levels}
+\begin{quotebox-yellow}{}
+    In the ISO/OSI stack, there is \textbf{not} a single optimal level in which we can implement security. Typically, L6 (Presentation) is the \textbf{only} level in which security measures are \textbf{not} useful.
+\begin{itemize}
+    \item The \textbf{higher} we go in the stack, the more our security features are \textbf{effective}, but we \textbf{slow}
+    down our system and we leave more room for DoS attacks.
+    \item The \textbf{lower} we go in the stack, the more \textbf{quickly} we detect attacks, but the \textbf{fewer} are he data available to us to detect them.
+\end{itemize}
+\end{quotebox-yellow}
+\section{DHCP Security}
+When L3 is reached, one of the first protocols that is activated is the \textbf{DHCP (Dynamic Host Configuration Protocol)}. Unfortunately, DHCP is \textbf{not} capable of performing peer authN
+and uses \textbf{broadcast} packets that carry: IP address; netmask; default gateway; local DNS and local DNS suffix (\(\rightarrow \) \textbf{sensitive data}).\\   
+\\    
+Since DHCP Requests are L2 broadcast frames, an attacker could activate a \textbf{Fake DHCP
+Server} by staying in the same broadcast domain of the victim and Sniffing the victim’s DHCP Request.\\    
+\\    
+Possible attacks that can be performed by a Fake DHCP Server are:
+\begin{itemize}
+    \item \textbf{DoS}: done by providing a wrong network configuration to the victim, denying access to the network.
+    \item \textbf{MIMT}:  a valid IP address is provided to the victim, but it will be a part of a /30 subnet \(\rightarrow \) \textbf{only} two IP addresses can be assigned:
+\end{itemize}

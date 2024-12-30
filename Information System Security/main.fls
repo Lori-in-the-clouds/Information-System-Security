@@ -272,15 +272,18 @@ INPUT chapters/2-Cryptography.aux
 INPUT ./chapters/3-AuthN.aux
 INPUT ./chapters/3-AuthN.aux
 INPUT chapters/3-AuthN.aux
-INPUT ./chapters/4-NetSec.aux
-INPUT ./chapters/4-NetSec.aux
-INPUT chapters/4-NetSec.aux
-INPUT ./chapters/5-Firewall.aux
-INPUT ./chapters/5-Firewall.aux
-INPUT chapters/5-Firewall.aux
-INPUT ./chapters/6-Netappsec.aux
-INPUT ./chapters/6-Netappsec.aux
-INPUT chapters/6-Netappsec.aux
+INPUT ./chapters/4-IP_Sec.aux
+INPUT ./chapters/4-IP_Sec.aux
+INPUT chapters/4-IP_Sec.aux
+INPUT ./chapters/5-Sec_OSI.aux
+INPUT ./chapters/5-Sec_OSI.aux
+INPUT chapters/5-Sec_OSI.aux
+INPUT ./chapters/6-Firewall.aux
+INPUT ./chapters/6-Firewall.aux
+INPUT chapters/6-Firewall.aux
+INPUT ./chapters/7-Netappsec.aux
+INPUT ./chapters/7-Netappsec.aux
+INPUT chapters/7-Netappsec.aux
 OUTPUT main.aux
 INPUT /usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -677,12 +680,12 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
-INPUT ./chapters/4-NetSec.tex
-INPUT ./chapters/4-NetSec.tex
-OUTPUT chapters/4-NetSec.aux
-INPUT ./chapters/4-NetSec.tex
-INPUT ./chapters/4-NetSec.tex
-INPUT chapters/4-NetSec.tex
+INPUT ./chapters/4-IP_Sec.tex
+INPUT ./chapters/4-IP_Sec.tex
+OUTPUT chapters/4-IP_Sec.aux
+INPUT ./chapters/4-IP_Sec.tex
+INPUT ./chapters/4-IP_Sec.tex
+INPUT chapters/4-IP_Sec.tex
 INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-29 17-23-09.png
 INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-29 17-23-09.png
 INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-29 17-23-09.png
@@ -723,12 +726,33 @@ INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 202
 INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-30 12-31-48.png
 INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-30 12-31-48.png
 INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-30 12-31-48.png
-INPUT ./chapters/5-Firewall.tex
-INPUT ./chapters/5-Firewall.tex
-OUTPUT chapters/5-Firewall.aux
-INPUT ./chapters/5-Firewall.tex
-INPUT ./chapters/5-Firewall.tex
-INPUT chapters/5-Firewall.tex
+INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-30 14-17-20.png
+INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-30 14-17-20.png
+INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-30 14-17-20.png
+INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-30 14-17-20.png
+INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-30 14-17-20.png
+INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-30 14-46-16.png
+INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-30 14-46-16.png
+INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-30 14-46-16.png
+INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-30 14-46-16.png
+INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-30 14-46-16.png
+INPUT /home/lorenzo/Pictures/Screenshots/Screenshot from 2024-12-30 14-50-45.png
+INPUT /home/lorenzo/Pictures/Screenshots/Screenshot from 2024-12-30 14-50-45.png
+INPUT /home/lorenzo/Pictures/Screenshots/Screenshot from 2024-12-30 14-50-45.png
+INPUT /home/lorenzo/Pictures/Screenshots/Screenshot from 2024-12-30 14-50-45.png
+INPUT /home/lorenzo/Pictures/Screenshots/Screenshot from 2024-12-30 14-50-45.png
+INPUT ./chapters/5-Sec_OSI.tex
+INPUT ./chapters/5-Sec_OSI.tex
+OUTPUT chapters/5-Sec_OSI.aux
+INPUT ./chapters/5-Sec_OSI.tex
+INPUT ./chapters/5-Sec_OSI.tex
+INPUT chapters/5-Sec_OSI.tex
+INPUT ./chapters/6-Firewall.tex
+INPUT ./chapters/6-Firewall.tex
+OUTPUT chapters/6-Firewall.aux
+INPUT ./chapters/6-Firewall.tex
+INPUT ./chapters/6-Firewall.tex
+INPUT chapters/6-Firewall.tex
 INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-21 15-09-40.png
 INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-21 15-09-40.png
 INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-21 15-09-40.png
@@ -789,12 +813,12 @@ INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 202
 INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-22 16-02-59.png
 INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-22 16-02-59.png
 INPUT /home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-11-22 16-02-59.png
-INPUT ./chapters/6-Netappsec.tex
-INPUT ./chapters/6-Netappsec.tex
-OUTPUT chapters/6-Netappsec.aux
-INPUT ./chapters/6-Netappsec.tex
-INPUT ./chapters/6-Netappsec.tex
-INPUT chapters/6-Netappsec.tex
+INPUT ./chapters/7-Netappsec.tex
+INPUT ./chapters/7-Netappsec.tex
+OUTPUT chapters/7-Netappsec.aux
+INPUT ./chapters/7-Netappsec.tex
+INPUT ./chapters/7-Netappsec.tex
+INPUT chapters/7-Netappsec.tex
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
@@ -934,15 +958,18 @@ INPUT chapters/2-Cryptography.aux
 INPUT ./chapters/3-AuthN.aux
 INPUT ./chapters/3-AuthN.aux
 INPUT chapters/3-AuthN.aux
-INPUT ./chapters/4-NetSec.aux
-INPUT ./chapters/4-NetSec.aux
-INPUT chapters/4-NetSec.aux
-INPUT ./chapters/5-Firewall.aux
-INPUT ./chapters/5-Firewall.aux
-INPUT chapters/5-Firewall.aux
-INPUT ./chapters/6-Netappsec.aux
-INPUT ./chapters/6-Netappsec.aux
-INPUT chapters/6-Netappsec.aux
+INPUT ./chapters/4-IP_Sec.aux
+INPUT ./chapters/4-IP_Sec.aux
+INPUT chapters/4-IP_Sec.aux
+INPUT ./chapters/5-Sec_OSI.aux
+INPUT ./chapters/5-Sec_OSI.aux
+INPUT chapters/5-Sec_OSI.aux
+INPUT ./chapters/6-Firewall.aux
+INPUT ./chapters/6-Firewall.aux
+INPUT chapters/6-Firewall.aux
+INPUT ./chapters/7-Netappsec.aux
+INPUT ./chapters/7-Netappsec.aux
+INPUT chapters/7-Netappsec.aux
 INPUT ./main.out
 INPUT ./main.out
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb
