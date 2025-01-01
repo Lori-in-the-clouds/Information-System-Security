@@ -409,5 +409,448 @@ still 4 bytes \textbf{only}, because \textbf{only} the 4 LSBytes transmitted (de
 \subsection{Ways to use IPsec}
 IPsec can be used to implement various security models:
 \begin{itemize}
-    \item 
+    \begin{minipage}{0.6\textwidth}
+    %	\vspace{-0.5cm}
+    \item \underline{\textbf{End-to-End Security}}: IPsec is activated on the End Nodes that are communicating. These nodes need a \textbf{Secure
+    Virtual Channel}, so they negotiate a Transport Mode SA. The \textbf{advantage} is that security
+    is implemented independently from the rest of the network, which means:
+    \begin{itemize}
+        \item There is \textbf{no need} to worry about the security of the LAN.
+        \item There is \textbf{no need} to worry about the trustworthiness of the gateway’s managing party.
+        \item There is \textbf{no need} to worry about the trustworthiness of the WAN.
+        \item The \textbf{only} possible attack is a DoS attack.
+    \end{itemize}
+   
+    \end{minipage} 
+    \hspace{0.2cm}
+    \begin{minipage}{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2025-01-01 15-53-53.png}
+    \end{minipage}
+    \\    
+    \\
+    \\
+    \textcolor{red}{\textbf{Disadvantages}}: 
+    \begin{itemize}
+        \item IPsec \textbf{must} be installed on both communicating machines, and on some devices the support module may \textbf{not} be natively present (e.g. mobile devices, both
+        Android and iOS, embedded systems, etc...).
+        \item IPsec is \textbf{slow} and, especially in big LANs, this must be taken into account, as
+        there may be the need to have a specif system that efficiently manages the IPsec configurations
+        of the various nodes.
+    \end{itemize}
+    Finally, if the Secure Virtual Channel uses \textbf{ESP} with a Non-NULL Encryption Algorithm \(\rightarrow \) traffic cannot be Sniffed, not even from inside the LAN.
+
+    \begin{minipage}{0.6\textwidth}
+    %	\vspace{-0.5cm}
+    \item \underline{\textbf{Basic VPN}}: IPsec is activated \textbf{directly} on the Gateways that are protecting the LANs from the WAN. In
+    this case, the Gateways create a Tunnel Mode SA between them. The main assumption is
+    that the LANs are \textbf{secure} and \textbf{trusted} \(\rightarrow \) attacks are possible \textbf{only} from the WAN.
+    \\     \\    
+    Yet, this means leaving an open door for \textbf{internal} attacks and it is \textbf{not} possible to perform
+\textbf{peer authN} of the real communication endpoint: \textbf{only} the Gateways are authN, which is why
+this model is also called \textbf{Site-on-Site VPN}. 
+    \end{minipage} 
+    \hspace{0.2cm}
+    \begin{minipage}{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2025-01-01 16-00-17.png}
+    \end{minipage}
+\begin{quotebox-red}{Beware}
+    Since the Gateways \textbf{must} perform the Tunneling for \textbf{all} communication, they could
+    get \textbf{overloaded}. Thus, typically, in this case gateways are equipped with some powerful CPU
+    or Hardware Accelerators. On the other hand, management is greatly \textbf{simplified}, since \textbf{only}
+    the Gateways have to be managed. Moreover, since there is \textbf{no} End-to-End Security \(\rightarrow \) the
+    LAN’s traffic can be inspected.
+\end{quotebox-red}
+\newpage
+\begin{minipage}{0.6\textwidth}
+%	\vspace{-0.5cm}
+\item \underline{\textbf{End-to-End Security with Basic VPN}}: This model is an example of the \textbf{Security in Depth} principle, as it consists of more than one
+defense line. Here IPsec is activated two times:
+\begin{itemize}
+    \item Between the End Nodes (Transport Mode SA) → used for \textbf{peer authN} and \textbf{integrity}.
+    \item  Between the Gateways (Tunnel Mode SA) → used to gain \textbf{confidentiality} with encryption;
 \end{itemize}
+This configuration protects from Sniffing attacks in the WAN, while maintaining the possibility
+to inspect the traffic on the LAN.
+\end{minipage} 
+\hspace{0.2cm}
+\begin{minipage}{0.4\textwidth}
+    \centering
+    \includegraphics[width=0.9\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2025-01-01 16-08-55.png}
+\end{minipage}
+\\    \\    \\
+\textcolor{red}{\textbf{Disadvantages}}: The disadvantages lie in managing of \textbf{all} the Gateway and \textbf{all} the LAN's node at the \textbf{same time}.
+\\   \\
+\begin{minipage}{0.6\textwidth}
+	\vspace{-0.5cm}
+\item \underline{\textbf{Secure Gatewar}}: The Secure Gateway model is intended to \textbf{protect Mobile Devices} who need to connect to a \textbf{trusted} LAN. IPsec is deployed on the Mobile Device of the users and on the LAN’s Gateway. A Secure Virtual Channel is created in Tunnel Mode SA. \textbf{All} the traffic coming from the user which is directed to an internal server is protected, and the Gateway can also perform \textbf{peer authN} and \textbf{authorization}.
+\end{minipage} 
+\hspace{0.2cm}
+\begin{minipage}{0.4\textwidth}
+    \centering
+    \includegraphics[width=0.9\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2025-01-01 16-28-24.png}
+\end{minipage}
+\begin{minipage}{0.6\textwidth}
+%	\vspace{-0.5cm}
+\item \underline{\textbf{Secure Remote Access}}: 
+The \textbf{Secure Remote Access} model is another example of the principle of \textbf{Security in Depth}, as it consists of more than one defence line. Here IPsec is activated two times:
+\begin{itemize}
+    \item Between the Mobile Nodes and the Gateway (Tunnel Mode SA) → used for \textbf{peer authN} and \textbf{authorization}.
+    \item Between the Mobile Nodes and the End Nodes (Transport Mode SA) → used for \textbf{End to-End Protection}.
+\end{itemize}
+\end{minipage} 
+\hspace{0.3cm}
+\begin{minipage}{0.4\textwidth}
+    \centering
+    \includegraphics[width=0.9\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2025-01-01 16-33-05.png}
+\end{minipage}
+\end{itemize} 
+
+\subsection{IPsec Key Management}
+\textbf{Key Management} is an important component of IPsec since it provides to all parties the
+Symmetric Keys used for \textbf{data authN} and (eventually) \textbf{confidentiality}. To distribute these
+keys, we can use OOB (passing the keys \textbf{manually}), or, if the number of nodes does not allow
+for OOB, we can use some \textbf{Automatic In-Band Protocol} for Key Distribution such as:
+\begin{itemize}
+    \item \textbf{ISAKMP} (\textbf{Internet Security Association \& Key Management Protocol}):
+    it contains the procedures needed to negotiate, set-up, modify and delete a SA.
+    The Key Exchange method is \textbf{not fixed} \(\rightarrow \) it can be OOB or an In-Band method that
+    uses \textbf{OAKLEY} (\(\rightarrow \) a protocol for authN exchange of symmetric keys).
+    \item \textbf{IKE} (\textbf{Internet Key Exchange}): it's a combination of ISAKMP and OAKLEY. It is one of the most \textbf{complex} security
+    protocols, because it works in the following way:
+    \\
+    \begin{minipage}{0.6\textwidth}
+    \vspace{0.2cm}
+    \begin{enumerate}
+        \item The SA is created to protect the ISAKMP exchange. The \textbf{Initiator} takes the initiative to open the IPsec channel towards
+        another machine named \textbf{Responder}. In this phase, a \textbf{bidirectional} ISAKMP SA
+        is negotiated to protect traffic in both directions, this can be done in \textbf{Main Mode}
+        or \textbf{Aggressive Mode}.
+        \item The created SA is used to protect the negotiation of the SA needed by IPsec traffic. One of the two nodes acts as an Initiator to create an IPsec SA. This
+        can be negotiated in \textbf{Quick Mode} since all the traffic is already protected by the
+        ISAKMP SA.
+        
+    \end{enumerate} 
+    \end{minipage} 
+    \hspace{0.2cm}
+    \begin{minipage}{0.4\textwidth}
+       
+        \includegraphics[width=0.7\textwidth]{/home/lorenzo/Pictures/Screenshots/Screenshot from 2025-01-01 16-44-13.png}
+    \end{minipage}
+   \begin{quotebox-yellow}{Modes of Operation}
+   \begin{itemize}
+    \item \textbf{Main Mode}: 6 messages → quite \textbf{slow}. It can protect the parties’ identities.
+    \item \textbf{Aggressive Mode}: 3 messages, it is faster than Main Mode. But it cannot protect the parties’ identities.
+    \item \textbf{Quick Mode}: 3 messages, it is used \textbf{only} to negotiate the IPsec SA.
+    \item \textbf{New Group Mode}: 2 messages, it is used to \textbf{communicate} to other peer to inform it about a \textbf{change} in the algorithm or the key that is being used to protect the traffic.
+   \end{itemize}
+   \end{quotebox-yellow}
+   \begin{quotebox-grey}{AuthN Method}
+     When a SA is created, we \textbf{must} specify which \textbf{AuthN Method} is needed:
+     \begin{itemize}
+        \item \textbf{Digital Signature}: non-repudiation of the IKE negotiation \(\rightarrow \) it is \textbf{not} possible to deny the request to open the Secure Channel.
+        \item \textbf{Public Key Encryption}: identity protection provided by the Aggressive Mode.
+        \item \textbf{Revised Public Key Encryption}: faster since only two PK operations are needed.
+        \item \textbf{Pre-Shared Key}: the party’s ID may \textbf{only} be its own IP address \(\rightarrow \) may create problems for Mobile Users.
+     \end{itemize}
+   \end{quotebox-grey}
+\end{itemize}
+
+\subsection{VPN Concentrator}
+Since, IPsec, nowadays, is used to create mainly Site-to-Site VPN, there is the problem of the \textbf{performance} of Gateways. For that reason, \textbf{VPN Concentrator} were created. They are a
+special purpose hardware appliance that acts as a \textbf{terminator} of IPsec Tunnel.\\   \\
+VPN Concentrators are used for remote access of single users or to create Site-to-Site VPN.
+Since they are implemented in hardware, VPN Concentrators have a \textbf{very high performance}
+with respect to the \textbf{low cost}.
+
+\subsection{IPsec Conclusions}
+IPsec can \textbf{only} be applied to \textbf{Unicast packets}, since it needs to identify the peer and exchange
+a key. Moreover, since reciprocal authN is needed, IPsec is applied \textbf{only} between parties that
+activated a SA by means of Shared Keys or by means of X.509 certificates.\\
+IPsec is good \textbf{only} for "closed" groups \(\rightarrow \) IPsec \textbf{cannot} be used to create services that do
+\textbf{not} need to client authN (e.g. e-commerce).
+\\
+\noindent{\color{gray!50}\rule{\textwidth}{0.5pt}}
+\section{Service Protocols (In)security}
+IP addresses are \textbf{not} authN and packets are \textbf{not} protected (lack of \textbf{integrity}, \textbf{authN}, \textbf{confidentiality} and protection against Replay attacks) when IPsec is \textbf{not} used. Therefore, \textbf{all} the protocols that use IP as a carrier can be attacked.
+
+\subsection{ICMP Security}
+\textbf{ICMP} (\textbf{Internet Control \& Management Protocol}) is a vital protocol for network management and, for this reason, many attacks are possible because it does \textbf{not} provide authN.
+This means that the following ICMP functions can be exploited to perform attacks:
+\begin{itemize}
+    \item \textbf{ICMP Echo Request/Reply}: can be used to perform ping flooding or ping bombing → both DoS attacks.
+    \item \textbf{Destination Unreachable}: since packets are \textbf{not} authN, DoS attacks can be performed:
+    fake nodes could send Destination Unreachable to the sender, which in turn will close the communication thinking that the destination is truly unreachable.
+    \item \textbf{Source Quench} (deprecated from 2012): it was a mechanism meant to provide congestion control. DoS attacks could be performed in the following way: since senders \textbf{must}
+    react to ICMP Source Quench messages, intermediate nodes’ buffers will get filled up by
+    the responses, \textbf{slowing} transmission on the connection. This was possible mainly because
+    ICMP Source Quench messages were \textbf{not} authN.
+    \item \textbf{Redirect}: these ICMP messages can be sent by any intermediate node when they detect
+    that a packet has taken the wrong path. This make \textbf{Logical MITM attacks} possible: an attacker could redirect the sender to a malicious node under its control and there it can perform the MITM attack.
+    \item \textbf{Time Exceeded for a Datagram}: it is an ICMP message normally sent by intermediate
+    nodes when they process a packet with \textbf{TTL = 0}. Receiving this message usually means
+    that there are loops in the routing plan \(\rightarrow \) the source node of the packet closes the
+    connection \(\rightarrow \) attackers could fake this message causing a DoS for the sender.
+    \begin{quotebox-yellow}{}
+        These attacks are \textbf{always} possible, since it is \textbf{not} possible to protect ICMP with IPsec.
+    \end{quotebox-yellow}
+\end{itemize}
+\begin{quotebox-grey}{Smurfing Attack}
+    \begin{minipage}{0.6\textwidth}
+    %	\vspace{-0.5cm}
+    A \textbf{Smurfing attack} can be performed with ICMP. Smurfing is a kind of DoS attack, where a
+    target is attacked by creating an ICMP Echo Request (a.k.a. ping) with \(IP_A\) as the Source
+    Address, while the destination is the Broadcast Address of the whole network. The nodes of
+    the network, upon receiving the ICMP Echo Request, will start sending ICMP Echo Replies
+    to the source of the request → the victim \textbf{A}, which will get overloaded with messages. At the
+    same time, the \textbf{Reflector Network} will be quite busy dealing with the huge amount of ICMP
+    traffic \(\rightarrow \) both the victim and the Reflector Network suffer the DoS attack.
+    
+    \end{minipage} 
+    \hspace{0.3cm}
+    \begin{minipage}{0.4\textwidth}
+        \centering
+        \includegraphics[width=0.9\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2025-01-01 17-33-10.png}
+    \end{minipage}
+    \\  \\
+    \\
+    To prevent this attack, we have to first understand where the attack is coming from:
+    \begin{itemize}
+        \item \textbf{Extern Attack}: the network’s Border Routers should \textbf{reject} incoming IP Broadcast packets.
+        \item \textbf{Internal Attack}: since broadcast \textbf{cannot} be disabled in LAN (it is required by protocols), the only way to stop a Smurfing attack is to identify the attacker via Network Management Tools and then try to stop its machine.
+    \end{itemize}
+\end{quotebox-grey}
+\begin{quotebox-grey}{Fraggle Attack}
+    \begin{minipage}{0.6\textwidth}
+    \vspace{-1.5cm}
+    \textbf{Fraggle attacks} are very similar to smurfing, since they follow the \textbf{same tactic}. However,
+    Fraggle attacks are performed with \textbf{UDP} rather than \textbf{ICMP}. Nowadays, the UDP Echo
+    Request are \textbf{disabled} by default, thus, this type of DoS attacks relies on the number of clients
+    inside the reflector network that have UDP Echo Request \textbf{enabled}. 
+    \end{minipage} 
+    \hspace{0.3cm}
+    \begin{minipage}{0.4\textwidth}
+        \centering
+        \includegraphics[width=0.9\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2025-01-01 17-37-02.png}
+    \end{minipage}
+
+\end{quotebox-grey}
+
+\subsection{ARP Poisoning}
+\textbf{ARP Poisoning} is performed by exploiting the fact that nodes accept ARP Reply \textbf{even if}
+they did \textbf{not} send an ARP Request, this is because rejecting it could mean avoiding the need
+to send an ARP Request in the future, when contacting that node.\\ 
+Thus, it is possible to send \textbf{unsolicited wrong} ARP Replies to the nodes, which will overwrite
+their \textbf{static} ARP Table Entries with \textbf{dynamic} ones.\\
+ARP Poisoning attacks are possible because \textbf{most} protocols do \textbf{not} check that the Source L2 Address inside the ARP field matches with the one in the Source Field of the Ethernet frame.
+\subsection{TCP SYN Flooding}
+\begin{minipage}{0.6\textwidth}
+%	\vspace{-0.5cm}
+Attackers could start a 3-Way Handshake to open a TCP connection, but \textbf{never} send the final
+ACK back. This makes the server fill up its table of open TCP connections, meanwhile the
+attacker can keep going back to the first step just by sending another SYN packet.\\
+At some point the table will be full and the server will \textbf{not} be able to handle any new connections
+attempts \(\rightarrow \) DoS for the clients who wish to connect to the server.
+\end{minipage} 
+\hspace{0.5cm}
+\begin{minipage}{0.4\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2025-01-01 17-44-53.png}
+\end{minipage}
+\\
+\\
+To protect against \textbf{SYN Flooding} it is possible to:
+\begin{itemize}
+    \item \textbf{SYN Interceptor}: a router could bu put in "front" of the server with \textbf{aggressive} but
+    \textbf{risky} timeout. The router would \textbf{only} have to wait for the 3-way handshake to complete
+    in due time, successful handshakes would then be transferred to the server.
+    \vspace{-0.3cm}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.35\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2025-01-01 17-52-20.png}
+        \caption{SYN Interceptor or Firewall Relay}
+    \end{figure}
+    \item \textbf{SYN Monitor}: a router could be used to monitor pending requests and eventually kill
+    them.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.35\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2025-01-01 17-58-09.png}
+        \caption{SYN Monitor or Firewall Gateway}
+    \end{figure}
+    \item \textbf{Decrease the Timeout}: at the end of the timeout, the server will check its connection
+    table and \textbf{discard} pending connections. However, the server risks to delete connections
+    requests coming from \textbf{valid} but \textbf{slow} clients.
+    \item \textbf{Increase the Table Size} → could easily be avoided by sending more requests.
+\end{itemize}
+\begin{quotebox}[colframe=blue!10!white, colback=blue!5!white]{SYN Cookie}
+    \textbf{SYN Cookies} are the \textbf{only} thing that can \textbf{completely protect} against SYN flooding attack.
+    A SYN Cookie uses the TCP Sequence Number of the SYN-ACK packet to transmit a \textbf{cookie}
+    to the requesting client. This cookie is later used to \textbf{recognize} a client that has already sent
+    the SYN \textbf{without} storing any info about them on the server.
+\end{quotebox}
+
+\subsection{DNS Security}
+\begin{minipage}{0.6\textwidth}
+\vspace{-0.5cm}
+The DNS provides translation from \textbf{name} (URL) → \textbf{address} (IP) and vice-versa if needed.
+The DNS is an \textbf{essential service} that works by means of \textbf{queries} (over port \textbf{53/UDP}) and
+\textbf{zone transfers} (over \textbf{53/TCP}), which allow the transfer of information between DNS Servers.
+By itself, DNS does \textbf{not} provide any kind of security.
+\end{minipage} 
+\hspace{0.5cm}
+\begin{minipage}{0.4\textwidth}
+    \centering
+    \includegraphics[width=0.7\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2025-01-01 18-10-05.png}
+\end{minipage}
+\begin{center}
+    
+\begin{quotebox-grey}{DNS Shadow Server}
+    \begin{minipage}{0.6\textwidth}
+    	\vspace{-0.5cm}
+    An attacker could Sniff the request that the victim sent to the Local DNS \(\rightarrow \) fake IP address
+    can be provided to the victim. An attacker could also Sniff the request going from the Local
+    DNS to the Root DNS \(\rightarrow \) fake responses can be provided to the Local DNS \(\rightarrow \) fake answer
+    can be provided to \textbf{all} the clients of the network that query the Local DNS.
+    \end{minipage} 
+    \hspace{0.3cm}
+    \begin{minipage}{0.4\textwidth}
+        \centering
+        \includegraphics[width=0.9\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2025-01-01 18-14-48.png}
+    \end{minipage}
+    \\   \\
+    Moreover, Microsoft implemented on Windows a cache for DNS, which is \textbf{violating} the general
+rules for DNS. In this case, \textbf{DNS Shadow Server} attacks are much \textbf{more effective} because cache on client is \textbf{not} often updated.
+\end{quotebox-grey}
+\end{center}
+
+
+\begin{center}
+   
+    \begin{quotebox-grey}{DNS Cache Poisoning}
+        Every DNS Server has a cache to fasten up response times. With \textbf{DNS Cache Poisoning}, an
+        attacker could create a domain (e.g. www.attacker.net) and a \textbf{nameserver}. This nameserver
+        will answer to anyone who contacts it with the \textbf{real} address of the server \textbf{plus} some other \textbf{wrong} information.
+        \\
+        If the victim’s nameserver is \textbf{not} properly configured, it will accept the additional answers and \textbf{overwrite} the information already available in its cache.
+
+            \centering
+            \includegraphics[width=0.4\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2025-01-01 18-21-48.png}
+    \end{quotebox-grey}
+\end{center}
+\begin{quotebox-grey}{DNS Cache Poisoning v2}
+    \begin{minipage}{0.6\textwidth}
+    \vspace{-0.5cm}
+    In this version, the attacker configures a DNS Client and asks for the victim’s \textbf{Recursive
+    Nameserver} for the resolution of the address. But since the search will take time, the attacker
+    can send the answer to its own request providing a \textbf{fake Source Address} (as if it was sent
+    from the Authoritative Nameserver).\\
+    This attack is much \textbf{more effective} since it is \textbf{not} necessary for the victim to be tricked into requesting the resolution of the attacker’s nameserver. 
+    \end{minipage} 
+    \hspace{0.3cm}
+    \begin{minipage}{0.4\textwidth}
+        
+        \includegraphics[width=0.9\textwidth]{/home/lorenzo/Pictures/Screenshots/Screenshot from 2025-01-01 18-26-14.png}
+    \end{minipage}
+\end{quotebox-grey}
+\begin{quotebox-grey}{DNS Flash Crowd}
+    \begin{minipage}{0.6\textwidth}
+    \vspace{-2cm}
+    The \textbf{DNS Flash Crowd} is the \textbf{only} possible way to perform a DoS attack on a DNS Server.
+    The DNS Server is targeted by a huge number of clients and servers that block access to \textbf{all}
+    the domains related to that DNS Server, making it \textbf{unreachable}. 
+    \end{minipage} 
+    \hspace{0.3cm}
+    \begin{minipage}{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2025-01-01 18-28-17.png}
+    \end{minipage}
+\end{quotebox-grey}
+
+\subsection{NAT Security}
+Name-Address Translation System is used by numerous application and it's typically implemented in DNS (Domain Name System)
+architectures.\\
+\\
+\textbf{The process:}
+\begin{enumerate}
+    \item \textbf{App \#1 Initiates a Request}: Wants to resolve a domain name (e.g., www.example.com)
+    to an IP address. It sends the request to the OS through the Name Switch.
+    \item \textbf{Name Switch}: The Name Switch in the OS determines how the domain name should be resolved. It checks in the following in order:
+    \begin{itemize}
+        \item Local Data (e.g., /etc/hosts): If the name exists in local configuration files, it uses
+        this data.
+        \item If the name is not found locally, it forwards the query to the Resolver.
+    \end{itemize}
+    \item \textbf{Resolver}: The Resolver handles DNS queries on behalf of the OS \(\rightarrow \) It forwards the query to a (Recursive) Caching Server for further resolution.
+    \item \textbf{Recursive Caching Server}: checks its Cache to see if it already has the requested domain name’s IP address:
+    \begin{itemize}
+        \item Cache Hit: If the result exists in the cache, it returns the IP address to the resolver.
+        \item Cache Miss: If the result is not in the cache, it queries the authoritative DNS servers.
+    \end{itemize}
+    \item \textbf{Zone Master (Primary) and Zone Slave (Secondary)}:
+    \begin{itemize}
+        \item The Zone Master responds with the authoritative answer.
+        \item The Zone Slave (Secondary) might also serve the query if it holds a copy of the zone
+        file.
+    \end{itemize}
+    \item \textbf{Response Propagation}: Once the Recursive Caching Server obtains the correct IP
+    address, it sends the result back to the Resolver. The Resolver delivers the resolved IP address to the Name Switch, which forwards it to App \#1.
+\end{enumerate}
+
+\noindent
+The DNS Infrastructure can be attacked in the following ways:
+\\
+\begin{minipage}{0.6\textwidth}
+	\vspace{0.3cm}
+\begin{itemize}
+    \item \textbf{Local Data Corruption}: an attacker could get access to a client and try to insert
+    among its local data some information to produce a \textbf{wrong} name-address translation.
+    \item \textbf{Unauthorized Configuration}: Name Switch or the Resolver could be reconfigured to point to a \textbf{fake} server that provides \textbf{wrong} answers.
+    \item \textbf{Server Impersonation}: since DNS does \textbf{not} have any kind of authN, communication
+    between the Resolver and the \textbf{Caching Server} or the \textbf{Zone Server} are vulnerable to
+    MITM attacks.
+    \item \textbf{Cache Poisoning}: every time there is a cache, it can be poisoned.
+    \item \textbf{Dynamic Update Exploit}: unauthorized nodes could perform updates.
+\end{itemize} 
+\end{minipage} 
+\hspace{0.3cm}
+\begin{minipage}{0.4\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2025-01-01 19-06-26.png}
+\end{minipage}
+
+\noindent
+Apart from attacks against the nameservers, DNS has got a \textbf{user privacy} problem for the
+queries as they can be: read while in transit or read and logged by the nameserver.\\
+Therefore, to improve DNS and \textbf{protect the queries}, the following protocols were created:
+\begin{itemize}
+    \item \textbf{DoT (DNS-over-TLS)}: query and response are \textbf{encapsulated} in a Secure TLS Tunnel,
+    yet it is still evident that the ongoing communication is a DNS exchange, thus it can be
+    attacked.
+    \item \textbf{RFC-8484 (DNS-over-HTTPS)}: query and response are part of a normal HTTPS
+    exchange → externally it looks like visiting a secure web page.
+\end{itemize}
+
+
+
+\subsection{Protection from IP Spoofing}
+It is \textbf{not} possible to prevent a host from changing its own address, but it is possible to try and limit the diffusion of \textbf{IP Spoofing}.\\
+To protect the internal network from external impostors and protect the external network form internal impostors, the following RFCs suggest how to \textbf{increase} the protection from IP
+spoofing:
+\begin{itemize}
+    \item \textbf{RFC-2827}: "Network ingress filtering: defeating DoS attacks which employ IP source
+    address spoofing".
+    \item \textbf{RFC-3704}: "Ingress filtering multihomed networks".
+    \item \textbf{RFC-3013}: "Recommended ISP security services and procedures".
+\end{itemize}
+\begin{minipage}{0.5\textwidth}    
+        \centering
+        \includegraphics[width=0.8\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2025-01-01 18-48-26.png}       
+\end{minipage} 
+\hspace{0.5cm}
+\begin{minipage}{0.5\textwidth}   
+        \centering
+        \includegraphics[width=0.8\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2025-01-01 18-49-02.png}
+\end{minipage}
+\\   \\    \\
+By placing filters on the \textcolor{red}{\textbf{red}} and \textcolor{blue}{\textbf{blue}} lines, it is possible to protect against both external and internal impostors. If \textbf{all} providers would apply this simple rule, it would be possible to avoid IP spoofing \textbf{globally}.
