@@ -338,5 +338,76 @@ ESP can be used in two modes:
         \centering
         \includegraphics[width=0.8\textwidth]{/home/lorenzo/Notes/Information System Security/images/Screenshot from 2024-12-30 23-09-37.png}
     \end{minipage}
+\end{itemize}
 
+\subsection{IPsec Implementation Details}
+Many algorithms can be used to implement IPsec, thus two main Crypto-Suites were defined to implement it:
+\begin{itemize}
+    \item \textbf{VPN-A}: uses \textbf{ESP} with \textbf{3DES-CBC} and \textbf{HMAC-SHA1-96}, this is a kind of \textbf{legacy
+    VPN} for compatibility with old systems \(\rightarrow \) less secure.
+    \item \textbf{VPN-B}: uses \textbf{ESP} with \textbf{ES-128-CBC} and \textbf{AES-XCBC-MAC-96}, which is the one used in modern systems \(\rightarrow \) more secure.
+\end{itemize}
+ESP adds also the possibility to use \textbf{NULL Algorithms}, where it is possible to specify \textbf{NULL}
+for one of the two parts (authN or confidentiality), but \textbf{not simultaneously} \(\rightarrow \) "protection
+against performance" trade-off.
+
+\begin{center}
+    \begin{quotebox-grey}{IPsec Partial Protection Against Replay Attacks}
+        ESP’s and AH’s \textbf{Sequence Number} provide \textbf{partial} protection from replay attacks since it
+        means that IPsec works with a minimum window of 32 packets (64 is the suggested one).\\    \\
+        When the SA is created, the sender initializes the Sequence Number to 0. Every time a packet
+        is sent, the Sequence Number is incremented by one, and once the value \(2^{31}-1\) is reached, a new SA should be negotiated. The window moves as valid packets are received \(\rightarrow \) \textbf{outside} the window, there is \textbf{no} protection against replay attacks.
+      
+            \centering
+            \includegraphics[width=0.5\textwidth]{/home/lorenzo/Notes/Information System Security/images/image copy 24.png}
+    \end{quotebox-grey}   
+\end{center}
+
+\subsection{IPsec v3}
+\textbf{IPsec v3} makes \textbf{ESP mandatory} and \textbf{AH optional}. It also adds support for single source
+multicast. Moreover, to avoid overflow in highly trafficked channels, the \textbf{ESN} (\textbf{Extended Sequence Number}) has been introduced. It uses 8 bytes even though packets inside it are
+still 4 bytes \textbf{only}, because \textbf{only} the 4 LSBytes transmitted (default with \textbf{IKEv2}). Finally, v3 adds support for AEAD and clarifies things about SA and SPI to manage faster lookup. The algorithms used in IPsec v3 are the following:
+\begin{itemize}
+    \item For \textbf{integrity} and \textbf{authN}:
+    \begin{itemize}
+        \item We may use \textbf{HMAC-MD5-96}.
+        \item We must use \textbf{HMAC-SHA1-96}.
+        \item We should use \textbf{AES-XCBC-MAC-96}.
+        \item We \textbf{must} use \textbf{NULL}, but only if \textbf{ESP} is used.
+        \item For a longer digest, we may use:
+        \begin{itemize}
+            \item \textbf{HMAC-SHA256-128}
+            \item \textbf{HMAC-SHA384-192}
+            \item \textbf{HMAC-SHA512-256}
+        \end{itemize}
+    \end{itemize}
+    \item For \textbf{privacy}:
+    \begin{itemize}
+        \item We must use NULL;
+        \item We must not use 3DES-CBC;
+        \item We should use AES-128-CBC;
+        \item We may use AES-CTR;
+        \item We should not use DES-CBC;
+    \end{itemize}
+    \item For \textbf{authN encryption} in \textbf{AEAD Mode} (see below), we can use:
+    \begin{itemize}
+        \item \textbf{HMAC-SHA256-128}
+        \item \textbf{HMAC-SHA384-192}
+        \item \textbf{HMAC-SHA512-256}
+    \end{itemize}
+\end{itemize}
+\begin{quotebox}[colframe=blue!10!white, colback=blue!5!white]{TFC (Traffic Flow Confidentiality)}
+    \textbf{TFC} is a \textbf{padding technique} used in ESP that puts padding \textbf{after} the payload and before
+    the normal padding: this is needed in order to \textbf{not} disclose what is the \textbf{real size} of the payload in the packet.\\     \\    
+    Thanks to the length fields (e.g. in TCP, UDP, etc...) the receiver is able to compute the \textbf{original} size of the payload.\\     \\  
+    \textbf{Dummy Packets} are a form of Nested Pseudo-Protocol that is introduced by IPsec v3 to keep
+    transmitting even in \textbf{absence} of real data to send, which is essential to keep \textbf{confidentiality}.
+    Even the Dummy Packets \textbf{must} be encrypted, in order to make them \textbf{indistinguishable} from
+    real traffic.
+\end{quotebox}
+
+\subsection{Ways to use IPsec}
+IPsec can be used to implement various security models:
+\begin{itemize}
+    \item 
 \end{itemize}

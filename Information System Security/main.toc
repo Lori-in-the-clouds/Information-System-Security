@@ -100,65 +100,68 @@
 \contentsline {subsection}{\numberline {5.3.5}Tunnel Mode in IPsec}{45}{subsection.5.3.5}%
 \contentsline {subsection}{\numberline {5.3.6}AH (Authentication Header)}{46}{subsection.5.3.6}%
 \contentsline {subsection}{\numberline {5.3.7}ESP (Encapsulating Security Payload)}{46}{subsection.5.3.7}%
-\contentsline {chapter}{\numberline {6}Firewall and IDS/IPS}{48}{chapter.6}%
-\contentsline {section}{\numberline {6.1}What is a Firewall?}{48}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Ingress vs Egress firewall}{48}{section.6.2}%
-\contentsline {section}{\numberline {6.3}The three principles of the firewall}{48}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Authorization policies}{48}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Basic components}{48}{section.6.5}%
-\contentsline {section}{\numberline {6.6}A which level the controls are made?}{49}{section.6.6}%
-\contentsline {section}{\numberline {6.7}Network-Level Controls}{49}{section.6.7}%
-\contentsline {subsection}{\numberline {6.7.1}Packet filter}{49}{subsection.6.7.1}%
-\contentsline {subsection}{\numberline {6.7.2}Circuit-Level Gateway}{49}{subsection.6.7.2}%
-\contentsline {subsection}{\numberline {6.7.3}Application-Level Gateway}{50}{subsection.6.7.3}%
-\contentsline {subsection}{\numberline {6.7.4}HTTP Proxies}{50}{subsection.6.7.4}%
-\contentsline {subsection}{\numberline {6.7.5}WAF (Web Application Firewall)}{51}{subsection.6.7.5}%
-\contentsline {section}{\numberline {6.8}Firewall's Architectures}{51}{section.6.8}%
-\contentsline {subsection}{\numberline {6.8.1}"Packet Filter" architecture}{51}{subsection.6.8.1}%
-\contentsline {subsection}{\numberline {6.8.2}"Dual-homed Gateway" architecture}{51}{subsection.6.8.2}%
-\contentsline {subsection}{\numberline {6.8.3}"Screened host" architecture}{52}{subsection.6.8.3}%
-\contentsline {subsection}{\numberline {6.8.4}"Screened subnet" architecture}{52}{subsection.6.8.4}%
-\contentsline {subsection}{\numberline {6.8.5}"Screened subnet" architecture (version 2)}{53}{subsection.6.8.5}%
-\contentsline {section}{\numberline {6.9}Local/Personal Firewall}{53}{section.6.9}%
-\contentsline {section}{\numberline {6.10}Protection offered by a firewall}{53}{section.6.10}%
-\contentsline {section}{\numberline {6.11}Intrusion Detection System (IDS)}{54}{section.6.11}%
-\contentsline {subsection}{\numberline {6.11.1}IDS functional features}{54}{subsection.6.11.1}%
-\contentsline {subsection}{\numberline {6.11.2}IDS topological features}{54}{subsection.6.11.2}%
-\contentsline {section}{\numberline {6.12}Intrusion Prevention System (IPS)}{55}{section.6.12}%
-\contentsline {section}{\numberline {6.13}Next-Generation Firewall (NGFW)}{55}{section.6.13}%
-\contentsline {section}{\numberline {6.14}Unified Threat Management (UTM)}{55}{section.6.14}%
-\contentsline {section}{\numberline {6.15}Honey pot / Honey net}{55}{section.6.15}%
-\contentsline {chapter}{\numberline {7}Security of network applications}{56}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Standard situation}{56}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Channel Security}{56}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Message/Data security}{56}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Different implementation}{57}{section.7.4}%
-\contentsline {subsubsection}{Security Internal to Applications}{57}{section*.15}%
-\contentsline {subsubsection}{Security External to Applications}{57}{section*.16}%
-\contentsline {section}{\numberline {7.5}TLS (Transport Layer Security)}{57}{section.7.5}%
-\contentsline {subsection}{\numberline {7.5.1}TLS - AuthN and Integrity}{58}{subsection.7.5.1}%
-\contentsline {subsection}{\numberline {7.5.2}TLS - Confidentiality}{58}{subsection.7.5.2}%
-\contentsline {subsection}{\numberline {7.5.3}TLS Architecture}{58}{subsection.7.5.3}%
-\contentsline {subsection}{\numberline {7.5.4}TLS Handshake Protocol}{59}{subsection.7.5.4}%
-\contentsline {subsection}{\numberline {7.5.5}TLS Session ID}{59}{subsection.7.5.5}%
-\contentsline {subsection}{\numberline {7.5.6}TLS Session \textbf {\(\&\)} Connections}{59}{subsection.7.5.6}%
-\contentsline {subsection}{\numberline {7.5.7}Relationship among Keys and Sessions}{60}{subsection.7.5.7}%
-\contentsline {subsection}{\numberline {7.5.8}TLS Record Protocol (authenticate-then-encrypt)}{60}{subsection.7.5.8}%
-\contentsline {subsection}{\numberline {7.5.9}Perfect Forward Secrecy}{60}{subsection.7.5.9}%
-\contentsline {subsection}{\numberline {7.5.10}TLS Downgrade Attack}{61}{subsection.7.5.10}%
-\contentsline {section}{\numberline {7.6}Virtual Servers and TLS}{61}{section.7.6}%
-\contentsline {section}{\numberline {7.7}ALPN extension (Application-Layer Protocol Negotiation)}{61}{section.7.7}%
-\contentsline {section}{\numberline {7.8}TLS Fallback - Signaling Cipher Suite Value}{62}{section.7.8}%
-\contentsline {section}{\numberline {7.9}DTLS (Datagram Transport Layer Security)}{62}{section.7.9}%
-\contentsline {section}{\numberline {7.10}HTTP Security}{62}{section.7.10}%
-\contentsline {subsection}{\numberline {7.10.1}HTTP Basic Authentication}{62}{subsection.7.10.1}%
-\contentsline {subsection}{\numberline {7.10.2}HTTP Digest Authentication}{62}{subsection.7.10.2}%
-\contentsline {subsection}{\numberline {7.10.3}HTTP \& TLS/SSL}{64}{subsection.7.10.3}%
-\contentsline {subsubsection}{TSL AuthN at the Application Layer}{64}{section*.17}%
-\contentsline {subsubsection}{AuthN in Web applications}{64}{section*.18}%
-\contentsline {subsubsection}{Web Form Security}{64}{section*.19}%
-\contentsline {section}{\numberline {7.11}HTTP Strict Transport Security (HSTS)}{64}{section.7.11}%
-\contentsline {subsection}{\numberline {7.11.1}HTTP Public Key Pinning (HPKT)}{65}{subsection.7.11.1}%
-\contentsline {section}{\numberline {7.12}E-Payment System}{65}{section.7.12}%
-\contentsline {subsection}{\numberline {7.12.1}Web-Based Payment Systems}{66}{subsection.7.12.1}%
-\contentsline {subsection}{\numberline {7.12.2}PCI DSS (Payment Card Industry Data Security Standard)}{66}{subsection.7.12.2}%
+\contentsline {subsection}{\numberline {5.3.8}IPsec Implementation Details}{47}{subsection.5.3.8}%
+\contentsline {subsection}{\numberline {5.3.9}IPsec v3}{47}{subsection.5.3.9}%
+\contentsline {subsection}{\numberline {5.3.10}Ways to use IPsec}{48}{subsection.5.3.10}%
+\contentsline {chapter}{\numberline {6}Firewall and IDS/IPS}{49}{chapter.6}%
+\contentsline {section}{\numberline {6.1}What is a Firewall?}{49}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Ingress vs Egress firewall}{49}{section.6.2}%
+\contentsline {section}{\numberline {6.3}The three principles of the firewall}{49}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Authorization policies}{49}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Basic components}{49}{section.6.5}%
+\contentsline {section}{\numberline {6.6}A which level the controls are made?}{50}{section.6.6}%
+\contentsline {section}{\numberline {6.7}Network-Level Controls}{50}{section.6.7}%
+\contentsline {subsection}{\numberline {6.7.1}Packet filter}{50}{subsection.6.7.1}%
+\contentsline {subsection}{\numberline {6.7.2}Circuit-Level Gateway}{50}{subsection.6.7.2}%
+\contentsline {subsection}{\numberline {6.7.3}Application-Level Gateway}{51}{subsection.6.7.3}%
+\contentsline {subsection}{\numberline {6.7.4}HTTP Proxies}{51}{subsection.6.7.4}%
+\contentsline {subsection}{\numberline {6.7.5}WAF (Web Application Firewall)}{52}{subsection.6.7.5}%
+\contentsline {section}{\numberline {6.8}Firewall's Architectures}{52}{section.6.8}%
+\contentsline {subsection}{\numberline {6.8.1}"Packet Filter" architecture}{52}{subsection.6.8.1}%
+\contentsline {subsection}{\numberline {6.8.2}"Dual-homed Gateway" architecture}{52}{subsection.6.8.2}%
+\contentsline {subsection}{\numberline {6.8.3}"Screened host" architecture}{53}{subsection.6.8.3}%
+\contentsline {subsection}{\numberline {6.8.4}"Screened subnet" architecture}{53}{subsection.6.8.4}%
+\contentsline {subsection}{\numberline {6.8.5}"Screened subnet" architecture (version 2)}{54}{subsection.6.8.5}%
+\contentsline {section}{\numberline {6.9}Local/Personal Firewall}{54}{section.6.9}%
+\contentsline {section}{\numberline {6.10}Protection offered by a firewall}{54}{section.6.10}%
+\contentsline {section}{\numberline {6.11}Intrusion Detection System (IDS)}{55}{section.6.11}%
+\contentsline {subsection}{\numberline {6.11.1}IDS functional features}{55}{subsection.6.11.1}%
+\contentsline {subsection}{\numberline {6.11.2}IDS topological features}{55}{subsection.6.11.2}%
+\contentsline {section}{\numberline {6.12}Intrusion Prevention System (IPS)}{56}{section.6.12}%
+\contentsline {section}{\numberline {6.13}Next-Generation Firewall (NGFW)}{56}{section.6.13}%
+\contentsline {section}{\numberline {6.14}Unified Threat Management (UTM)}{56}{section.6.14}%
+\contentsline {section}{\numberline {6.15}Honey pot / Honey net}{56}{section.6.15}%
+\contentsline {chapter}{\numberline {7}Security of network applications}{57}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Standard situation}{57}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Channel Security}{57}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Message/Data security}{57}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Different implementation}{58}{section.7.4}%
+\contentsline {subsubsection}{Security Internal to Applications}{58}{section*.15}%
+\contentsline {subsubsection}{Security External to Applications}{58}{section*.16}%
+\contentsline {section}{\numberline {7.5}TLS (Transport Layer Security)}{58}{section.7.5}%
+\contentsline {subsection}{\numberline {7.5.1}TLS - AuthN and Integrity}{59}{subsection.7.5.1}%
+\contentsline {subsection}{\numberline {7.5.2}TLS - Confidentiality}{59}{subsection.7.5.2}%
+\contentsline {subsection}{\numberline {7.5.3}TLS Architecture}{59}{subsection.7.5.3}%
+\contentsline {subsection}{\numberline {7.5.4}TLS Handshake Protocol}{60}{subsection.7.5.4}%
+\contentsline {subsection}{\numberline {7.5.5}TLS Session ID}{60}{subsection.7.5.5}%
+\contentsline {subsection}{\numberline {7.5.6}TLS Session \textbf {\(\&\)} Connections}{60}{subsection.7.5.6}%
+\contentsline {subsection}{\numberline {7.5.7}Relationship among Keys and Sessions}{61}{subsection.7.5.7}%
+\contentsline {subsection}{\numberline {7.5.8}TLS Record Protocol (authenticate-then-encrypt)}{61}{subsection.7.5.8}%
+\contentsline {subsection}{\numberline {7.5.9}Perfect Forward Secrecy}{61}{subsection.7.5.9}%
+\contentsline {subsection}{\numberline {7.5.10}TLS Downgrade Attack}{62}{subsection.7.5.10}%
+\contentsline {section}{\numberline {7.6}Virtual Servers and TLS}{62}{section.7.6}%
+\contentsline {section}{\numberline {7.7}ALPN extension (Application-Layer Protocol Negotiation)}{62}{section.7.7}%
+\contentsline {section}{\numberline {7.8}TLS Fallback - Signaling Cipher Suite Value}{63}{section.7.8}%
+\contentsline {section}{\numberline {7.9}DTLS (Datagram Transport Layer Security)}{63}{section.7.9}%
+\contentsline {section}{\numberline {7.10}HTTP Security}{63}{section.7.10}%
+\contentsline {subsection}{\numberline {7.10.1}HTTP Basic Authentication}{63}{subsection.7.10.1}%
+\contentsline {subsection}{\numberline {7.10.2}HTTP Digest Authentication}{63}{subsection.7.10.2}%
+\contentsline {subsection}{\numberline {7.10.3}HTTP \& TLS/SSL}{65}{subsection.7.10.3}%
+\contentsline {subsubsection}{TSL AuthN at the Application Layer}{65}{section*.17}%
+\contentsline {subsubsection}{AuthN in Web applications}{65}{section*.18}%
+\contentsline {subsubsection}{Web Form Security}{65}{section*.19}%
+\contentsline {section}{\numberline {7.11}HTTP Strict Transport Security (HSTS)}{65}{section.7.11}%
+\contentsline {subsection}{\numberline {7.11.1}HTTP Public Key Pinning (HPKT)}{66}{subsection.7.11.1}%
+\contentsline {section}{\numberline {7.12}E-Payment System}{66}{section.7.12}%
+\contentsline {subsection}{\numberline {7.12.1}Web-Based Payment Systems}{67}{subsection.7.12.1}%
+\contentsline {subsection}{\numberline {7.12.2}PCI DSS (Payment Card Industry Data Security Standard)}{67}{subsection.7.12.2}%
